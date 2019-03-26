@@ -112,9 +112,9 @@ collections:
                   },
                 ],
             }
-      - file: "src/pages/about/index.md"
-        label: "About"
-        name: "about"
+      - file: "src/pages/info.md"
+        label: "Informasjon"
+        name: "info"
         fields:
           - {
               label: "Template Key",
@@ -124,15 +124,15 @@ collections:
             }
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
-      - file: "src/pages/products/index.md"
-        label: "Products Page"
-        name: "products"
+      - file: "src/pages/kontakt.md"
+        label: "Kontakt"
+        name: "kontakt"
         fields:
           - {
               label: "Template Key",
               name: "templateKey",
               widget: "hidden",
-              default: "product-page",
+              default: "contact-page",
             }
           - { label: Title, name: title, widget: string }
           - { label: Image, name: image, widget: image }
