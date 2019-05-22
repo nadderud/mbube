@@ -1,47 +1,49 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "mbube",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "dotenv-webpack": "^1.7.0",
     "gatsby": "^2.2.10",
     "gatsby-image": "^2.0.34",
+    "gatsby-plugin-create-client-paths": "^2.0.5",
     "gatsby-plugin-manifest": "^2.0.24",
     "gatsby-plugin-netlify": "^2.0.13",
-    "gatsby-plugin-netlify-cms": "^3.0.16",
+    "gatsby-plugin-netlify-cms": "^4.0.0",
     "gatsby-plugin-offline": "^2.0.25",
     "gatsby-plugin-react-helmet": "^3.0.10",
     "gatsby-plugin-sharp": "^2.0.30",
     "gatsby-source-filesystem": "^2.0.28",
     "gatsby-transformer-remark": "^2.3.8",
     "gatsby-transformer-sharp": "^2.1.17",
+    "grommet": "^2.7.0",
     "netlify-cms": "^2.8.0",
+    "netlify-identity-widget": "^1.5.2",
+    "polished": "^3.3.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.0",
+    "sanitize.css": "^9.0.0",
+    "styled-components": "^4.2.0"
   },
   "devDependencies": {
+    "http-proxy-middleware": "^0.19.1",
+    "netlify-lambda": "^1.4.7",
+    "npm-run-all": "^4.1.5",
     "prettier": "^1.16.4"
   },
-  "keywords": [
-    "gatsby"
-  ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
     "develop": "gatsby develop",
+    "start": "run-p start:**",
+    "start:app": "npm run develop",
+    "start:lambda": "netlify-lambda serve src/lambda --config ./webpack.functions.js",
+    "build": "run-p build:**",
+    "build:app": "gatsby build",
+    "build:lambda": "netlify-lambda build src/lambda",
     "format": "prettier --write src/**/*.{js,jsx}",
-    "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
   }
 }

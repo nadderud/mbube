@@ -1,13 +1,24 @@
 import React from "react"
 
-import Layout from "../components/layout"
+import Layout, { Heading } from "../components/layout"
 import SEO from "../components/seo"
 
 const NotFoundPage = () => (
   <Layout>
-    <SEO title="404: Not found" />
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+    <SEO title="Siden har gått seg vill" />
+    <Heading>Denne siden har gått seg vill</Heading>
+    <div className="page-content">
+      <p>Vi kan ikke finne siden du leter etter på denne plasseringen.</p>
+      <ul>
+        <li>
+          Prøv å gå tilbake og se om du kan finne noen andre spor å følge.
+        </li>
+        <li>
+          Hvis du blir bekymret for siden må du gjerne gi oss beskjed, så skal
+          vi sende ut en patrulje som kan lete etter den.
+        </li>
+      </ul>
+    </div>
   </Layout>
 )
 

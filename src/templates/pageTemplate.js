@@ -1,8 +1,9 @@
 import React from "react"
 import { Link } from "gatsby"
 import { graphql } from "gatsby"
+import { Text } from "grommet"
 
-import Layout from "../components/layout"
+import Layout, { Heading } from "../components/layout"
 import SEO from "../components/seo"
 
 export default function Template({
@@ -13,12 +14,15 @@ export default function Template({
   return (
     <Layout>
       <SEO title={frontmatter.title} />
-      <h1>{frontmatter.title}</h1>
+      <Heading>{frontmatter.title}</Heading>
       <div
         className="page-content"
         dangerouslySetInnerHTML={{ __html: html }}
       />
-      <Link to="/">Go back to the homepage</Link>
+      <hr />
+      <Text>
+        <Link to="/">Tilbake til forsiden</Link>
+      </Text>
     </Layout>
   )
 }

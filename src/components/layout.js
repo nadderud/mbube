@@ -7,10 +7,40 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { StaticQuery, graphql } from "gatsby"
+import { StaticQuery, graphql, Link } from "gatsby"
+import { grommet, Grommet, Box, Text, Heading as GrHeading } from "grommet"
+import { deepMerge } from "grommet/utils"
+import "sanitize.css"
 
 import Header from "./header"
-import "./layout.css"
+
+export const MaxWidthContainer = ({ children, ...props }) => (
+  <Box
+    style={{
+      maxWidth: 960,
+      width: "100%",
+    }}
+    margin={{ horizontal: "auto" }}
+    pad={{ horizontal: "medium" }}
+    {...props}
+  >
+    {children}
+  </Box>
+)
+
+export const Heading = ({ children }) => (
+  <GrHeading margin={{ bottom: "xsmall", top: "medium" }}>{children}</GrHeading>
+)
+
+const myStyle = {
+  global: {
+    colors: {
+      brand: "#367f99",
+    },
+  },
+}
+
+const mergedStyle = deepMerge(myStyle, grommet)
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -24,24 +54,23 @@ const Layout = ({ children }) => (
       }
     `}
     render={data => (
-      <>
+      <Grommet theme={mergedStyle} full>
         <Header siteTitle={data.site.siteMetadata.title} />
-        <div
-          style={{
-            margin: `0 auto`,
-            maxWidth: 960,
-            padding: `0px 1.0875rem 1.45rem`,
-            paddingTop: 0,
-          }}
+        <MaxWidthContainer>{children}</MaxWidthContainer>
+        <Box
+          background="light-2"
+          pad={{ vertical: "medium" }}
+          margin={{ top: "medium" }}
         >
-          <main>{children}</main>
-          <footer>
-            © {new Date().getFullYear()}, Built with
-            {` `}
-            <a href="https://www.gatsbyjs.org">Gatsby</a>
-          </footer>
-        </div>
-      </>
+          <MaxWidthContainer>
+            <Text size="small" color="dark-2">
+              © 2009&ndash;{new Date().getFullYear()} Nadderud speidergruppe
+              {"  |  "}
+              <Link to="/kontakt">Kontakt oss</Link>
+            </Text>
+          </MaxWidthContainer>
+        </Box>
+      </Grommet>
     )}
   />
 )
