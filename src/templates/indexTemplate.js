@@ -1,10 +1,12 @@
 import React from "react"
-import { Link } from "gatsby"
 import { graphql } from "gatsby"
-import { Text } from "grommet"
+import { Paragraph } from "grommet"
 
-import Layout, { Heading } from "../components/layout"
+import Layout from "../components/layout"
 import SEO from "../components/seo"
+import { initAuth } from "../app/services/auth"
+import BlogRoll from "../components/BlogRoll"
+initAuth()
 
 export default function Template({ data }) {
   const { markdownRemark } = data
@@ -12,15 +14,14 @@ export default function Template({ data }) {
   return (
     <Layout>
       <SEO title={frontmatter.title} />
-      <Heading>{frontmatter.title}</Heading>
-      <div
-        className="page-content"
-        dangerouslySetInnerHTML={{ __html: html }}
-      />
-      <hr />
-      <Text>
-        <Link to="/">Tilbake til forsiden</Link>
-      </Text>
+      <div>
+        <Paragraph>{frontmatter.description}</Paragraph>
+        <BlogRoll />
+        <div
+          className="page-content"
+          dangerouslySetInnerHTML={{ __html: html }}
+        />
+      </div>
     </Layout>
   )
 }
@@ -32,6 +33,7 @@ export const pageQuery = graphql`
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         title
+        description
       }
     }
   }

@@ -12,15 +12,11 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - {
-          label: "Template Key",
-          name: "templateKey",
-          widget: "hidden",
-          default: "blog-post",
-        }
+      - { name: "templateKey", widget: "hidden", default: "blog-post" }
       - { label: "Tittel", name: "title", widget: "string" }
       - { label: "Dato", name: "date", widget: "datetime" }
       - { label: "Beskrivelse", name: "description", widget: "text" }
+      - { label: "Featured Image", name: "featuredimage", widget: image }
       - { label: "Innhold", name: "body", widget: "markdown" }
       - { label: "Tagger", name: "tags", widget: "list" }
 
@@ -31,87 +27,11 @@ collections:
         label: "Forside"
         name: "index"
         fields:
-          - {
-              label: "Template Key",
-              name: "templateKey",
-              widget: "hidden",
-              default: "index-page",
-            }
+          - { name: "templateKey", widget: "hidden", default: "index" }
           - { label: Tittel, name: title, widget: string }
           - { label: Bilde, name: image, widget: image }
-          - { label: Heading, name: heading, widget: string }
-          - { label: Subheading, name: subheading, widget: string }
-          - {
-              label: Mainpitch,
-              name: mainpitch,
-              widget: object,
-              fields:
-                [
-                  { label: Title, name: title, widget: string },
-                  { label: Description, name: description, widget: text },
-                ],
-            }
-          - { label: Description, name: description, widget: string }
-          - {
-              label: Intro,
-              name: intro,
-              widget: object,
-              fields:
-                [
-                  { label: Heading, name: heading, widget: string },
-                  { label: Description, name: description, widget: text },
-                  {
-                    label: Blurbs,
-                    name: blurbs,
-                    widget: list,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: Text, name: text, widget: text },
-                      ],
-                  },
-                ],
-            }
-          - {
-              label: Main,
-              name: main,
-              widget: object,
-              fields:
-                [
-                  { label: Heading, name: heading, widget: string },
-                  { label: Description, name: description, widget: text },
-                  {
-                    label: Image1,
-                    name: image1,
-                    widget: object,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: Alt, name: alt, widget: string },
-                      ],
-                  },
-                  {
-                    label: Image2,
-                    name: image2,
-                    widget: object,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: Alt, name: alt, widget: string },
-                      ],
-                  },
-                  {
-                    label: Image3,
-                    name: image3,
-                    widget: object,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: Alt, name: alt, widget: string },
-                      ],
-                  },
-                ],
-            }
+          - { label: Beskrivelse, name: description, widget: string }
+          - { label: Innhold, name: "body", widget: "markdown" }
       - file: "src/pages/program.md"
         label: "Program"
         name: "program"
@@ -123,7 +43,17 @@ collections:
         label: "Kontakt"
         name: "kontakt"
         fields:
-          - { name: "path", widget: "hidden", default: "/kontakt" }
-          - { label: Title, name: title, widget: string }
-          - { label: Description, name: description, widget: string }
-          - { label: "Body", name: "body", widget: "markdown" }
+          - { label: Tittel, name: title, widget: string }
+          - { label: Beskrivelse, name: description, widget: string }
+          - {
+              label: Kontaktpersoner,
+              name: contacts,
+              widget: list,
+              fields:
+                [
+                  { label: Navn, name: name, widget: string },
+                  { label: Tittel, name: title, widget: string },
+                  { label: "E-post", name: email, widget: string },
+                  { label: Telefon, name: phone, widget: string },
+                ],
+            }

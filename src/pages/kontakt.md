@@ -1,5 +1,4 @@
 ---
-path: "/kontakt"
 date: 2019-05-22T17:12:33.962Z
 title: "Kontakt oss"
 ---

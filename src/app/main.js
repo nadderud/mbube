@@ -1,7 +1,7 @@
 import React from "react"
 import { Box, Heading, Button, Text } from "grommet"
 import { Send, Chat, Plan, Domain } from "grommet-icons"
-import { navProps } from "../components/header"
+import { navProps } from "../components/Header"
 
 const BigNav = ({ label, to, Icon }) => (
   <Button
