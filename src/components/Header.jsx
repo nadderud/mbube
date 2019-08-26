@@ -1,7 +1,7 @@
 import { Link, navigate } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-import { Box, Text, Stack, Button, ResponsiveContext, Menu } from "grommet"
+import { Box, Text, Button, ResponsiveContext, Menu } from "grommet"
 import { Menu as MenuIcon } from "grommet-icons"
 
 import MaxWidthContainer from "./MaxWidthContainer"
@@ -24,40 +24,8 @@ const NavButton = ({ to, label }) => (
 )
 
 const NavButtonLabel = ({ children }) => (
-  <Box pad={{ horizontal: "medium", vertical: "small" }}>{children}</Box>
+  <Box pad={{ horizontal: "small", vertical: "small" }}>{children}</Box>
 )
-
-const ResponsiveTitle = ({ isMobile, siteTitle }) =>
-  isMobile ? (
-    <Text size="xlarge" weight="bold">
-      <Link
-        to="/"
-        style={{
-          color: "white",
-          textDecoration: `none`,
-        }}
-      >
-        {siteTitle}
-      </Link>
-    </Text>
-  ) : (
-    <Stack anchor="bottom-right">
-      <Box pad={{ bottom: "20px" }}>
-        <Text size="xxlarge" weight="bold" style={{ whiteSpace: "nowrap" }}>
-          <Link
-            to="/"
-            style={{
-              color: "white",
-              textDecoration: `none`,
-            }}
-          >
-            {siteTitle}
-          </Link>
-        </Text>
-      </Box>
-      <Text>- spennende friluftsliv</Text>
-    </Stack>
-  )
 
 const ResponsiveMenu = ({ isMobile, items }) => (
   <Box direction="row" gap="small" alignSelf="end" margin={{ left: "auto" }}>
@@ -65,7 +33,7 @@ const ResponsiveMenu = ({ isMobile, items }) => (
       <Menu
         items={items}
         dropProps={{ align: { top: "bottom", right: "right" } }}
-        dropBackground="accent-1"
+        dropBackground="dark-1"
         icon={<MenuIcon />}
         messages={{
           openMenu: "Vis navigasjon",
@@ -82,15 +50,24 @@ const ResponsiveMenu = ({ isMobile, items }) => (
 
 const MbubeHeader = ({ siteTitle }) => (
   <header>
-    <Box background="brand" pad={{ vertical: "medium", horizontal: "small" }}>
+    <Box background="dark-1" pad={{ vertical: "5px" }}>
       <MaxWidthContainer>
         <ResponsiveContext.Consumer>
           {size => (
             <Box direction="row" gap="medium">
-              <ResponsiveTitle
-                siteTitle={siteTitle}
-                isMobile={isMobile(size)}
-              />
+              <Box margin={{ vertical: "small" }}>
+                <Text size="large" style={{ whiteSpace: "nowrap" }}>
+                  <Link
+                    to="/"
+                    style={{
+                      color: "white",
+                      textDecoration: `none`,
+                    }}
+                  >
+                    {siteTitle}
+                  </Link>
+                </Text>
+              </Box>
               <ResponsiveMenu
                 isMobile={isMobile(size)}
                 items={[
@@ -98,6 +75,11 @@ const MbubeHeader = ({ siteTitle }) => (
                     label: <NavButtonLabel>Program</NavButtonLabel>,
                     to: "/program/",
                     onClick: () => navigate("/program/"),
+                  },
+                  {
+                    label: <NavButtonLabel>Informasjon</NavButtonLabel>,
+                    to: "/info/",
+                    onClick: () => navigate("/info/"),
                   },
                   {
                     label: <NavButtonLabel>Bli speider</NavButtonLabel>,

@@ -23,7 +23,13 @@ export const Heading = ({ children }) => (
 const myStyle = {
   global: {
     colors: {
-      brand: "#367f99",
+      brand: "#43b02a",
+    },
+    font: {
+      family: "'LFT Etica','Helvetica Neue',Arial,sans-serif",
+    },
+    hover: {
+      color: { dark: "brand", light: "brand" },
     },
   },
 }
