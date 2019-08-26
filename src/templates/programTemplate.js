@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import { graphql } from "gatsby"
-import { Text, Button } from "grommet"
+import { Text } from "grommet"
 
 import Layout, { Heading } from "../components/layout"
 import SEO from "../components/seo"
@@ -42,9 +42,7 @@ export const pageQuery = graphql`
         id
         summary
         start
-        organizer {
-          displayName
-        }
+        organizer
         end
         location
         description

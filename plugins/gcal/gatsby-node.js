@@ -2,13 +2,42 @@ const axios = require("axios")
 const crypto = require("crypto")
 const fs = require("fs")
 
-const getEventsUri = (calendarId, apiKey) =>
-  `https://www.googleapis.com/calendar/v3/calendars/${calendarId}/events?key=${apiKey}`
+const TIME_MIN = new Date(Date.now() - 86400000).toISOString()
 
-exports.sourceNodes = async ({ actions }, { apiKey, path }) => {
-  const { createNode } = actions
+const getEventsUri = (calendarId, apiKey) =>
+  `https://www.googleapis.com/calendar/v3/calendars/${calendarId}/events?timeMin=${TIME_MIN}&key=${apiKey}`
+
+exports.sourceNodes = async ({ actions, schema }, { apiKey, path }) => {
+  const { createNode, createTypes } = actions
   const contents = fs.readFileSync(path)
   const calendars = JSON.parse(contents)
+
+  const typeDefs = [
+    schema.buildObjectType({
+      name: "Event",
+      fields: {
+        status: "String!",
+        htmlLink: "String",
+        created: "Date",
+        updated: "Date",
+        summary: "String",
+        location: "String",
+        organizer: "String",
+        start: "Date!",
+        end: "Date!",
+        iCalUID: "String",
+        sequence: "Int",
+        calendar: "String!",
+        description: "String",
+      },
+      interfaces: ["Node"],
+      extensions: {
+        infer: true,
+      },
+    }),
+  ]
+
+  createTypes(typeDefs)
 
   for (calendar of calendars) {
     await createNode({
@@ -31,6 +60,7 @@ exports.sourceNodes = async ({ actions }, { apiKey, path }) => {
           calendar: calendar.name,
           start: event.start.dateTime || event.start.date,
           end: event.end.dateTime || event.end.date,
+          organizer: event.organizer ? event.organizer.displayName : null,
           parent: null,
           internal: {
             type: "Event",
