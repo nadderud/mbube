@@ -40,12 +40,22 @@ exports.createPages = ({ actions, graphql }) => {
           }
         }
       }
+      allCalendar {
+        edges {
+          node {
+            slug
+            name
+            id
+          }
+        }
+      }
     }
   `).then(result => {
     if (result.errors) {
       return Promise.reject(result.errors)
     }
 
+    // create markdown pages
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
       createPage({
         path: node.fields.slug,
@@ -55,6 +65,20 @@ exports.createPages = ({ actions, graphql }) => {
         context: {
           slug: node.fields.slug,
         },
+      })
+    })
+
+    // create calendar pages
+    createPage({
+      path: `program`,
+      component: path.resolve("src/templates/programTemplate.js"),
+      context: { calendarId: null },
+    })
+    result.data.allCalendar.edges.forEach(({ node }) => {
+      createPage({
+        path: `program/${node.slug}`,
+        component: path.resolve("src/templates/programTemplate.js"),
+        context: { calendarId: node.id, calendarName: node.name },
       })
     })
   })

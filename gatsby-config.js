@@ -1,5 +1,9 @@
 var proxy = require("http-proxy-middleware")
 
+require("dotenv").config({
+  path: ".env",
+})
+
 module.exports = {
   // for avoiding CORS while developing Netlify Functions locally
   // read more: https://www.gatsbyjs.org/docs/api-proxy/#advanced-proxying
@@ -58,6 +62,13 @@ module.exports = {
       resolve: "gatsby-plugin-netlify-cms",
       options: {
         modulePath: `${__dirname}/src/cms/cms.js`,
+      },
+    },
+    {
+      resolve: `gcal`,
+      options: {
+        path: `${__dirname}/src/data/calendars.json`,
+        apiKey: process.env.GOOGLE_KEY,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
