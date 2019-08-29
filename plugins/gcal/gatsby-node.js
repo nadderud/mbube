@@ -51,13 +51,14 @@ exports.sourceNodes = async ({ actions, schema }, { apiKey, path }) => {
           .digest(`hex`),
       },
     })
+    console.log("Loading gcal ", calendar.id)
     const events = await getEvents(apiKey, calendar.id)
     for (event of events) {
       if (event.status === "confirmed") {
         await createNode({
           ...event,
-          id: `${calendar.id}${event.id}`,
-          calendar: calendar.name,
+          id: `${event.id}`,
+          calendar: calendar.slug,
           start: event.start.dateTime || event.start.date,
           end: event.end.dateTime || event.end.date,
           organizer: event.organizer ? event.organizer.displayName : null,

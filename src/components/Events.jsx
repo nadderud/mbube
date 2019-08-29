@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { locale, parseZone } from "moment"
+import { Location as LocationIcon } from "grommet-icons"
 
 locale("nb", {
   months: "januar_februar_mars_april_mai_juni_juli_august_september_oktober_november_desember".split(
@@ -62,7 +63,7 @@ const eventTime = (startRaw, endRaw) => {
   end.locale("nb")
 
   if (start.isSame(end, "day")) {
-    return `${start.format("D. MMM HH:mm")}–${end.format("HH:mm")}`
+    return `${start.format("D. MMM \nHH:mm")}–${end.format("HH:mm")}`
   }
 
   if (start.isSame(end, "month")) {
@@ -80,8 +81,7 @@ const Events = ({ events }) => {
     <table className="terminliste">
       <thead>
         <th>Tid</th>
-        <th>Tema</th>
-        <th>Sted</th>
+        <th>Tema og sted</th>
         <th>Ansvar</th>
         <th>Merknad</th>
       </thead>
@@ -90,8 +90,11 @@ const Events = ({ events }) => {
           ({ id, start, end, summary, location, description, organizer }) => (
             <tr className="event" key={id}>
               <td>{eventTime(start, end)}</td>
-              <td>{summary}</td>
-              <td>{location}</td>
+              <td>
+                <strong>{summary}</strong>
+                <br />
+                <LocationIcon /> {location}
+              </td>
               <td>{organizer}</td>
               <td>{description}</td>
             </tr>

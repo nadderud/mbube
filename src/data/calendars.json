@@ -2,11 +2,55 @@
   {
     "name": "Flokken",
     "id": "nadderud.no_qlitigf1h23kh5koa0omi1apu8@group.calendar.google.com",
-    "slug": "flokken"
+    "slug": "flokken",
+    "visible": true
   },
   {
     "name": "Troppen",
     "id": "nadderud.no_2929cu4kt3lj8tqu7ob8joguf0@group.calendar.google.com",
-    "slug": "troppen"
+    "slug": "troppen",
+    "visible": false
+  },
+  {
+    "name": "Ekorn",
+    "id": "nadderud.no_76a5l1knl6qh54jkg3s93uf3fc@group.calendar.google.com",
+    "slug": "troppen/ekorn",
+    "visible": true
+  },
+  {
+    "name": "Elg",
+    "id": "nadderud.no_3cvsqgnedtvt3na142fli5cels@group.calendar.google.com",
+    "slug": "troppen/elg",
+    "visible": true
+  },
+  {
+    "name": "Hare",
+    "id": "nadderud.no_nve4frornciu2fpa3qa55amef0@group.calendar.google.com",
+    "slug": "troppen/hare",
+    "visible": true
+  },
+  {
+    "name": "Rev",
+    "id": "nadderud.no_vtvgrgkpp18gvsh0pcksb379og@group.calendar.google.com",
+    "slug": "troppen/rev",
+    "visible": true
+  },
+  {
+    "name": "Ulv",
+    "id": "nadderud.no_fb2bu5m6arldhi5b7kr9nrgid4@group.calendar.google.com",
+    "slug": "troppen/ulv",
+    "visible": true
+  },
+  {
+    "name": "Roverne",
+    "id": "nadderud.no_609bou5r8u9cl5e5lqdve7vq18@group.calendar.google.com",
+    "slug": "rover",
+    "visible": true
+  },
+  {
+    "name": "Alle",
+    "id": "nadderud.no_nmhftcmqkjihqv2p0dbdh09o34@group.calendar.google.com",
+    "slug": "",
+    "visible": false
   }
 ]

@@ -1,16 +1,30 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { Link, graphql, StaticQuery } from "gatsby"
+import { Box, Button } from "grommet"
+import { Link, graphql, StaticQuery, navigate } from "gatsby"
 
 const Calendars = ({ calendars, selected }) => (
-  <div className="columns is-multiline">
+  <div className="calendars">
     {calendars &&
       calendars.map(({ node: calendar }) => (
-        <div className="is-parent column is-6" key={calendar.id}>
-          <Link to={`/program/${calendar.slug}/`}>
-            {calendar.name} {selected === calendar.id ? " (VALGT)" : ""}
-          </Link>
-        </div>
+        <Button
+          onClick={e => {
+            e.preventDefault()
+            navigate(`/program/${calendar.slug}/`)
+          }}
+          href={`/program/${calendar.slug}/`}
+          plain
+          className={[
+            "calendarPicker",
+            selected === calendar.slug ? "selected" : "",
+          ].join(" ")}
+          key={calendar.id}
+        >
+          <div className={["bigRound", calendar.slug.split("/")[0]].join(" ")}>
+            <span>{calendar.name[0]}</span>
+          </div>
+          <div className="label">{calendar.name}</div>
+        </Button>
       ))}
   </div>
 )
@@ -24,7 +38,7 @@ export default props => (
   <StaticQuery
     query={graphql`
       query CalendarsQuery {
-        allCalendar {
+        allCalendar(filter: { visible: { eq: true } }) {
           edges {
             node {
               id

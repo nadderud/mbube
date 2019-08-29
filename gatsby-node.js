@@ -75,10 +75,14 @@ exports.createPages = ({ actions, graphql }) => {
       context: { calendarId: null },
     })
     result.data.allCalendar.edges.forEach(({ node }) => {
+      const calendarIdParts = node.slug.split("/")
+      const calendarIds = calendarIdParts.length
+        ? ["", calendarIdParts[0], node.slug]
+        : [""]
       createPage({
         path: `program/${node.slug}`,
         component: path.resolve("src/templates/programTemplate.js"),
-        context: { calendarId: node.id, calendarName: node.name },
+        context: { calendarId: node.slug, calendarIds },
       })
     })
   })
