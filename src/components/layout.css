@@ -70,7 +70,6 @@ h1.mainHeader span {
 }
 
 table.terminliste {
-  margin-top: 2em;
   width: 100%;
 }
 
@@ -95,4 +94,10 @@ table.terminliste td.month {
   font-size: small;
   font-weight: bold;
   border-bottom: 0;
+}
+
+.nothing {
+  margin: 2em auto;
+  padding: 3em 4em;
+  border: 2px dashed #ddd;
 }

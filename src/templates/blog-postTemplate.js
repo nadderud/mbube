@@ -1,32 +1,24 @@
-import React from "react"
-import { Link } from "gatsby"
-import { graphql } from "gatsby"
-import { Text } from "grommet"
+import React from 'react';
+import { Link, graphql } from 'gatsby';
 
-import Layout, { Heading } from "../components/layout"
-import SEO from "../components/seo"
-import Byline from "../components/Byline"
+import { Text } from 'grommet';
+
+import Layout, { Heading } from '../components/Layout';
+import SEO from '../components/seo';
+import Byline from '../components/Byline';
 
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
 }) {
-  const { markdownRemark } = data // data.markdownRemark holds our post data
-  const { frontmatter, html } = markdownRemark
+  const { markdownRemark } = data; // data.markdownRemark holds our post data
+  const { frontmatter, html } = markdownRemark;
   return (
-    <Layout>
+    <Layout title={frontmatter.title}>
       <SEO title={frontmatter.title} />
-      <Heading>{frontmatter.title}</Heading>
       <Byline frontmatter={frontmatter} />
-      <div
-        className="page-content"
-        dangerouslySetInnerHTML={{ __html: html }}
-      />
-      <hr />
-      <Text>
-        <Link to="/">Tilbake til forsiden</Link>
-      </Text>
+      <div className="page-content" dangerouslySetInnerHTML={{ __html: html }} />
     </Layout>
-  )
+  );
 }
 
 export const pageQuery = graphql`
@@ -39,4 +31,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

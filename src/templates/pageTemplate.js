@@ -1,28 +1,29 @@
-import React from "react"
-import { Link } from "gatsby"
-import { graphql } from "gatsby"
-import { Text } from "grommet"
+/* eslint-disable react/jsx-filename-extension */
+import React from 'react';
+import { Link, graphql } from 'gatsby';
 
-import Layout, { Heading } from "../components/layout"
-import SEO from "../components/seo"
+import { Text } from 'grommet';
+
+import Layout from '../components/Layout';
+import WhiteBox from '../components/WhiteBox';
+import SEO from '../components/seo';
 
 export default function Template({ data }) {
-  const { markdownRemark } = data
-  const { frontmatter, html } = markdownRemark
+  const { markdownRemark } = data;
+  const { frontmatter, html } = markdownRemark;
   return (
-    <Layout>
+    <Layout
+      title={frontmatter.title}
+      before={(
+        <WhiteBox>
+          Her finner du møter og turer vi har planlagt fremover. Velg din enhet eller patrulje.
+        </WhiteBox>
+)}
+    >
       <SEO title={frontmatter.title} />
-      <Heading>{frontmatter.title}</Heading>
-      <div
-        className="page-content"
-        dangerouslySetInnerHTML={{ __html: html }}
-      />
-      <hr />
-      <Text>
-        <Link to="/">Tilbake til forsiden</Link>
-      </Text>
+      <div className="page-content" dangerouslySetInnerHTML={{ __html: html }} />
     </Layout>
-  )
+  );
 }
 
 export const pageQuery = graphql`
@@ -35,4 +36,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

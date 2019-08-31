@@ -1,15 +1,11 @@
-import React from "react"
-import { Box } from "grommet"
-import MaxWidthContainer from "./MaxWidthContainer"
+import React from 'react';
+import { Box } from 'grommet';
+import MaxWidthContainer from './MaxWidthContainer';
 
 const WhiteBox = ({ children }) => (
-  <Box
-    background="white"
-    pad={{ horizontal: "small", vertical: "large" }}
-    margin={{ bottom: "large" }}
-  >
-    <MaxWidthContainer>{children}</MaxWidthContainer>
+  <Box background="white" pad={{ vertical: 'large' }} margin={{ bottom: 'medium' }}>
+    <MaxWidthContainer margin={{ horizontal: 'auto' }}>{children}</MaxWidthContainer>
   </Box>
-)
+);
 
-export default WhiteBox
+export default WhiteBox;

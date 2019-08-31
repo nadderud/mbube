@@ -1,23 +1,23 @@
-import React from "react"
-import PropTypes from "prop-types"
-import { Box } from "grommet"
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Box } from 'grommet';
 
 const MaxWidthContainer = ({ children, ...props }) => (
   <Box
     style={{
       maxWidth: 960,
-      width: "100%",
+      width: '100%',
     }}
-    margin={{ horizontal: "auto" }}
-    pad={{ horizontal: "medium" }}
+    margin={{ horizontal: 'auto', vertical: 'small' }}
+    pad={{ horizontal: 'medium' }}
     {...props}
   >
     {children}
   </Box>
-)
+);
 
 MaxWidthContainer.propTypes = {
   children: PropTypes.node.isRequired,
-}
+};
 
-export default MaxWidthContainer
+export default MaxWidthContainer;
