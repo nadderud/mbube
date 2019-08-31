@@ -8,7 +8,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
-import { grommet, Grommet, Heading as GrHeading, Box, Stack } from "grommet"
+import { grommet, Grommet, Heading as GrHeading, Box } from "grommet"
 import { deepMerge } from "grommet/utils"
 import "sanitize.css"
 import "./layout.css"
@@ -62,7 +62,7 @@ const Layout = ({ title, before, children, after }) => (
       }
     `}
     render={data => (
-      <Grommet theme={mergedStyle} full>
+      <Grommet theme={mergedStyle}>
         <Box background="#f5f5f5">
           <Header siteTitle={data.site.siteMetadata.title} />
           <TitleContainer title={title} />
