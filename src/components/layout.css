@@ -71,6 +71,7 @@ h1.mainHeader span {
 
 table.terminliste {
   margin-top: 2em;
+  width: 100%;
 }
 
 table.terminliste thead th {
@@ -78,10 +79,20 @@ table.terminliste thead th {
   border-bottom: 1px solid #999;
   font-weight: normal;
   font-size: small;
-  padding: 3px 5px;
+  padding: 5px 10px;
 }
 
 table.terminliste td {
-  border-bottom: 1px solid #999;
-  padding: 3px 5px;
+  border-bottom: 1px solid #ddd;
+  background: #fff;
+  padding: 5px 10px;
+}
+
+table.terminliste td.month {
+  background: #333;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: small;
+  font-weight: bold;
+  border-bottom: 0;
 }
