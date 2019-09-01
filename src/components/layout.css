@@ -2,6 +2,20 @@ body {
   background: #f5f5f5;
 }
 
+.logo {
+  height: 50px;
+  position: relative;
+  margin: -13px 5px -15px -10px;
+}
+
+@media only screen and (min-width: 769px) {
+  .logo {
+    height: 60px;
+    position: relative;
+    margin: -18px 5px -20px -20px;
+  }
+}
+
 h1.mainHeader {
   font-style: italic;
   font-family: "Next", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
