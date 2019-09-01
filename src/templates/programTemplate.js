@@ -9,26 +9,30 @@ import SEO from '../components/seo';
 import Calendars from '../components/Calendars';
 import Events from '../components/Events';
 
-const title = (name) => (name ? `Program for ${name}` : 'Program');
+const title = (slug, name) => (slug ? `Program for ${name}` : 'Program');
 
 export default function Template({ data: { calendar, allEvent } }) {
   const { slug, name } = calendar || {};
   return (
     <Layout
-      title={title(name)}
+      title={title(slug, name)}
       before={(
         <>
           <WhiteBox>
             Her finner du møter og turer vi har planlagt fremover. Velg din enhet eller patrulje.
           </WhiteBox>
-          <MaxWidthContainer>
+          <MaxWidthContainer margin={{ horizontal: 'auto', bottom: 'small' }}>
             <Calendars selected={slug} />
           </MaxWidthContainer>
         </>
 )}
     >
-      <SEO title={title(name)} />
-      {name ? <Events events={allEvent.nodes} /> : null}
+      <SEO title={title(slug, name)} />
+      {slug ? (
+        <Events events={allEvent.nodes} />
+      ) : (
+        <div className="nothing">Velg en enhet eller patrulje.</div>
+      )}
     </Layout>
   );
 }

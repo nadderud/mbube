@@ -1,13 +1,12 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 
-import Layout, { Heading } from '../components/Layout';
+import Layout from '../components/Layout';
 import SEO from '../components/seo';
 
 const NotFoundPage = () => (
-  <Layout>
+  <Layout title="Denne siden har gått seg vill">
     <SEO title="Siden har gått seg vill" />
-    <Heading>Denne siden har gått seg vill</Heading>
     <div className="page-content">
       <p>Vi kan ikke finne siden du leter etter på denne plasseringen.</p>
       <ul>

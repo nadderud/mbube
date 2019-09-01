@@ -1,9 +1,7 @@
 import React from 'react';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 
-import { Text } from 'grommet';
-
-import Layout, { Heading } from '../components/Layout';
+import Layout from '../components/Layout';
 import SEO from '../components/seo';
 import Byline from '../components/Byline';
 

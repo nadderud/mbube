@@ -1,7 +1,9 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import { graphql } from 'gatsby';
-import { Paragraph } from 'grommet';
+import {
+  Paragraph, Button, Box, Grid,
+} from 'grommet';
 
 import Layout from '../components/Layout';
 import SEO from '../components/seo';
@@ -16,10 +18,30 @@ export default function Template({ data }) {
   const { frontmatter, html } = markdownRemark;
   return (
     <Layout
-      showNavBack={false}
+      isFrontPage
+      title={frontmatter.title}
+      image={frontmatter.image}
       before={(
         <WhiteBox>
-          <Paragraph>{frontmatter.description}</Paragraph>
+          <Grid
+            columns={['auto', 'auto']}
+            rows={['auto']}
+            gap="small"
+            areas={[
+              { name: 'desc', start: [0, 0], end: [0, 0] },
+              { name: 'cta', start: [1, 0], end: [1, 0] },
+            ]}
+          >
+            <Box gridArea="desc">
+              <Paragraph>{frontmatter.description}</Paragraph>
+            </Box>
+            <Box gridArea="cta" margin={{ left: 'small', vertical: 'small' }}>
+              <Box gap="small">
+                <Button label="Bli speider" />
+                <Button label="Arrangementer" />
+              </Box>
+            </Box>
+          </Grid>
         </WhiteBox>
 )}
     >
@@ -40,6 +62,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         title
         description
+        image
       }
     }
   }
