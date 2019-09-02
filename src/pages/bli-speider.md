@@ -1,9 +1,11 @@
 ---
-templateKey: page
-date: 2019-05-22T17:12:33.962Z
 title: Bli speider
-description: "Dette er siden for deg som har lyst til å bli speider."
+image: /img/upload/20180801_201550-kopi.jpg
+description: >-
+  Speidere synes det er gøy å være ute. Du kan bli speider hvis du går i 3.
+  klasse eller mer.
 ---
+<a href="https://min.speiding.no/register/in/group/1003" target="_blank">Gå til innmeldingsskjema (egen fane)</a>
 
 ## Spørsmål om speiding
 
@@ -13,7 +15,7 @@ Speiding er aktivt friluftsliv. Det er en stor å viktig del av speiderarbeidet 
 
 ### Hvem kan bli speider?
 
-Alle barn og ungdom fra 8 (3. klasse) til 25 år kan bli speidere. Du trenger ingen forkunnskaper - og du kan begynne når du vil. Noen begynner med en gang de er gamle nok, andre litt senere.
+Alle barn og ungdom fra 3. klasse til 25 år kan bli speidere. Du trenger ingen forkunnskaper - og du kan begynne når du vil. Noen begynner med en gang de er gamle nok, andre litt senere.
 
 ### Når kan jeg begynne i speideren?
 
