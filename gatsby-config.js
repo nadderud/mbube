@@ -20,7 +20,8 @@ module.exports = {
   },
   siteMetadata: {
     title: 'Nadderud speidergruppe',
-    description: 'Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.',
+    description:
+      'Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.',
     author: '@gatsbyjs',
   },
   plugins: [
@@ -30,10 +31,11 @@ module.exports = {
     },
     'gatsby-plugin-react-helmet',
     {
+      // keep as first gatsby-source-filesystem plugin for gatsby image support
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',
-        path: `${__dirname}/src/images`,
+        path: `${__dirname}/static/img/upload`,
       },
     },
     {
@@ -43,9 +45,33 @@ module.exports = {
         name: 'pages',
       },
     },
-    'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
-    'gatsby-transformer-remark',
+    'gatsby-transformer-sharp',
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [
+          {
+            resolve: 'gatsby-remark-relative-images',
+            options: {
+              name: 'images',
+            },
+          },
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 2048,
+            },
+          },
+          {
+            resolve: 'gatsby-remark-copy-linked-files',
+            options: {
+              destinationDir: 'static',
+            },
+          },
+        ],
+      },
+    },
     {
       resolve: 'gatsby-plugin-netlify-cms',
       options: {

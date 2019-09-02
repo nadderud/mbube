@@ -42,7 +42,14 @@ const TitleContainer = ({ title, image, isFrontPage }) => {
   }
   return (
     <Box
-      background={image ? { image: `url(${image})`, size: 'cover' } : 'steelblue'}
+      background={
+        image
+          ? {
+            image: `url(${image.childImageSharp ? image.childImageSharp.fluid.src : image})`,
+            size: 'cover',
+          }
+          : 'steelblue'
+      }
       pad="large"
       alignContent="center"
       height={isFrontPage ? 'medium' : false}

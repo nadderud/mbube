@@ -1,9 +1,7 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
-import { graphql } from 'gatsby';
-import {
-  Paragraph, Button, Box, Grid,
-} from 'grommet';
+import { graphql, navigate } from 'gatsby';
+import { Button, Box } from 'grommet';
 
 import Layout from '../components/Layout';
 import SEO from '../components/seo';
@@ -12,6 +10,11 @@ import BlogRoll from '../components/BlogRoll';
 import WhiteBox from '../components/WhiteBox';
 
 initAuth();
+
+const navTo = (href) => (e) => {
+  e.preventDefault();
+  navigate(href);
+};
 
 export default function Template({ data }) {
   const { markdownRemark } = data;
@@ -23,25 +26,11 @@ export default function Template({ data }) {
       image={frontmatter.image}
       before={(
         <WhiteBox>
-          <Grid
-            columns={['auto', 'auto']}
-            rows={['auto']}
-            gap="small"
-            areas={[
-              { name: 'desc', start: [0, 0], end: [0, 0] },
-              { name: 'cta', start: [1, 0], end: [1, 0] },
-            ]}
-          >
-            <Box gridArea="desc">
-              <Paragraph>{frontmatter.description}</Paragraph>
-            </Box>
-            <Box gridArea="cta" margin={{ left: 'small', vertical: 'small' }}>
-              <Box gap="small">
-                <Button label="Bli speider" />
-                <Button label="Arrangementer" />
-              </Box>
-            </Box>
-          </Grid>
+          <p>{frontmatter.description}</p>
+          <Box gap="small" direction="row">
+            <Button label="Arrangementer" href="/program/" onClick={navTo('/program/')} />
+            <Button label="Bli speider" href="/bli-speider/" onClick={navTo('/bli-speider/')} />
+          </Box>
         </WhiteBox>
 )}
     >
@@ -62,7 +51,13 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         title
         description
-        image
+        image {
+          childImageSharp {
+            fluid(maxWidth: 2080) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }

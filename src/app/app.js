@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import { Router } from '@reach/router'; // comes with gatsby v2
 import Layout from '../components/Layout';
