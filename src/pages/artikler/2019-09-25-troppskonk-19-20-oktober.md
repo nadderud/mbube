@@ -2,26 +2,18 @@
 templateKey: blog-post
 title: Troppskonk 19-20 oktober
 date: 2019-10-19T08:00:00.000Z
-description: >-
-  Endelig er det på tide med høstens første troppstur!
-
-
-  Håper alle gamle og nye speidere er klare for å kjempe i den gjeve
-  konkurransen om å bli årets flagg- eller bannerpatrulje!
-
-   
-  I år starter troppskonkurransen lørdag 19 oktober på Hauger T-banestasjon kl
-  10.00. T-banen går fra Bekkestua T-banestasjon kl 09.36 og kl 09.51, vi
-  oppfordrer alle til å ta kollektivt. Neste dag, søndag 20 oktober, er vi
-  fremme ved parkeringa ved Burudvann kl 14.00
-
-
-  På turen går vi i speiderskjerf.
+description: Troppskonk
 featuredimage: /img/upload/20181013_122906.jpg
 tags:
   - '?'
 ---
-Pakkeliste:
+Endelig er det på tide med høstens første troppstur!
+
+Håper alle gamle og nye speidere er klare for å kjempe i den gjeve konkurransen om å bli årets flagg- eller bannerpatrulje! 
+
+I år starter troppskonkurransen lørdag 19 oktober på Hauger T-banestasjon kl 10.00. T-banen går fra Bekkestua T-banestasjon kl 09.36 og kl 09.51, vi oppfordrer alle til å ta kollektivt. Neste dag, søndag 20 oktober, er vi fremme ved parkeringa ved Burudvann kl 14.00
+
+På turen går vi i speiderskjerf.Pakkeliste:
 
 • Sovepose
 
@@ -73,12 +65,8 @@ Peffen har ansvar for å ta med patruljeutstyr til konkurransen: Kompass, kartlo
 
 Påmelding skjer til Merete (mbhaukedal@gmail.com) innen onsdag 16 oktober. 
 
-
-
 Ta gjerne kontakt hvis det er noen spørsmål.
 
 Vi gleder oss til å dra på tur med dere!
-
-
 
 Speiderhilsen fra lederne!!
