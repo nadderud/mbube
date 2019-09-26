@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { Link, graphql, StaticQuery } from "gatsby"
-import { Heading, Paragraph } from "grommet"
+import { Heading, Paragraph, Box } from "grommet"
 import PreviewCompatibleImage from "./PreviewCompatibleImage"
 import Byline from "./Byline"
 
@@ -9,36 +9,39 @@ const BlogRoll = ({ posts }) => (
   <div className="columns is-multiline">
     {posts &&
       posts.map(({ node: post }) => (
-        <div className="is-parent column is-6" key={post.id}>
-          <article
-            className={`blog-list-item tile is-child box notification ${
-              post.frontmatter.featuredpost ? "is-featured" : ""
-            }`}
-          >
-            <header>
-              {post.frontmatter.featuredimage ? (
-                <div className="featured-thumbnail">
-                  <PreviewCompatibleImage
-                    imageInfo={{
-                      image: post.frontmatter.featuredimage,
-                      alt: `featured image thumbnail for post ${post.title}`,
-                    }}
-                  />
-                </div>
-              ) : null}
-              <Heading level={2} size="medium" margin={{ bottom: "xxsmall" }}>
-                <Link
-                  className="title has-text-primary is-size-4"
-                  to={post.fields.slug}
+        <Box padding={{ vertical: "medium" }} key={post.id}>
+          <div style={{ display: "flex", flexWrap: "wrap" }}>
+            <div style={{ flex: "1 0 200px", paddingRight: ".5em" }}>
+              <header>
+                {post.frontmatter.featuredimage ? (
+                  <div className="featured-thumbnail"></div>
+                ) : null}
+                <Heading
+                  level={2}
+                  size="medium"
+                  margin={{ bottom: "xxsmall", top: "none" }}
                 >
-                  {post.frontmatter.title}
-                </Link>
-              </Heading>
-              <Byline frontmatter={post.frontmatter} />
-            </header>
-            <Paragraph margin={{ top: "xsmall" }}>{post.excerpt}</Paragraph>
-          </article>
-        </div>
+                  <Link
+                    className="title has-text-primary is-size-4"
+                    to={post.fields.slug}
+                  >
+                    {post.frontmatter.title}
+                  </Link>
+                </Heading>
+                <Byline frontmatter={post.frontmatter} />
+              </header>
+              <Paragraph margin={{ top: "xsmall" }}>{post.excerpt}</Paragraph>
+            </div>
+            <div style={{ width: "100%", flex: "0 1 400px" }}>
+              <PreviewCompatibleImage
+                imageInfo={{
+                  image: post.frontmatter.featuredimage,
+                  style: { width: "100%" },
+                }}
+              />
+            </div>
+          </div>
+        </Box>
       ))}
   </div>
 )
@@ -70,6 +73,14 @@ export default () => (
                 title
                 templateKey
                 date(formatString: "D. MMMM YYYY", locale: "nb")
+                featuredimage {
+                  childImageSharp {
+                    fluid(maxWidth: 400, maxHeight: 300, quality: 100) {
+                      ...GatsbyImageSharpFluid
+                      presentationWidth
+                    }
+                  }
+                }
               }
             }
           }
