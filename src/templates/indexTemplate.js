@@ -3,7 +3,6 @@ import React from "react"
 import { graphql, navigate } from "gatsby"
 import { Button, Box } from "grommet"
 
-import Layout from "../components/Layout"
 import SEO from "../components/seo"
 import { initAuth } from "../app/services/auth"
 import BlogRoll from "../components/BlogRoll"
@@ -21,7 +20,7 @@ export default function Template({ data }) {
   const { markdownRemark } = data
   const { frontmatter, html } = markdownRemark
   return (
-    <Layout isFrontPage>
+    <>
       <SEO title={frontmatter.title} />
       <Hero image={frontmatter.image} height="medium" />
       <WhiteBox>
@@ -46,7 +45,7 @@ export default function Template({ data }) {
           dangerouslySetInnerHTML={{ __html: html }}
         />
       </WhiteBox>
-    </Layout>
+    </>
   )
 }
 

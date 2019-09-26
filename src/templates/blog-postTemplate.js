@@ -1,7 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import Layout from "../components/Layout"
 import SEO from "../components/seo"
 import Byline from "../components/Byline"
 import Hero from "../components/Hero"
@@ -13,7 +12,7 @@ export default function Template({
   const { markdownRemark } = data // data.markdownRemark holds our post data
   const { frontmatter, html } = markdownRemark
   return (
-    <Layout>
+    <>
       <SEO title={frontmatter.title} />
       <Hero
         title={frontmatter.title}
@@ -27,7 +26,7 @@ export default function Template({
           dangerouslySetInnerHTML={{ __html: html }}
         />
       </WhiteBox>
-    </Layout>
+    </>
   )
 }
 

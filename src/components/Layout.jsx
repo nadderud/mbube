@@ -8,12 +8,10 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql, Link } from "gatsby"
-import { grommet, Grommet, Heading, Box, Text } from "grommet"
+import { grommet, Grommet, Box, Text } from "grommet"
 import { deepMerge } from "grommet/utils"
 import "sanitize.css"
 import "./layout.css"
-
-import HeroBackground from "./HeroBackground"
 
 import Header from "./Header"
 import Footer from "./Footer"
@@ -35,7 +33,7 @@ const myStyle = {
 
 const mergedStyle = deepMerge(myStyle, grommet)
 
-const Layout = ({ children, isFrontPage }) => (
+const Layout = ({ children, location }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -51,7 +49,7 @@ const Layout = ({ children, isFrontPage }) => (
         <Box background="#f5f5f5">
           <Header siteTitle={data.site.siteMetadata.title} />
           {children}
-          {!isFrontPage ? (
+          {location.pathname !== "/" ? (
             <MaxWidthContainer>
               <Text>
                 <Link to="/">Tilbake til forsiden</Link>
@@ -67,11 +65,11 @@ const Layout = ({ children, isFrontPage }) => (
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-  isFrontPage: PropTypes.bool,
+  location: PropTypes.object,
 }
 
 Layout.defaultProps = {
-  isFrontPage: false,
+  location: {},
 }
 
 export default Layout

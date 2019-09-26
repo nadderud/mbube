@@ -2,7 +2,6 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import Layout from "../components/Layout"
 import WhiteBox from "../components/WhiteBox"
 import MaxWidthContainer from "../components/MaxWidthContainer"
 import SEO from "../components/seo"
@@ -15,7 +14,7 @@ const title = (slug, name) => (slug ? `Program for ${name}` : "Program")
 export default function Template({ data: { calendar, allEvent } }) {
   const { slug, name } = calendar || {}
   return (
-    <Layout>
+    <>
       <SEO title={title(slug, name)} />
       <Hero title={title(slug, name)} />
       <WhiteBox>
@@ -32,7 +31,7 @@ export default function Template({ data: { calendar, allEvent } }) {
           <div className="nothing">Velg en enhet eller patrulje.</div>
         )}
       </WhiteBox>
-    </Layout>
+    </>
   )
 }
 

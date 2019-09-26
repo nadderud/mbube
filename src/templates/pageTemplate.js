@@ -3,7 +3,6 @@ import React from "react"
 import PropTypes from "prop-types"
 import { graphql } from "gatsby"
 
-import Layout from "../components/Layout"
 import WhiteBox from "../components/WhiteBox"
 import SEO from "../components/seo"
 import Hero from "../components/Hero"
@@ -14,7 +13,7 @@ export default function Template({ data: { markdownRemark } }) {
     html,
   } = markdownRemark
   return (
-    <Layout>
+    <>
       <SEO title={title} description={description} />
       <Hero title={title} image={image} />
       <WhiteBox>{description}</WhiteBox>
@@ -24,7 +23,7 @@ export default function Template({ data: { markdownRemark } }) {
           dangerouslySetInnerHTML={{ __html: html }}
         />
       </WhiteBox>
-    </Layout>
+    </>
   )
 }
 
