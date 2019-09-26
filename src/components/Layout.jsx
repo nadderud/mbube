@@ -5,77 +5,63 @@
  * See: https://www.gatsbyjs.org/docs/static-query/
  */
 
-import React from 'react';
-import PropTypes from 'prop-types';
-import { StaticQuery, graphql, Link } from 'gatsby';
-import {
-  grommet, Grommet, Heading, Box, Text,
-} from 'grommet';
-import { deepMerge } from 'grommet/utils';
-import 'sanitize.css';
-import './layout.css';
+import React from "react"
+import PropTypes from "prop-types"
+import { StaticQuery, graphql, Link } from "gatsby"
+import { grommet, Grommet, Heading, Box, Text } from "grommet"
+import { deepMerge } from "grommet/utils"
+import "sanitize.css"
+import "./layout.css"
 
-import Header from './Header';
-import Footer from './Footer';
-import MaxWidthContainer from './MaxWidthContainer';
-import WhiteBox from './WhiteBox';
+import HeroBackground from "./HeroBackground"
+
+import Header from "./Header"
+import Footer from "./Footer"
+import MaxWidthContainer from "./MaxWidthContainer"
+import WhiteBox from "./WhiteBox"
 
 const myStyle = {
   global: {
     colors: {
-      brand: '#43b02a',
+      brand: "#43b02a",
     },
     font: {
       family: "'LFT Etica','Helvetica Neue',Arial,sans-serif",
     },
     hover: {
-      color: { dark: 'brand', light: 'brand' },
+      color: { dark: "brand", light: "brand" },
     },
   },
-};
+}
 
-const mergedStyle = deepMerge(myStyle, grommet);
+const mergedStyle = deepMerge(myStyle, grommet)
 
 const TitleContainer = ({ title, image, isFrontPage }) => {
   if (!title && !isFrontPage) {
-    return null;
+    return null
   }
   return (
-    <Box
-      background={
-        image
-          ? {
-            image: `url(${image.childImageSharp ? image.childImageSharp.fluid.src : image})`,
-            size: 'cover',
-          }
-          : 'steelblue'
-      }
-      pad="large"
-      alignContent="center"
-      height={isFrontPage ? 'medium' : false}
-    >
+    <HeroBackground image={image} height={isFrontPage ? "medium" : "normal"}>
       {!isFrontPage && (
         <Heading className="mainHeader">
           <span>{title}</span>
         </Heading>
       )}
-    </Box>
-  );
-};
+    </HeroBackground>
+  )
+}
 
 TitleContainer.propTypes = {
   title: PropTypes.string,
-  image: PropTypes.string,
+  image: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   isFrontPage: PropTypes.bool.isRequired,
-};
+}
 
 TitleContainer.defaultProps = {
   title: null,
   image: null,
-};
-const Layout = ({
-  title, before, children, after, isFrontPage, image,
-}) => (
+}
+const Layout = ({ title, before, children, after, isFrontPage, image }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -86,11 +72,15 @@ const Layout = ({
         }
       }
     `}
-    render={(data) => (
+    render={data => (
       <Grommet theme={mergedStyle}>
         <Box background="#f5f5f5">
           <Header siteTitle={data.site.siteMetadata.title} />
-          <TitleContainer title={title} image={image} isFrontPage={isFrontPage} />
+          <TitleContainer
+            title={title}
+            image={image}
+            isFrontPage={isFrontPage}
+          />
           {before}
           <WhiteBox>{children}</WhiteBox>
           {after}
@@ -106,22 +96,22 @@ const Layout = ({
       </Grommet>
     )}
   />
-);
+)
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
   isFrontPage: PropTypes.bool,
   title: PropTypes.string.isRequired,
-  image: PropTypes.string,
+  image: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   before: PropTypes.node,
   after: PropTypes.node,
-};
+}
 
 Layout.defaultProps = {
   isFrontPage: false,
   image: null,
   before: null,
   after: null,
-};
+}
 
-export default Layout;
+export default Layout
