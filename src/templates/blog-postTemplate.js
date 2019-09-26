@@ -4,6 +4,8 @@ import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import SEO from "../components/seo"
 import Byline from "../components/Byline"
+import Hero from "../components/Hero"
+import WhiteBox from "../components/WhiteBox"
 
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
@@ -11,13 +13,20 @@ export default function Template({
   const { markdownRemark } = data // data.markdownRemark holds our post data
   const { frontmatter, html } = markdownRemark
   return (
-    <Layout title={frontmatter.title} image={frontmatter.featuredimage}>
+    <Layout>
       <SEO title={frontmatter.title} />
-      <Byline frontmatter={frontmatter} />
-      <div
-        className="page-content"
-        dangerouslySetInnerHTML={{ __html: html }}
+      <Hero
+        title={frontmatter.title}
+        image={frontmatter.featuredimage}
+        height="medium"
       />
+      <WhiteBox>
+        <Byline frontmatter={frontmatter} />
+        <div
+          className="page-content"
+          dangerouslySetInnerHTML={{ __html: html }}
+        />
+      </WhiteBox>
     </Layout>
   )
 }

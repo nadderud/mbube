@@ -18,7 +18,6 @@ import HeroBackground from "./HeroBackground"
 import Header from "./Header"
 import Footer from "./Footer"
 import MaxWidthContainer from "./MaxWidthContainer"
-import WhiteBox from "./WhiteBox"
 
 const myStyle = {
   global: {
@@ -36,32 +35,7 @@ const myStyle = {
 
 const mergedStyle = deepMerge(myStyle, grommet)
 
-const TitleContainer = ({ title, image, isFrontPage }) => {
-  if (!title && !isFrontPage) {
-    return null
-  }
-  return (
-    <HeroBackground image={image} height={isFrontPage ? "medium" : "normal"}>
-      {!isFrontPage && (
-        <Heading className="mainHeader">
-          <span>{title}</span>
-        </Heading>
-      )}
-    </HeroBackground>
-  )
-}
-
-TitleContainer.propTypes = {
-  title: PropTypes.string,
-  image: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
-  isFrontPage: PropTypes.bool.isRequired,
-}
-
-TitleContainer.defaultProps = {
-  title: null,
-  image: null,
-}
-const Layout = ({ title, before, children, after, isFrontPage, image }) => (
+const Layout = ({ children, isFrontPage }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -76,14 +50,7 @@ const Layout = ({ title, before, children, after, isFrontPage, image }) => (
       <Grommet theme={mergedStyle}>
         <Box background="#f5f5f5">
           <Header siteTitle={data.site.siteMetadata.title} />
-          <TitleContainer
-            title={title}
-            image={image}
-            isFrontPage={isFrontPage}
-          />
-          {before}
-          <WhiteBox>{children}</WhiteBox>
-          {after}
+          {children}
           {!isFrontPage ? (
             <MaxWidthContainer>
               <Text>
@@ -101,17 +68,10 @@ const Layout = ({ title, before, children, after, isFrontPage, image }) => (
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
   isFrontPage: PropTypes.bool,
-  title: PropTypes.string.isRequired,
-  image: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
-  before: PropTypes.node,
-  after: PropTypes.node,
 }
 
 Layout.defaultProps = {
   isFrontPage: false,
-  image: null,
-  before: null,
-  after: null,
 }
 
 export default Layout
