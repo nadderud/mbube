@@ -2,9 +2,7 @@
 templateKey: blog-post
 title: Flokk-tur til Lomma 19.-20. oktober
 date: 2019-10-11T14:58:17.793Z
-description: >
-  Høstens store hendelse for barna i flokken nærmer seg, og turen går til 1.
-  Eiksmarka's hytte "Lomma" i Bærumsmarka. 
+description: Flokk-tur til Lomma 19.-20. oktober
 featuredimage: /img/upload/lomma.jpg
 tags:
   - Flokken
@@ -12,6 +10,8 @@ tags:
   - høsttur
   - hyttetur
 ---
+Høstens store hendelse for barna i flokken nærmer seg, og turen går til 1. Eiksmarka's hytte "Lomma" i Bærumsmarka.
+
 Oppmøte på parkeringen ved Stein Gård kl. 11 lørdag morgen. 
 
 Vi går i samlet flokk innover til hytta som ligger bare et steinkast unna vår egen Mason Hill ved Fiskelaustjern. Turen inn til Lomma er ca. 3 km lang, og går på vei/sti i lett terreng, men noen steder kan det være litt myrlendt/vått, så alle må møte opp i fottøy tilpasset dette. 
