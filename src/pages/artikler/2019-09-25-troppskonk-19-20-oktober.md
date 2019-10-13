@@ -11,7 +11,7 @@ Endelig er det på tide med høstens første troppstur!
 
 Håper alle gamle og nye speidere er klare for å kjempe i den gjeve konkurransen om å bli årets flagg- eller bannerpatrulje! 
 
-I år starter troppskonkurransen lørdag 19 oktober på Hauger T-banestasjon kl 10.00. T-banen går fra Bekkestua T-banestasjon kl 09.36 og kl 09.51, vi oppfordrer alle til å ta kollektivt. Neste dag, søndag 20 oktober, er vi fremme ved parkeringa ved Burudvann kl 14.00
+I år starter troppskonkurransen lørdag 19 oktober på Hauger T-banestasjon kl 10.00. T-banen går fra Bekkestua T-banestasjon kl 09.36 og kl 09.51, vi oppfordrer alle til å ta kollektivt. Neste dag, søndag 20 oktober, er vi fremme ved parkeringa ved Burudvann kl 14.00. Vi sover ute i gapahuk om natten.
 
 På turen går vi i speiderskjerf.
 
