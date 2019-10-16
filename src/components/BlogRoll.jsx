@@ -2,16 +2,41 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Link, graphql, StaticQuery } from "gatsby"
 import { Heading, Paragraph, Box } from "grommet"
+import styled from "styled-components"
 import PreviewCompatibleImage from "./PreviewCompatibleImage"
 import Byline from "./Byline"
 
+const ArticleRow = styled.div`
+  @media (min-width: 576px) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+`
+
+const ArticleRowText = styled.div`
+  @media (min-width: 576px) {
+    padding-right: 0.5rem;
+    flex: 1 0 200px;
+  }
+`
+
+const ArticleRowImage = styled.div`
+  max-width: 100%;
+  margin-bottom: 1.5rem;
+
+  @media (min-width: 576px) {
+    max-width: 50%;
+    flex: 0 1 400px;
+  }
+`
+
 const BlogRoll = ({ posts }) => (
-  <div className="columns is-multiline">
+  <div>
     {posts &&
       posts.map(({ node: post }) => (
         <Box padding={{ vertical: "medium" }} key={post.id}>
-          <div style={{ display: "flex", flexWrap: "wrap" }}>
-            <div style={{ flex: "1 0 200px", paddingRight: ".5em" }}>
+          <ArticleRow>
+            <ArticleRowText>
               <header>
                 {post.frontmatter.featuredimage ? (
                   <div className="featured-thumbnail"></div>
@@ -31,16 +56,16 @@ const BlogRoll = ({ posts }) => (
                 <Byline frontmatter={post.frontmatter} />
               </header>
               <Paragraph margin={{ top: "xsmall" }}>{post.excerpt}</Paragraph>
-            </div>
-            <div style={{ width: "100%", flex: "0 1 400px" }}>
+            </ArticleRowText>
+            <ArticleRowImage>
               <PreviewCompatibleImage
                 imageInfo={{
                   image: post.frontmatter.featuredimage,
                   style: { width: "100%" },
                 }}
               />
-            </div>
-          </div>
+            </ArticleRowImage>
+          </ArticleRow>
         </Box>
       ))}
   </div>
