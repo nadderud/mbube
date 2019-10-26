@@ -26,6 +26,13 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: "@horacioh/gatsby-theme-instagram",
+      options: {
+        type: `account`, // optional. `account` is the default `type` value
+        username: "nadderudspeidergruppe",
+      },
+    },
+    {
       resolve: "gatsby-plugin-create-client-paths",
       options: { prefixes: ["/app/*"] },
     },

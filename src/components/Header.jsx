@@ -87,6 +87,11 @@ const MbubeHeader = ({ siteTitle }) => (
                     to: '/bli-speider/',
                     onClick: () => navigate('/bli-speider/'),
                   },
+                  {
+                    label: <NavButtonLabel>Bilder</NavButtonLabel>,
+                    to: '/Instagram/',
+                    onClick: () => navigate('/Instagram/'),
+                  },
                 ]}
               />
             </Box>

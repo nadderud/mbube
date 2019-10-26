@@ -3,34 +3,40 @@ import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 import { Box, Anchor } from "grommet"
 import MaxWidthContainer from "./MaxWidthContainer"
+import styled from "styled-components"
+import { Link } from "gatsby"
 
-const Footer = ({ data }) => (
+
+const TextInfo = styled.div`
+  float: none;
+  margin-top: 20px;
+  @media (min-width: 576px) {
+    float: right;
+    margin-top: 0px;
+  }
+`
+
+
+const Footer = () => (
   <Box
-    background="dark-1"
-    pad={{ vertical: "medium" }}
-    margin={{ top: "medium" }}
+    color="black"
+    background="none"
+    pad={{ top: "0px" }}
+    margin={{ top: "0px" }}
   >
     <MaxWidthContainer>
-      <div>
-        <p>{data.description}</p>
-        <h3>Kontakt oss</h3>
-        {data.contacts.map(contact => (
-          <p key={contact.name}>
-            <strong>{contact.name}</strong>
-            {`, ${contact.title}`}
-            <br />
-            {`${contact.phone}, `}
-            <Anchor href={`mailto:${contact.email}`}>{contact.email}</Anchor>
+      
+          <p>
+              © 2009&ndash;
+              {new Date().getFullYear()}
+              {" Nadderud speidergruppe"}
+              <TextInfo>
+                <Link to="/info/" style={{color:"black"}}>mere informasjon</Link>
+              </TextInfo>
           </p>
-        ))}
-        <p>
-          <small>
-            © 2009&ndash;
-            {new Date().getFullYear()}
-            {" Nadderud speidergruppe"}
-          </small>
-        </p>
-      </div>
+          
+          
+        
     </MaxWidthContainer>
   </Box>
 )
