@@ -9,7 +9,7 @@ const Instagram = () => {
             <WhiteBox>
                 <h1>Bilder fra instagram</h1>
                 <Grid />
-                <p>Følg <strong>nadderudspeidergruppe</strong> på instagram for å se flere bilder.</p>
+                <p>Følg <a href="https://www.instagram.com/nadderudspeidergruppe/"><strong>nadderudspeidergruppe</strong> på Instagram</a> for å se flere bilder.</p>
             </WhiteBox>
         </div>  
     )
