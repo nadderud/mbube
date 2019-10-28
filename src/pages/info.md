@@ -1,7 +1,7 @@
 ---
 date: 2019-05-22T17:12:33.962Z
 title: Informasjon
-image: /img/upload/flaate.jpg
+image: ../../static/img/upload/flaate.jpg
 description: "Spennende friluftsliv for barn og ungdom fra 3. klasse og oppover. Vi er en aktiv speidergruppe med ca. 100 medlemmer som dekker området Nadderud, Bekkestua, Hosle, Eikeli og Haslum."
 ---
 ## Generell info
@@ -12,7 +12,7 @@ description: "Spennende friluftsliv for barn og ungdom fra 3. klasse og oppover.
   Nadderud speidergruppe, v/Mats Grimsgaard,
   Tostrups gate 25, 0264 Oslo
 
-- Telefonnummer:
+- Telefonnummer: 
   926 11 925
 - E-postadresse:
   [post@nadderud.no](mailto:post@nadderud.no)

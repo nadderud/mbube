@@ -1,7 +1,7 @@
 ---
 templateKey: index
 title: Forsiden
-image: /img/upload/vann.jpg
+image: ../../static/img/upload/vann.jpg
 description: >-
   Spennende friluftsliv for barn og ungdom fra 3. klasse og oppover. Vi er en
   aktiv speidergruppe med ca. 100 medlemmer som dekker området Nadderud,

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import {
   Box, Text, Button, ResponsiveContext, Menu,
-} from 'grommet';
+} from 'grommet'; 
 import { Menu as MenuIcon } from 'grommet-icons';
 
 import MaxWidthContainer from './MaxWidthContainer';
@@ -83,14 +83,14 @@ const MbubeHeader = ({ siteTitle }) => (
                     onClick: () => navigate('/info/'),
                   },
                   {
+                    label: <NavButtonLabel>Bilder</NavButtonLabel>,
+                    to: '/bilder/',
+                    onClick: () => navigate('/bilder/'),
+                  },
+                  {
                     label: <NavButtonLabel>Bli speider</NavButtonLabel>,
                     to: '/bli-speider/',
                     onClick: () => navigate('/bli-speider/'),
-                  },
-                  {
-                    label: <NavButtonLabel>Bilder</NavButtonLabel>,
-                    to: '/Instagram/',
-                    onClick: () => navigate('/Instagram/'),
                   },
                 ]}
               />
