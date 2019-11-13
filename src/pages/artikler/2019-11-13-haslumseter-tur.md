@@ -5,7 +5,9 @@ date: 2019-11-13T20:09:21.449Z
 description: 16.-17. november er det tur for hele troppen til Haslumseter kapell!
 featuredimage: /img/upload/haslumseter_kpl2.jpg
 tags:
-  - Merete
+  - Haslumseter
+  - troppstu
+  - hyttetur
 ---
 Turen starter på Skytterkollen kl. 11:00 lørdag, og slutter samme sted kl. 15:00 på søndag.
 
