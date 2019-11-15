@@ -1,7 +1,7 @@
 ---
 date: 2019-05-22T17:12:33.962Z
 title: Informasjon
-image: ../../static/img/upload/flaate.jpg
+image: /img/upload/flaate.jpg
 description: "Spennende friluftsliv for barn og ungdom fra 3. klasse og oppover. Vi er en aktiv speidergruppe med ca. 100 medlemmer som dekker området Nadderud, Bekkestua, Hosle, Eikeli og Haslum."
 ---
 ## Generell info

@@ -1,6 +1,6 @@
 ---
 title: Bli speider
-image: ../../static/img/upload/leirbaal.jpg
+image: /img/upload/leirbaal.jpg
 description: >-
   Speidere synes det er gøy å være ute. Du kan bli speider hvis du går i 3.
   klasse eller mer.
