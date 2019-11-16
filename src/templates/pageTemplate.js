@@ -45,7 +45,7 @@ export const pageQuery = graphql`
               ...GatsbyImageSharpFluid
             }
           }
-        }
+        } 
       }
     }
   }

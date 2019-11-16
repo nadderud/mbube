@@ -2,11 +2,14 @@ import { Link, navigate } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 import {
-  Box, Text, Button, ResponsiveContext, Menu,
-} from 'grommet';
+  Box, Text, Button, ResponsiveContext, Menu, Grommet
+} from 'grommet'; 
+
 import { Menu as MenuIcon } from 'grommet-icons';
 
 import MaxWidthContainer from './MaxWidthContainer';
+import CustomTheme from "./customTheme"
+
 
 export const navProps = (to) => ({
   as: 'a',
@@ -50,6 +53,7 @@ const ResponsiveMenu = ({ isMobile, items }) => (
 
 const MbubeHeader = ({ siteTitle }) => (
   <header>
+    <CustomTheme>
     <Box background="dark-1" pad={{ vertical: '5px' }}>
       <MaxWidthContainer margin={{ horizontal: 'auto' }}>
         <ResponsiveContext.Consumer>
@@ -83,6 +87,11 @@ const MbubeHeader = ({ siteTitle }) => (
                     onClick: () => navigate('/info/'),
                   },
                   {
+                    label: <NavButtonLabel>Bilder</NavButtonLabel>,
+                    to: '/bilder/',
+                    onClick: () => navigate('/bilder/'),
+                  },
+                  {
                     label: <NavButtonLabel>Bli speider</NavButtonLabel>,
                     to: '/bli-speider/',
                     onClick: () => navigate('/bli-speider/'),
@@ -94,6 +103,7 @@ const MbubeHeader = ({ siteTitle }) => (
         </ResponsiveContext.Consumer>
       </MaxWidthContainer>
     </Box>
+    </CustomTheme>
   </header>
 );
 
