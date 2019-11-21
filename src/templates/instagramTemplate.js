@@ -20,7 +20,7 @@ const BilderInstagram = ({ data: { markdownRemark } }) => {
             <WhiteBox>
                 <h1>Bilder fra Instagram</h1>
                 <Grid />
-                <p>Trykk for å gå til <a href="https://www.instagram.com/nadderudspeidergruppe/?hl=nb">nadderudspeidergruppe</a> på Instagram</p>
+                <p>Trykk for å gå til <a href="https://www.instagram.com/nadderudspeidergruppe/?hl=nb">nadderudspeidergruppe</a> på Instagram </p>
             </WhiteBox>
         </div>  
     )
