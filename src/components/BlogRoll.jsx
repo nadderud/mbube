@@ -1,9 +1,10 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { graphql, StaticQuery } from "gatsby"
+import { Link, graphql, StaticQuery } from "gatsby"
 import { Box, Grid, Heading, Text, Paragraph, Anchor } from "grommet"
 
 import PreviewCompatibleImage from "./PreviewCompatibleImage"
+
 
 
 import CustomTheme from "./customTheme"
@@ -24,9 +25,13 @@ const BlogRoll = ({ posts }) => (
         </Box>
         <Box align="start" justify="center" pad="small" direction="column">
           <Box justify="center" direction="row" align="end" gap="small" margin={{"top":"xsmall","horizontal":"small"}} alignSelf="start">
+          <Link to={post.fields.slug} style={{textDecoration:"None"}}> 
             <Heading level="2" size="small" margin="none" textAlign="start">
+            
             {post.frontmatter.title}
+            
             </Heading>
+            </Link>
             <Text textAlign="end" size="small" color="neutral-3" truncate={false}>
               {post.frontmatter.date}
             </Text>
@@ -34,7 +39,9 @@ const BlogRoll = ({ posts }) => (
           <Paragraph fill="true" size="medium" fontSize="xsmall" responsive="true" textAlign="start" margin={{"horizontal":"small"}}>
             {post.excerpt}
           </Paragraph>
+          <Link to={post.fields.slug}> 
           <Anchor label="Les mer..." color="neutral-3" margin="small"/>
+          </Link>
         </Box>
             
       </Box>
