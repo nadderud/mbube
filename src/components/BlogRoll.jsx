@@ -23,27 +23,36 @@ const BlogRoll = ({ posts }) => (
                 }}
               />
         </Box>
-        <Box align="start" justify="center" pad="small" direction="column">
-          <Box justify="center" direction="row" align="end" gap="small" margin={{"top":"xsmall","horizontal":"small"}} alignSelf="start">
+        <Box pad="small">
           <Link to={post.fields.slug} style={{textDecoration:"None"}}> 
-            <Heading level="2" size="small" margin="none" textAlign="start">
+            <Heading color="black" level="2" size="small" margin="none" textAlign="start" margin={{"horizontal":"small", "vertical":"xsmall"}}>
             
             {post.frontmatter.title}
             
             </Heading>
             </Link>
-            <Text textAlign="end" size="small" color="neutral-3" truncate={false}>
-              {post.frontmatter.date}
-            </Text>
-          </Box>
-          <Paragraph fill="true" size="medium" fontSize="xsmall" responsive="true" textAlign="start" margin={{"horizontal":"small"}}>
+        
+          <Paragraph fill="true" size="medium" fontSize="xsmall" responsive="true" textAlign="start" margin={{"horizontal":"small", "top":"xsmall"}}>
             {post.excerpt}
           </Paragraph>
+
+          <Grid columns="50%" fill="vertical" pad={{"top":"xsmall"}}>
+          <Box margin="small">
           <Link to={post.fields.slug}> 
-          <Anchor label="Les mer..." color="neutral-3" margin="small"/>
+            <Anchor label="Les mer..." color="#4d647c" margin="none"/>
           </Link>
+          </Box>
+
+          <Box align="end" margin={{"horizontal":"small"}}>
+          <Text size="small" color="grey" margin="small" alignSelf="end">
+            {post.frontmatter.date}
+          </Text> 
+          </Box>
+
+          </Grid>
+
+        
         </Box>
-            
       </Box>
       ))}
   </Grid>   
