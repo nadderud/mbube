@@ -4,9 +4,6 @@ import { deepMerge } from "grommet/utils"
 
 const myTheme = {
     global: {
-      size: {
-        medium: "310px",
-      },
       breakpoints: {
         small: {
           value: 774
