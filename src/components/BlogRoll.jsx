@@ -10,9 +10,9 @@ const BlogRoll = ({ posts }) => (
     <Grid alignContent="stretch" columns="300px" gap="medium" fill="vertical">
     {posts &&
       posts.map(({ node: post }) => (
-        <Box>
+        <div>
         <Box elevation="xsmall" animation={{"type":"fadeIn","size":"medium"}} round="xsmall">
-          <Box align="center" justify="center" height="small" background={{"dark":false,"color":"light-2"}} fill="horizontal" round={{"corner":"top","size":"xsmall"}}>
+          <Box height="small" background={{"dark":false,"color":"light-2"}} round={{"corner":"top","size":"xsmall"}}>
             <PreviewCompatibleImage
                     imageInfo={{
                       image: post.frontmatter.featuredimage,
@@ -20,7 +20,7 @@ const BlogRoll = ({ posts }) => (
                     }}
                   />
           </Box>
-          <Box direction="column" flex="grow" margin="small">
+          <Box direction="column" margin="small">
             <Link to={post.fields.slug} style={{textDecoration:"None"}}> 
               <Heading color="black" level="2" size="small" margin="none" textAlign="start" margin={{"horizontal":"small", "vertical":"xsmall"}}>
                 {post.frontmatter.title}
@@ -32,7 +32,7 @@ const BlogRoll = ({ posts }) => (
             </Paragraph>
   
             <Box align="center" direction="row" flex="false" gap="none" justify="between">
-              <Box margin="small" width="80px">
+              <Box margin="small" width="90px">
                 <Link to={post.fields.slug}> 
                   <Anchor label="Les mer..." color="#4d647c" margin="none"/>
                 </Link>
@@ -46,7 +46,7 @@ const BlogRoll = ({ posts }) => (
           </Box>
 
         </Box>
-        </Box>
+        </div>
       ))}
   </Grid >   
 )
