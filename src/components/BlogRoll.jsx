@@ -6,57 +6,49 @@ import { Box, Grid, Heading, Text, Paragraph, Anchor } from "grommet"
 import PreviewCompatibleImage from "./PreviewCompatibleImage"
 
 
-
-import CustomTheme from "./customTheme"
-
 const BlogRoll = ({ posts }) => (
-  <CustomTheme>
-    <Grid alignContent="center" columns="medium" gap="medium" fill="vertical">
+    <Grid alignContent="stretch" columns="300px" gap="medium" fill="vertical">
     {posts &&
       posts.map(({ node: post }) => (
-        <Box elevation="xsmall" direction="column" animation={{"type":"fadeIn","size":"medium"}} wrap={false} align="stretch" round="xsmall">
-        <Box align="center" justify="center" height="small" background={{"dark":false,"color":"light-2"}} fill="horizontal" round={{"corner":"top","size":"xsmall"}}>
-        <PreviewCompatibleImage
-                imageInfo={{
-                  image: post.frontmatter.featuredimage,
-                  style: { width: "100%" },
-                }}
-              />
-        </Box>
-        <Box pad="small">
-          <Link to={post.fields.slug} style={{textDecoration:"None"}}> 
-            <Heading color="black" level="2" size="small" margin="none" textAlign="start" margin={{"horizontal":"small", "vertical":"xsmall"}}>
-            
-            {post.frontmatter.title}
-            
-            </Heading>
+        <div>
+        <Box elevation="xsmall" animation={{"type":"fadeIn","size":"medium"}} round="xsmall">
+          <Box height="small" background={{"dark":false,"color":"light-2"}} round={{"corner":"top","size":"xsmall"}}>
+            <PreviewCompatibleImage
+                    imageInfo={{
+                      image: post.frontmatter.featuredimage,
+                      style: { width: "100%" },
+                    }}
+                  />
+          </Box>
+          <Box direction="column" margin="small">
+            <Link to={post.fields.slug} style={{textDecoration:"None"}}> 
+              <Heading color="black" level="2" size="small" margin="none" textAlign="start" margin={{"horizontal":"small", "vertical":"xsmall"}}>
+                {post.frontmatter.title}
+              </Heading>
             </Link>
-        
-          <Paragraph fill="true" size="medium" fontSize="xsmall" responsive="true" textAlign="start" margin={{"horizontal":"small", "top":"xsmall"}}>
-            {post.excerpt}
-          </Paragraph>
 
-          <Grid columns="50%" fill="vertical" pad={{"top":"xsmall"}}>
-          <Box margin="small">
-          <Link to={post.fields.slug}> 
-            <Anchor label="Les mer..." color="#4d647c" margin="none"/>
-          </Link>
+            <Paragraph fill="true" size="medium" fontSize="xsmall"  responsive="true" textAlign="start" margin={{"horizontal":"small", "top":"xsmall"}}>
+              {post.excerpt}
+            </Paragraph>
+  
+            <Box align="center" direction="row" flex="false" gap="none" justify="between">
+              <Box margin="small" width="90px">
+                <Link to={post.fields.slug}> 
+                  <Anchor label="Les mer..." color="#4d647c" margin="none"/>
+                </Link>
+              </Box>
+              <Box alignSelf="end" margin={{"horizontal":"small"}}>
+                <Text size="small" color="grey" margin="small" alignSelf="end">
+                  Laget: {post.frontmatter.date}
+                </Text> 
+              </Box>
+            </Box>
           </Box>
 
-          <Box align="end" margin={{"horizontal":"small"}}>
-          <Text size="small" color="grey" margin="small" alignSelf="end">
-            {post.frontmatter.date}
-          </Text> 
-          </Box>
-
-          </Grid>
-
-        
         </Box>
-      </Box>
+        </div>
       ))}
-  </Grid>   
-  </CustomTheme>
+  </Grid >   
 )
 
 BlogRoll.propTypes = {
