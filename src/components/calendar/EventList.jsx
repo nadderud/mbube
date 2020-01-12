@@ -5,6 +5,7 @@ import parseDate from "./parseDate"
 import EventItem from "./EventItem"
 import styled from "styled-components"
 import { Heading } from "grommet"
+import moment from "moment"
 
 const StyledMonth = styled(Heading)`
   background: #333;
@@ -12,17 +13,24 @@ const StyledMonth = styled(Heading)`
   text-transform: uppercase;
   font-weight: bold;
   border-bottom: 0;
-  padding: 8px;
-  margin: 12px 0 0;
+  padding: 8px 10px;
   line-height: 1;
   font-size: 16px;
   max-width: none;
 `
 
-const Month = ({ children }) => <StyledMonth level={2}>{children}</StyledMonth>
+const Month = ({ children }) => (
+  <StyledMonth level={2} margin={{ top: "medium", bottom: "none" }}>
+    {children}
+  </StyledMonth>
+)
 
-const EventList = ({ events }) => {
-  if (!events || !events.length) {
+const currentFilter = events =>
+  events.filter(item => parseDate(item.end).isSameOrAfter(moment(), "day"))
+
+const EventList = ({ events = [] }) => {
+  const currentEvents = currentFilter(events)
+  if (currentEvents.length < 1) {
     return <div className="nothing">Terminlisten er tom.</div>
   }
 
@@ -39,7 +47,7 @@ const EventList = ({ events }) => {
 
   return (
     <div>
-      {events.map(item => (
+      {currentEvents.map(item => (
         <React.Fragment key={item.id}>
           {monthRow(item.start)}
           <EventItem data={item} />

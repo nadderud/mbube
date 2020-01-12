@@ -14,11 +14,9 @@ import UnitBadge from "../UnitBadge"
 const Container = styled.div`
   display: flex;
   align-items: stretch;
-  padding: 8px 0;
-
-  :hover {
-    background-color: #f5f5f5;
-  }
+  padding: 10px 5px 10px 0;
+  margin: 0 0 1px 0;
+  background-color: #fff;
 `
 
 const MainItem = styled.div`

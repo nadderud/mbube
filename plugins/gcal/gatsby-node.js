@@ -39,7 +39,7 @@ exports.sourceNodes = async ({ actions, schema }, { apiKey, path }) => {
 
   createTypes(typeDefs)
 
-  for (calendar of calendars) {
+  for (var calendar of calendars) {
     await createNode({
       ...calendar,
       parent: null,
@@ -53,7 +53,7 @@ exports.sourceNodes = async ({ actions, schema }, { apiKey, path }) => {
     })
     console.log("Loading gcal ", calendar.id)
     const events = await getEvents(apiKey, calendar.id)
-    for (event of events) {
+    for (var event of events) {
       if (event.status === "confirmed") {
         await createNode({
           ...event,

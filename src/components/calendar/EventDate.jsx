@@ -11,7 +11,7 @@ const Container = styled.div`
 
 const BigDate = styled.div`
   font-size: 20px;
-  line-height: 22px;
+  line-height: 24px;
   font-weight: 600;
   text-align: center;
   word-wrap: normal;
