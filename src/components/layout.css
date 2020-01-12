@@ -69,33 +69,6 @@ body {
   font-size: 30px;
 }
 
-table.terminliste {
-  width: 100%;
-}
-
-table.terminliste thead th {
-  text-align: left;
-  border-bottom: 1px solid #999;
-  font-weight: normal;
-  font-size: small;
-  padding: 5px 10px;
-}
-
-table.terminliste td {
-  border-bottom: 1px solid #ddd;
-  background: #fff;
-  padding: 5px 10px;
-}
-
-table.terminliste td.month {
-  background: #333;
-  color: #fff;
-  text-transform: uppercase;
-  font-size: small;
-  font-weight: bold;
-  border-bottom: 0;
-}
-
 .nothing {
   margin: 2em auto;
   padding: 3em 4em;
