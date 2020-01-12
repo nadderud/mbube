@@ -7,7 +7,7 @@ import MaxWidthContainer from "../components/MaxWidthContainer"
 import SEO from "../components/seo"
 import Hero from "../components/Hero"
 import Calendars from "../components/Calendars"
-import Events from "../components/Events"
+import EventList from "../components/calendar/EventList"
 
 const title = (slug, name) => (slug ? `Program for ${name}` : "Program")
 
@@ -26,7 +26,7 @@ export default function Template({ data: { calendar, allEvent } }) {
       </MaxWidthContainer>
       <WhiteBox>
         {slug ? (
-          <Events events={allEvent.nodes} />
+          <EventList events={allEvent.nodes} />
         ) : (
           <div className="nothing">Velg en enhet eller patrulje.</div>
         )}
@@ -53,6 +53,7 @@ export const pageQuery = graphql`
         end
         location
         description
+        calendar
       }
     }
   }
