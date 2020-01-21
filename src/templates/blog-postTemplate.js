@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+import { Heading } from "grommet"
 
 import SEO from "../components/seo"
 import Byline from "../components/Byline"
@@ -15,12 +16,13 @@ export default function Template({
     <>
       <SEO title={frontmatter.title} />
       <Hero
-        title={frontmatter.title}
+        
         image={frontmatter.featuredimage}
         height="medium"
       />
       <WhiteBox>
         <Byline frontmatter={frontmatter} />
+        <Heading level="2" margin={{"top":"small", "bottom":"none"}}>{frontmatter.title}</Heading>
         <div
           className="page-content"
           dangerouslySetInnerHTML={{ __html: html }}
