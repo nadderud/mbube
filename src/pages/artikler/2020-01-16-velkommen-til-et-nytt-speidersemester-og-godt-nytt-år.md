@@ -3,7 +3,7 @@ templateKey: blog-post
 title: Velkommen til et nytt speidersemester og godt nytt år!
 date: 2020-01-16T21:31:20.623Z
 description: 'Nå gleder vi oss til å ta fått på ett nytt speidersemester! '
-featuredimage: /img/upload/bål.jpeg
+featuredimage: /img/upload/bål.jpeg
 tags:
   - Hilsen lederne
 ---
