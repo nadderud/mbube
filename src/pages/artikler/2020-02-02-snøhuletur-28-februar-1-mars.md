@@ -19,7 +19,7 @@ Vi sover i telt fra fredag til lørdag, og har hele lørdagen til å grave. Søn
 
 Middag kjøpes inn felles, følg forøvrig [vedlagt utstyrsliste](/img/upload/utstyrsliste%20vinter.pdf). Det er veldig fint med så mange kokeapparater som mulig. Vi fordeler fellesutstyr på veien opp. Pris inkluderer middag lørdag og transport: Prisen er 500 kroner pr pers. Vipps til Stian ved oppmøte eller tidligere.
 
-Det vil bli infomøte etter troppsmøtet mandag 3.februar kl 19:00 på speiderhuset for alle speidere som vurderer å være med på turen, ellers er det bare ta kontakt om det er noe dere lurer på.
+Det vil bli infomøte etter troppsmøtet mandag 3.februar kl 19:30 på speiderhuset for alle speidere som vurderer å være med på turen, ellers er det bare ta kontakt om det er noe dere lurer på.
 
 **Påmelding til Stian innen 24. februar på [stian@nadderud.no](mailto:stian@nadderud.no) eller mobil [911 28 204](tel:91128204).**
 
