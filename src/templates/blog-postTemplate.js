@@ -1,34 +1,54 @@
 import React from "react"
 import { graphql } from "gatsby"
+import { Paragraph } from "grommet"
 
 import SEO from "../components/seo"
 import Byline from "../components/Byline"
 import Hero from "../components/Hero"
 import WhiteBox from "../components/WhiteBox"
+import Content, { HTMLContent } from "../components/Content"
 
-export default function Template({
-  data, // this prop will be injected by the GraphQL query below.
-}) {
-  const { markdownRemark } = data // data.markdownRemark holds our post data
-  const { frontmatter, html } = markdownRemark
+export const BlogPostTemplate = ({
+  title,
+  featuredimage,
+  date,
+  description,
+  content,
+  contentComponent,
+}) => {
+  const RenderContent = contentComponent || Content
   return (
     <>
-      <SEO title={frontmatter.title} />
-      <Hero
-        title={frontmatter.title}
-        image={frontmatter.featuredimage}
-        height="medium"
-      />
+      <SEO title={title} />
+      <Hero title={title} image={featuredimage} height="medium" />
       <WhiteBox>
-        <Byline frontmatter={frontmatter} />
-        <div
-          className="page-content"
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
+        <Byline date={date} />
+        {description && (
+          <Paragraph fill size="large" margin={{ vertical: "small" }}>
+            {description}
+          </Paragraph>
+        )}
+        <RenderContent content={content} />
       </WhiteBox>
     </>
   )
 }
+
+const BlogPost = ({ data }) => {
+  const { markdownRemark } = data
+  const { frontmatter, html } = markdownRemark
+  return (
+    <BlogPostTemplate
+      title={frontmatter.title}
+      featuredimage={frontmatter.featuredimage}
+      date={frontmatter.date}
+      content={html}
+      contentComponent={HTMLContent}
+    />
+  )
+}
+
+export default BlogPost
 
 export const pageQuery = graphql`
   query($slug: String!) {
