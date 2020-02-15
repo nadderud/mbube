@@ -17,10 +17,10 @@ collections:
     fields:
       - { name: "templateKey", widget: "hidden", default: "blog-post" }
       - { label: "Tittel", name: "title", widget: "string" }
-      - { label: "Publisert dato", name: "date", widget: "datetime" }
-      - { label: "Beskrivelse", name: "description", widget: "text" }
-      - { label: "Featured Image", name: "featuredimage", widget: image }
+      - { label: "Bilde", name: "featuredimage", widget: image }
+      - { label: "Ingress", name: "description", widget: "text" }
       - { label: "Innhold", name: "body", widget: "markdown" }
+      - { label: "Publisert dato", name: "date", widget: "datetime" }
       - { label: "Tagger", name: "tags", widget: "list" }
 
   - name: "pages"

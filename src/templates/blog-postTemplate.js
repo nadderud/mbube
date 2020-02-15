@@ -23,11 +23,15 @@ export const BlogPostTemplate = ({
       <Hero image={featuredimage} height="medium" />
       <WhiteBox>
         <Byline date={date} />
-        <Heading level="2" margin={{ vertical: "small" }}>
+        <Heading level="1" margin={{ top: "small", bottom: "none" }}>
           {title}
         </Heading>
         {description && (
-          <Paragraph fill size="large" margin={{ vertical: "small" }}>
+          <Paragraph
+            fill
+            size="large"
+            margin={{ top: "small", bottom: "none" }}
+          >
             {description}
           </Paragraph>
         )}
@@ -42,9 +46,7 @@ const BlogPost = ({ data }) => {
   const { frontmatter, html } = markdownRemark
   return (
     <BlogPostTemplate
-      title={frontmatter.title}
-      featuredimage={frontmatter.featuredimage}
-      date={frontmatter.date}
+      {...frontmatter}
       content={html}
       contentComponent={HTMLContent}
     />
@@ -58,8 +60,9 @@ export const pageQuery = graphql`
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {
-        date(formatString: "D. MMMM YYYY", locale: "nb")
+        date
         title
+        description
         featuredimage {
           childImageSharp {
             fluid(quality: 90, maxWidth: 1920) {
