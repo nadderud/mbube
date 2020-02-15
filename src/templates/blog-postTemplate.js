@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { Paragraph } from "grommet"
+import { Paragraph, Heading } from "grommet"
 
 import SEO from "../components/seo"
 import Byline from "../components/Byline"
@@ -20,9 +20,12 @@ export const BlogPostTemplate = ({
   return (
     <>
       <SEO title={title} />
-      <Hero title={title} image={featuredimage} height="medium" />
+      <Hero image={featuredimage} height="medium" />
       <WhiteBox>
         <Byline date={date} />
+        <Heading level="2" margin={{ vertical: "small" }}>
+          {title}
+        </Heading>
         {description && (
           <Paragraph fill size="large" margin={{ vertical: "small" }}>
             {description}

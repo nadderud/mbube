@@ -17,9 +17,9 @@ Avreise fra parkeringsplassen bak Rema Nadderud (v/Rikets sal) klokka 17 på fre
 
 Vi sover i telt fra fredag til lørdag, og har hele lørdagen til å grave. Søndag har vi tid til både lek og læring, før vi drar hjem. Hjemkomst blir søndag kveld, tidspunkt avhenger av vær og føre, men vi regner med at det blir omtrent klokka 20.
 
-Middag kjøpes inn felles, følg forøvrig vedlagt utstyrsliste. Det er veldig fint med så mange kokeapparater som mulig. Vi fordeler fellesutstyr på veien opp. Pris inkluderer middag lørdag og transport: Prisen er 500 kroner pr pers. Vipps til Stian ved oppmøte eller tidligere.
+Middag kjøpes inn felles, følg forøvrig [vedlagt utstyrsliste](/img/upload/utstyrsliste%20vinter.pdf). Det er veldig fint med så mange kokeapparater som mulig. Vi fordeler fellesutstyr på veien opp. Pris inkluderer middag lørdag og transport: Prisen er 500 kroner pr pers. Vipps til Stian ved oppmøte eller tidligere.
 
-Det vil bli infomøte etter troppsmøtet mandag 3.februar kl 19:00 på speiderhuset for alle speidere som vurderer å være med på turen, ellers er det bare ta kontakt om det er noe dere lurer på.
+Det vil bli infomøte etter troppsmøtet mandag 3.februar kl 19:30 på speiderhuset for alle speidere som vurderer å være med på turen, ellers er det bare ta kontakt om det er noe dere lurer på.
 
 **Påmelding til Stian innen 24. februar på [stian@nadderud.no](mailto:stian@nadderud.no) eller mobil [911 28 204](tel:91128204).**
 
