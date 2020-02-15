@@ -5,50 +5,80 @@ import { Box, Grid, Heading, Text, Paragraph, Anchor } from "grommet"
 
 import PreviewCompatibleImage from "./PreviewCompatibleImage"
 
-
 const BlogRoll = ({ posts }) => (
-    <Grid alignContent="stretch" columns="300px" gap="medium" fill="vertical">
+  <Grid alignContent="stretch" columns="300px" gap="medium" fill="vertical">
     {posts &&
       posts.map(({ node: post }) => (
         <div>
-        <Box elevation="xsmall" animation={{"type":"fadeIn","size":"medium"}} round="xsmall">
-          <Box height="small" background={{"dark":false,"color":"light-2"}} round={{"corner":"top","size":"xsmall"}}>
-            <PreviewCompatibleImage
-                    imageInfo={{
-                      image: post.frontmatter.featuredimage,
-                      style: { width: "100%" },
-                    }}
-                  />
-          </Box>
-          <Box direction="column" margin="small">
-            <Link to={post.fields.slug} style={{textDecoration:"None"}}> 
-              <Heading color="black" level="2" size="small" margin="none" textAlign="start" margin={{"horizontal":"small", "vertical":"xsmall"}}>
-                {post.frontmatter.title}
-              </Heading>
-            </Link>
+          <Box
+            elevation="xsmall"
+            animation={{ type: "fadeIn", size: "medium" }}
+            round="xsmall"
+          >
+            <Box
+              height="small"
+              background={{ dark: false, color: "light-2" }}
+              round={{ corner: "top", size: "xsmall" }}
+            >
+              <PreviewCompatibleImage
+                imageInfo={{
+                  image: post.frontmatter.featuredimage,
+                  style: { width: "100%" },
+                }}
+              />
+            </Box>
+            <Box direction="column" margin="small">
+              <Link to={post.fields.slug} style={{ textDecoration: "None" }}>
+                <Heading
+                  color="black"
+                  level="2"
+                  size="small"
+                  textAlign="start"
+                  margin={{ horizontal: "small", vertical: "xsmall" }}
+                >
+                  {post.frontmatter.title}
+                </Heading>
+              </Link>
 
-            <Paragraph fill="true" size="medium" fontSize="xsmall"  responsive="true" textAlign="start" margin={{"horizontal":"small", "top":"xsmall"}}>
-              {post.excerpt}
-            </Paragraph>
-  
-            <Box align="center" direction="row" flex="false" gap="none" justify="between">
-              <Box margin="small" width="90px">
-                <Link to={post.fields.slug}> 
-                  <Anchor label="Les mer..." color="#4d647c" margin="none"/>
-                </Link>
-              </Box>
-              <Box alignSelf="end" margin={{"horizontal":"small"}}>
-                <Text size="small" color="grey" margin="small" alignSelf="end">
-                  Laget: {post.frontmatter.date}
-                </Text> 
+              <Paragraph
+                fill="true"
+                size="medium"
+                fontSize="xsmall"
+                responsive="true"
+                textAlign="start"
+                margin={{ horizontal: "small", top: "xsmall" }}
+              >
+                {post.frontmatter.description}
+              </Paragraph>
+
+              <Box
+                align="center"
+                direction="row"
+                flex="false"
+                gap="none"
+                justify="between"
+              >
+                <Box margin="small" width="90px">
+                  <Link to={post.fields.slug}>
+                    <Anchor label="Les mer..." color="#4d647c" margin="none" />
+                  </Link>
+                </Box>
+                <Box alignSelf="end" margin={{ horizontal: "small" }}>
+                  <Text
+                    size="small"
+                    color="grey"
+                    margin="small"
+                    alignSelf="end"
+                  >
+                    Laget: {post.frontmatter.date}
+                  </Text>
+                </Box>
               </Box>
             </Box>
           </Box>
-
-        </Box>
         </div>
       ))}
-  </Grid >   
+  </Grid>
 )
 
 BlogRoll.propTypes = {
@@ -65,7 +95,11 @@ export default () => (
       query BlogRollQuery {
         allMarkdownRemark(
           sort: { order: DESC, fields: [frontmatter___date] }
-          filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
+          filter: {
+            isFuture: { eq: false }
+            isExpired: { eq: false }
+            frontmatter: { templateKey: { eq: "blog-post" } }
+          }
         ) {
           edges {
             node {
@@ -76,6 +110,7 @@ export default () => (
               }
               frontmatter {
                 title
+                description
                 templateKey
                 date(formatString: "D. MMMM YYYY", locale: "nb")
                 featuredimage {

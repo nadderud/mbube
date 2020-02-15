@@ -7,8 +7,10 @@ description: >-
   vår tradisjonsrike nissefest. Denne blir på baksiden av speiderhuset mandag
   16. desember klokka 18.00 til 19.00. Alle er velkommen - både store og små!
 featuredimage: /img/upload/nisser.jpg
+expireInDays: 60
 tags:
-  - ""
+  - troppen
+  - flokken
 ---
 
 Det blir nissegrøt, leker, moro, og kanskje noen overraskelser. _Vi oppfordrer alle til å kle seg ut som nisser._ Det blir premie for beste kostyme. Ta med din egen tallerken, skje og kopp.

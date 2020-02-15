@@ -21,6 +21,15 @@ collections:
       - { label: "Ingress", name: "description", widget: "text" }
       - { label: "Innhold", name: "body", widget: "markdown" }
       - { label: "Publisert dato", name: "date", widget: "datetime" }
+      - {
+          label: "Synlig i antall dager på forsiden",
+          name: "expireInDays",
+          widget: "number",
+          default: 60,
+          valueType: "int",
+          min: 0,
+          max: 365,
+        }
       - { label: "Tagger", name: "tags", widget: "list" }
 
   - name: "pages"

@@ -4,8 +4,9 @@ title: Troppskonk 19-20 oktober
 date: 2019-10-19T08:00:00.000Z
 description: Endelig er det på tide med høstens første troppstur!
 featuredimage: /img/upload/20181013_122906.jpg
+expireInDays: 60
 tags:
-  - "?"
+  - troppen
 ---
 
 Håper alle gamle og nye speidere er klare for å kjempe i den gjeve konkurransen om å bli årets flagg- eller bannerpatrulje!

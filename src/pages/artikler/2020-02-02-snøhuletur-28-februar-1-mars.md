@@ -6,9 +6,12 @@ description: >-
   Det er snart klart for vinterens vakreste eventyr! Årets snøhuletur arrangeres
   28. februar - 1. mars
 featuredimage: /img/upload/skitur på fjell.jpg
+expireInDays: 60
 tags:
-  - troppen rover
+  - troppen
+  - rover
 ---
+
 Det er snart klart for vinterens vakreste eventyr! Årets snøhuletur arrangeres 28. februar - 1. mars
 
 Nadderuds tradisjonsrike snøhuletur er for alle som går i 8. klasse eller høyere, og er en fin og spennende måte å bli kjent med vinterspeiding, høyfjell og snøhulegraving. Vi går ikke langt, men fokuserer på hulegraving. Vi drar til Haugastøl om vær og snø er bra, ellers vil vi på kort varsel kunne endre til annet sted.
@@ -23,7 +26,7 @@ Det vil bli infomøte etter troppsmøtet mandag 3.februar kl 19:30 på speiderhu
 
 **Påmelding til Stian innen 24. februar på [stian@nadderud.no](mailto:stian@nadderud.no) eller mobil [911 28 204](tel:91128204).**
 
-*NB: Vi har begrenset antall plasser - førstemann til mølla!*
+_NB: Vi har begrenset antall plasser - førstemann til mølla!_
 
 Speiderhilsen
 

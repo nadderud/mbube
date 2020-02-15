@@ -1,28 +1,31 @@
-const path = require('path');
+const path = require("path")
 
-const { createFilePath } = require('gatsby-source-filesystem');
-const { fmImagesToRelative } = require('gatsby-remark-relative-images');
+const { createFilePath } = require("gatsby-source-filesystem")
+const { fmImagesToRelative } = require("gatsby-remark-relative-images")
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
-  const { createNodeField } = actions;
-  fmImagesToRelative(node); // convert image paths for gatsby images
+  const { createNodeField } = actions
+  fmImagesToRelative(node) // convert image paths for gatsby images
 
-  if (node.internal.type === 'MarkdownRemark') {
-    const slug = createFilePath({ node, getNode, basePath: 'pages' });
+  if (node.internal.type === "MarkdownRemark") {
+    const slug = createFilePath({ node, getNode, basePath: "pages" })
     createNodeField({
       node,
-      name: 'slug',
+      name: "slug",
       value: slug,
-    });
+    })
   }
-};
+}
 
 exports.createPages = ({ actions, graphql }) => {
-  const { createPage } = actions;
+  const { createPage } = actions
 
   return graphql(`
     {
-      allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }, limit: 1000) {
+      allMarkdownRemark(
+        sort: { order: DESC, fields: [frontmatter___date] }
+        limit: 1000
+      ) {
         edges {
           node {
             fields {
@@ -44,9 +47,9 @@ exports.createPages = ({ actions, graphql }) => {
         }
       }
     }
-  `).then((result) => {
+  `).then(result => {
     if (result.errors) {
-      return Promise.reject(result.errors);
+      return Promise.reject(result.errors)
     }
 
     // create markdown pages
@@ -54,31 +57,61 @@ exports.createPages = ({ actions, graphql }) => {
       createPage({
         path: node.fields.slug,
         component: path.resolve(
-          `src/templates/${node.frontmatter.templateKey || 'page'}Template.js`,
+          `src/templates/${node.frontmatter.templateKey || "page"}Template.js`
         ),
         context: {
           slug: node.fields.slug,
         },
-      });
-    });
+      })
+    })
 
     // create calendar pages
     createPage({
-      path: 'program',
-      component: path.resolve('src/templates/programTemplate.js'),
+      path: "program",
+      component: path.resolve("src/templates/programTemplate.js"),
       context: { calendarId: null },
-    });
+    })
 
     result.data.allCalendar.edges.forEach(({ node }) => {
-      const calendarIdParts = node.slug.split('/');
-      const calendarIds = calendarIdParts.length ? ['', calendarIdParts[0], node.slug] : [''];
+      const calendarIdParts = node.slug.split("/")
+      const calendarIds = calendarIdParts.length
+        ? ["", calendarIdParts[0], node.slug]
+        : [""]
       createPage({
         path: `program/${node.slug}`,
-        component: path.resolve('src/templates/programTemplate.js'),
+        component: path.resolve("src/templates/programTemplate.js"),
         context: { calendarId: node.slug, calendarIds },
-      });
-    });
+      })
+    })
 
-    return Promise.resolve();
-  });
-};
+    return Promise.resolve()
+  })
+}
+
+function addDays(date, days) {
+  return new Date(date.getTime() + days * 1000 * 60 * 60 * 24)
+}
+
+exports.createSchemaCustomization = ({ actions, schema, getNode }) => {
+  actions.createTypes([
+    schema.buildObjectType({
+      name: "MarkdownRemark",
+      interfaces: ["Node"],
+      fields: {
+        isFuture: {
+          type: "Boolean!",
+          resolve: s => new Date(s.frontmatter.date) > new Date(),
+        },
+        isExpired: {
+          type: "Boolean!",
+          resolve: s =>
+            new Date() >
+            addDays(
+              new Date(s.frontmatter.date),
+              s.frontmatter.expireInDays || 60
+            ),
+        },
+      },
+    }),
+  ])
+}
