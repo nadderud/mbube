@@ -62,14 +62,17 @@ const SingePost = ({post}) => {
 const PostGrid = ({posts}) => {
     return(
         <Box>
-            <Grid columns="250px" gap="small">
-                { posts &&
-            posts.map(({ node: post }) => {
-                return(
-                    <SingePost post={post} />
-                )
-            })}
+          {(posts.length > 0) 
+          ? <Grid columns="250px" gap="small">
+              { posts &&
+              posts.map(({ node: post }) => {
+                  return(
+                      <SingePost post={post} />
+                  )
+              })}
             </Grid>
+          :"Beklager, vi fant ikke innlegget du lette etter"}
+            
         </Box>
     )
 }
