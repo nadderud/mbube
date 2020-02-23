@@ -1,44 +1,68 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { Heading } from "grommet"
+import { Paragraph, Heading } from "grommet"
 
 import SEO from "../components/seo"
 import Byline from "../components/Byline"
 import Hero from "../components/Hero"
 import WhiteBox from "../components/WhiteBox"
+import Content, { HTMLContent } from "../components/Content"
 
-export default function Template({
-  data, // this prop will be injected by the GraphQL query below.
-}) {
-  const { markdownRemark } = data // data.markdownRemark holds our post data
-  const { frontmatter, html } = markdownRemark
+export const BlogPostTemplate = ({
+  title,
+  featuredimage,
+  date,
+  description,
+  content,
+  contentComponent,
+}) => {
+  const RenderContent = contentComponent || Content
   return (
     <>
-      <SEO title={frontmatter.title} />
-      <Hero
-        
-        image={frontmatter.featuredimage}
-        height="medium"
-      />
+      <SEO title={title} />
+      <Hero image={featuredimage} height="medium" />
       <WhiteBox>
-        <Byline frontmatter={frontmatter} />
-        <Heading level="2" margin={{"top":"small", "bottom":"none"}}>{frontmatter.title}</Heading>
-        <div
-          className="page-content"
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
+        <Byline date={date} />
+        <Heading level="1" margin={{ top: "small", bottom: "none" }}>
+          {title}
+        </Heading>
+        {description && (
+          <Paragraph
+            fill
+            size="large"
+            margin={{ top: "small", bottom: "none" }}
+          >
+            {description}
+          </Paragraph>
+        )}
+        <RenderContent content={content} />
       </WhiteBox>
     </>
   )
 }
+
+const BlogPost = ({ data }) => {
+  const { markdownRemark } = data
+  const { frontmatter, html } = markdownRemark
+  return (
+    <BlogPostTemplate
+      {...frontmatter}
+      content={html}
+      contentComponent={HTMLContent}
+    />
+  )
+}
+
+export default BlogPost
 
 export const pageQuery = graphql`
   query($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {
-        date(formatString: "D. MMMM YYYY", locale: "nb")
+        date
         title
+        description
         featuredimage {
           childImageSharp {
             fluid(quality: 90, maxWidth: 1920) {

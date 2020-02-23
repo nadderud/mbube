@@ -34,13 +34,13 @@ const Hero = ({ title, image, height }) => (
 Hero.propTypes = {
   title: PropTypes.string,
   image: PropTypes.object,
-  height: PropTypes.oneOf(["normal", "medium"]),
+  height: PropTypes.oneOf(["small", "medium"]),
 }
 
 Hero.defaultProps = {
   title: null,
   image: null,
-  height: "normal",
+  height: "small",
 }
 
 export default Hero

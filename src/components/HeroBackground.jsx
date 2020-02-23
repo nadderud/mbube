@@ -9,7 +9,7 @@ const HeroBackground = ({ image, height, children }) => {
       {children}
     </Box>
   )
-  if (image && image.childImageSharp) {
+  if (!!image && image.childImageSharp) {
     return (
       <BackgroundImage
         Tag="div"
@@ -20,6 +20,25 @@ const HeroBackground = ({ image, height, children }) => {
       </BackgroundImage>
     )
   }
+
+  if (!!image && typeof image === "string") {
+    console.log(image)
+    return (
+      <Box
+        background={{
+          color: "steelblue",
+          dark: true,
+          opacity: true,
+          position: "center",
+          size: "cover",
+          image: `url(${image})`,
+        }}
+      >
+        {innerBox}
+      </Box>
+    )
+  }
+
   return <Box background="steelblue">{innerBox}</Box>
 }
 
