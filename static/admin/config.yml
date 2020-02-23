@@ -18,7 +18,12 @@ collections:
       - { name: "templateKey", widget: "hidden", default: "blog-post" }
       - { label: "Tittel", name: "title", widget: "string" }
       - { label: "Bilde", name: "featuredimage", widget: image }
-      - { label: "Ingress", name: "description", widget: "text" }
+      - {
+          label: "Ingress",
+          name: "description",
+          widget: "text",
+          pattern: [".{50,160}", "Må være mellom 50 og 160 tegn"],
+        }
       - { label: "Innhold", name: "body", widget: "markdown" }
       - { label: "Publisert dato", name: "date", widget: "datetime" }
       - {
