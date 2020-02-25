@@ -19,6 +19,34 @@ import MaxWidthContainer from "./MaxWidthContainer"
 
 import CustomTheme from "./customTheme"
 
+export const LayoutTemplate = ({ children, isFrontpage, siteTitle }) => (
+  <CustomTheme>
+    <Box background="#f5f5f5">
+      <Header siteTitle={siteTitle} />
+      {children}
+      {!isFrontpage ? (
+        <MaxWidthContainer>
+          <Text>
+            <Link to="/">Tilbake til forsiden</Link>
+          </Text>
+        </MaxWidthContainer>
+      ) : null}
+      <Footer />
+    </Box>
+  </CustomTheme>
+)
+
+LayoutTemplate.propTypes = {
+  children: PropTypes.node.isRequired,
+  siteTitle: PropTypes.string,
+  isFrontpage: PropTypes.bool,
+}
+
+LayoutTemplate.defaultProps = {
+  siteTitle: "",
+  isFrontpage: false,
+}
+
 const Layout = ({ children, location }) => (
   <StaticQuery
     query={graphql`
@@ -31,20 +59,12 @@ const Layout = ({ children, location }) => (
       }
     `}
     render={data => (
-      <CustomTheme>
-        <Box background="#f5f5f5">
-          <Header siteTitle={data.site.siteMetadata.title} />
-          {children}
-          {location.pathname !== "/" ? (
-            <MaxWidthContainer>
-              <Text>
-                <Link to="/">Tilbake til forsiden</Link>
-              </Text>
-            </MaxWidthContainer>
-          ) : null}
-          <Footer />
-        </Box>
-      </CustomTheme>
+      <LayoutTemplate
+        siteTitle={data.site.siteMetadata.title}
+        isFrontpage={location.pathname === "/"}
+      >
+        {children}
+      </LayoutTemplate>
     )}
   />
 )

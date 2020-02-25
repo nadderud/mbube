@@ -1,10 +1,10 @@
 import React from "react"
 import { Paragraph } from "grommet"
+import parseDate from "./calendar/parseDate"
 
-const Byline = ({ frontmatter = {}, children }) => (
+const Byline = ({ date }) => (
   <Paragraph size="small" color="dark-2" margin={{ vertical: "none" }}>
-    {frontmatter.date}
-    {children}
+    {date && parseDate(date).format("dddd D. MMMM YYYY")}
   </Paragraph>
 )
 

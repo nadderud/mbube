@@ -1,3 +1,5 @@
-import CMS from 'netlify-cms-app';
+import CMS from "netlify-cms-app"
+import withStyledSheets from "./withStyledSheets"
+import BlogPostPreview from "./preview-templates/BlogPostPreview"
 
-CMS.init();
+CMS.registerPreviewTemplate("artikler", withStyledSheets(BlogPostPreview))
