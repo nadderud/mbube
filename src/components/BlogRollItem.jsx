@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { Link, navigate } from "gatsby"
+import { navigate } from "gatsby"
 import { Box, Heading, Text, Paragraph } from "grommet"
 
 import PreviewCompatibleImage from "./PreviewCompatibleImage"
@@ -26,11 +26,9 @@ const BlogRollItem = ({ image, slug, title, description, date }) => (
       />
     </Box>
     <Box margin="medium" flex>
-      <Link to={slug} style={{ textDecoration: "none" }}>
         <Heading color="black" level="2" size="small" margin="none">
           {title}
         </Heading>
-      </Link>
       <Paragraph margin={{ vertical: "xsmall" }}>{description}</Paragraph>
       <Box flex justify="between" direction="row" align="end">
         <div></div>
