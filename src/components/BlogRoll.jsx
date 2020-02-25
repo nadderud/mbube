@@ -1,22 +1,39 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { graphql, StaticQuery } from "gatsby"
-import { Grid } from "grommet"
+import { graphql, StaticQuery, navigate } from "gatsby"
+import { Grid, Box, Button } from "grommet"
 
 import BlogRollItem from "./BlogRollItem"
 
+import { Archive } from 'grommet-icons';
+
 const BlogRoll = ({ posts }) => (
-  <Grid alignContent="stretch" columns="300px" gap="medium" fill="vertical">
-    {posts &&
-      posts.map(({ node: post }) => (
-        <BlogRollItem
-          key={post.fields.slug}
-          image={post.frontmatter.featuredimage}
-          slug={post.fields.slug}
-          {...post.frontmatter}
-        />
-      ))}
-  </Grid>
+  <Box>
+    <Grid columns="300px" gap="medium">
+      {posts &&
+        posts.map(({ node: post }) => (
+          <BlogRollItem
+            key={post.fields.slug}
+            image={post.frontmatter.featuredimage}
+            slug={post.fields.slug}
+            {...post.frontmatter}
+          />
+        ))}
+    </Grid>
+    <Box 
+      width="medium" 
+      align="center" 
+      alignSelf="center"
+      margin="medium"
+    >
+      <Button
+        size="small"
+        icon={<Archive />}
+        label="Arkiverte artikkler"
+        onClick={() => navigate("/artikkler")}
+      />
+    </Box>
+  </Box>
 )
 
 BlogRoll.propTypes = {

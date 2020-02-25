@@ -6,7 +6,7 @@ import { graphql } from "gatsby"
 import WhiteBox from "../components/WhiteBox"
 import SEO from "../components/seo"
 import Hero from "../components/Hero"
-import BlogRollArkiv from "../components/BlogRollArkiv"
+import BloggRollArchive from "../components/BloggRollArchive"
 
 export default function Template({ data: { markdownRemark } }) {
   const {
@@ -19,7 +19,7 @@ export default function Template({ data: { markdownRemark } }) {
       <Hero title={title} image={image} />
       <WhiteBox>{description}</WhiteBox>
       <WhiteBox>
-        <BlogRollArkiv />
+        <BloggRollArchive />
         <div
           className="page-content"
           dangerouslySetInnerHTML={{ __html: html }}
