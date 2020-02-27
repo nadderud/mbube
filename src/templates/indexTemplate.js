@@ -51,7 +51,7 @@ export default function Template({ data }) {
           <Button
             size="small"
             icon={<Archive />}
-            label="Arkiverte artikler"
+            label="Arkiverte artikkler"
             onClick={() => navigate("/artikler")}
           />
         </Box>

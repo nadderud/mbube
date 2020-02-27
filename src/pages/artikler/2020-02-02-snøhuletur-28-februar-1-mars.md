@@ -5,7 +5,7 @@ date: 2020-02-02T06:43:00.367Z
 description: >-
   Det er snart klart for vinterens vakreste eventyr! Årets snøhuletur arrangeres
   28. februar - 1. mars
-featuredimage: /img/upload/skitur på fjell.jpg
+featuredimage: /img/upload/skitur paa fjell.jpg
 expireInDays: 60
 tags:
   - troppen
