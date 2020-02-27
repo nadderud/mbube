@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { graphql, StaticQuery, navigate } from "gatsby"
-import { Grid, Box, Button } from "grommet"
+import { graphql, StaticQuery } from "gatsby"
+import { Grid, Box } from "grommet"
 
 import BlogRollItem from "./BlogRollItem"
 

@@ -38,7 +38,6 @@ class BloggRollArchive extends React.Component {
         super(props)
         this.state = {
             posts: this.props.posts,
-            count: this.props.count
         }
     }
 
@@ -52,7 +51,6 @@ class BloggRollArchive extends React.Component {
         })
         this.setState({
             posts: updatedPosts,
-            value: value
         })
 
     }
@@ -132,7 +130,7 @@ export default () => (
       }
     `}
     render={(data, count) => (
-      <BloggRollArchive pageInfo={data.markdownRemark} posts={data.allMarkdownRemark.edges} count={count} />
+      <BloggRollArchive posts={data.allMarkdownRemark.edges} />
     )}
   />
 )
