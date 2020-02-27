@@ -56,7 +56,7 @@ class BloggRollArchive extends React.Component {
         })
 
     }
-
+    
     render(){
         return(
             <>

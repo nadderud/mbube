@@ -26,18 +26,14 @@ const BlogRollItem = ({ image, slug, title, description, date, compact }) => (
       />
     </Box>
     <Box margin="medium" flex>
-      {compact 
-      ? <Heading color="black" level="3" size="small" margin="none">
+      <Heading color="black" level={compact ? "3" : "2"} size="small" margin="none">
           {title}
-        </Heading> 
-      : <>
-          <Heading color="black" level="2" size="small" margin="none">
-            {title}
-          </Heading>
-          <Paragraph margin={{ vertical: "xsmall" }}>{description}</Paragraph>
-        </>
+      </Heading> 
+
+      {compact  
+      ? ""
+      : <Paragraph margin={{ vertical: "xsmall" }}>{description}</Paragraph>
       }
-      
       
       <Box flex justify="between" direction="row" align="end">
         <div></div>
