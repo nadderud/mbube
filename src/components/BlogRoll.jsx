@@ -5,7 +5,6 @@ import { Grid, Box, Button } from "grommet"
 
 import BlogRollItem from "./BlogRollItem"
 
-import { Archive } from 'grommet-icons';
 
 const BlogRoll = ({ posts }) => (
   <Box>
@@ -20,19 +19,6 @@ const BlogRoll = ({ posts }) => (
           />
         ))}
     </Grid>
-    <Box 
-      width="medium" 
-      align="center" 
-      alignSelf="center"
-      margin="medium"
-    >
-      <Button
-        size="small"
-        icon={<Archive />}
-        label="Arkiverte artikkler"
-        onClick={() => navigate("/artikkler")}
-      />
-    </Box>
   </Box>
 )
 
