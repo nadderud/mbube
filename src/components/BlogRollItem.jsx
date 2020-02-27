@@ -1,11 +1,11 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { Link, navigate } from "gatsby"
+import { navigate } from "gatsby"
 import { Box, Heading, Text, Paragraph } from "grommet"
 
 import PreviewCompatibleImage from "./PreviewCompatibleImage"
 
-const BlogRollItem = ({ image, slug, title, description, date }) => (
+const BlogRollItem = ({ image, slug, title, description, date, compact }) => (
   <Box
     elevation="xsmall"
     animation={{ type: "fadeIn", size: "medium" }}
@@ -14,7 +14,7 @@ const BlogRollItem = ({ image, slug, title, description, date }) => (
     onClick={() => navigate(slug)}
   >
     <Box
-      height="small"
+      height={compact ? "xsmall" : "small"}
       background={{ dark: false, color: "light-2" }}
       round={{ corner: "top", size: "xsmall" }}
     >
@@ -26,12 +26,15 @@ const BlogRollItem = ({ image, slug, title, description, date }) => (
       />
     </Box>
     <Box margin="medium" flex>
-      <Link to={slug} style={{ textDecoration: "none" }}>
-        <Heading color="black" level="2" size="small" margin="none">
+      <Heading color="black" level={compact ? "3" : "2"} size="small" margin="none">
           {title}
-        </Heading>
-      </Link>
-      <Paragraph margin={{ vertical: "xsmall" }}>{description}</Paragraph>
+      </Heading> 
+
+      {compact  
+      ? ""
+      : <Paragraph margin={{ vertical: "xsmall" }}>{description}</Paragraph>
+      }
+      
       <Box flex justify="between" direction="row" align="end">
         <div></div>
         <Text size="xsmall" color="grey">

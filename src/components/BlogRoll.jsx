@@ -1,22 +1,25 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { graphql, StaticQuery } from "gatsby"
-import { Grid } from "grommet"
+import { Grid, Box } from "grommet"
 
 import BlogRollItem from "./BlogRollItem"
 
+
 const BlogRoll = ({ posts }) => (
-  <Grid alignContent="stretch" columns="300px" gap="medium" fill="vertical">
-    {posts &&
-      posts.map(({ node: post }) => (
-        <BlogRollItem
-          key={post.fields.slug}
-          image={post.frontmatter.featuredimage}
-          slug={post.fields.slug}
-          {...post.frontmatter}
-        />
-      ))}
-  </Grid>
+  <Box>
+    <Grid columns="300px" gap="medium">
+      {posts &&
+        posts.map(({ node: post }) => (
+          <BlogRollItem
+            key={post.fields.slug}
+            image={post.frontmatter.featuredimage}
+            slug={post.fields.slug}
+            {...post.frontmatter}
+          />
+        ))}
+    </Grid>
+  </Box>
 )
 
 BlogRoll.propTypes = {

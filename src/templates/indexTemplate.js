@@ -9,6 +9,8 @@ import BlogRoll from "../components/BlogRoll"
 import WhiteBox from "../components/WhiteBox"
 import Hero from "../components/Hero"
 
+import { Archive } from 'grommet-icons';
+
 initAuth()
 
 const navTo = href => e => {
@@ -40,6 +42,19 @@ export default function Template({ data }) {
       </WhiteBox>
       <WhiteBox>
         <BlogRoll />
+        <Box 
+          width="medium" 
+          align="center" 
+          alignSelf="center"
+          margin="medium"
+        >
+          <Button
+            size="small"
+            icon={<Archive />}
+            label="Arkiverte artikkler"
+            onClick={() => navigate("/artikler")}
+          />
+        </Box>
         <div
           className="page-content"
           dangerouslySetInnerHTML={{ __html: html }}
