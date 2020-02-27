@@ -64,7 +64,7 @@ class BloggRollArchive extends React.Component {
               >
                 <FormField
                   name="name" 
-                  label="Søk etter artikkeltittel eller -dato "
+                  label="Søk etter artikeltittel eller -dato "
                 >
                   <Box width="medium" margin={{"vertical":"small"}}>
                     <Stack anchor="top-right">
