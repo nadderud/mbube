@@ -14,6 +14,7 @@ const BadgeBase = styled.span`
 `
 
 const UnitBadge = ({ name, unit }) => {
+  if (!unit) return null
   const Badge = unitColor(BadgeBase, unit)
   return <Badge>{name}</Badge>
 }
