@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import { graphql, StaticQuery, Link } from "gatsby"
 import styled from "styled-components"
 
-import { withUnitColor } from "../style/unitColor"
+import { unitColor } from "../style/unitColor"
 
 const Container = styled.div`
   display: flex;
@@ -11,15 +11,15 @@ const Container = styled.div`
   flex-wrap: wrap;
 `
 
-const ItemLink = styled(Link)`
+const UnitLink = styled(Link)`
   text-decoration: none;
   padding: 1px 5px;
   margin: 1px;
   border: 3px solid transparent;
   box-sizing: border-box;
   white-space: nowrap;
+  ${(props) => unitColor}
 `
-const UnitLink = withUnitColor(ItemLink)
 
 const Calendars = ({ calendars = [] }) => (
   <Container>

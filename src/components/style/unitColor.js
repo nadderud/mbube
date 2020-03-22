@@ -1,5 +1,3 @@
-import styled from "styled-components"
-
 const unitStyles = {
   flokken: {
     background: "#f2cc07",
@@ -15,7 +13,7 @@ const unitStyles = {
   },
 }
 
-export const withUnitColor = (Component) => styled(Component)`
-  background: ${(props) => (unitStyles[props.unit] || {}).background};
-  color: ${(props) => (unitStyles[props.unit] || {}).color};
+export const unitColor = ({ unit }) => `
+background: ${(unitStyles[unit] || {}).background};
+color: ${(unitStyles[unit] || {}).color};
 `
