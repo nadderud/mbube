@@ -1,6 +1,6 @@
-import React from "react"
-import { Stack, Box, Grid, Text, FormField,Form,TextInput } from "grommet"
-import { FormSearch } from 'grommet-icons';
+import React, { useEffect, useState } from "react"
+import { Stack, Box, Grid, Text, FormField, Form, TextInput } from "grommet"
+import { FormSearch } from "grommet-icons"
 
 import PropTypes from "prop-types"
 import { graphql, StaticQuery } from "gatsby"
@@ -10,79 +10,67 @@ import BlogRoll from "./BlogRoll"
 import BlogRollItem from "./BlogRollItem"
 
 const BlogRollGrid = ({ posts }) => {
-    return(
-        <>
-          {(posts.length > 0) ? 
-            <Grid columns="250px" gap="small">
-              { posts &&
-                  posts.map(({ node: post }) => {
-                  return(
-                    <BlogRollItem
-                      key={post.fields.slug}
-                      image={post.frontmatter.featuredimage}
-                      slug={post.fields.slug}
-                      compact={true}
-                      {...post.frontmatter}
-                    />
-                  )}
-                )}
-            </Grid> 
-          :
-            <Text weight="bold">Beklager, vi fant ikke det som du lette etter</Text>}
-        </>
-    )
+  return (
+    <>
+      {posts.length > 0 ? (
+        <Grid columns="250px" gap="small">
+          {posts &&
+            posts.map(({ node: post }) => {
+              return (
+                <BlogRollItem
+                  key={post.fields.slug}
+                  image={post.frontmatter.featuredimage}
+                  slug={post.fields.slug}
+                  compact={true}
+                  {...post.frontmatter}
+                />
+              )
+            })}
+        </Grid>
+      ) : (
+        <Text weight="bold">Beklager, vi fant ikke det som du lette etter</Text>
+      )}
+    </>
+  )
 }
 
-class BloggRollArchive extends React.Component {
-    constructor(props){
-        super(props)
-        this.state = {
-            posts: this.props.posts,
-        }
+const postFilter = (post, query) =>
+  post.node.frontmatter.title.toLowerCase().includes(query) ||
+  post.node.frontmatter.date.toLowerCase().includes(query)
+
+const BloggRollArchive = ({ posts = [] }) => {
+  const [query, setQuery] = useState("")
+  const [results, setResults] = useState(posts)
+
+  useEffect(() => {
+    if (query.length > 0) {
+      setResults(posts.filter((post) => postFilter(post, query.toLowerCase())))
+    } else {
+      setResults(posts)
     }
+  }, [query, posts])
 
-    updateGrid = (value) =>{
-        var updatedPosts = []
-        this.props.posts.map(post => {
-            (post.node.frontmatter.title.toLowerCase().includes(value.toLowerCase()) ||
-             post.node.frontmatter.date.toLowerCase().includes(value.toLowerCase()))
-            ? updatedPosts.push(post)
-            : ""
-        })
-        this.setState({
-            posts: updatedPosts,
-        })
+  return (
+    <>
+      <Form>
+        <FormField name="name" label="Søk etter tittel eller dato ">
+          <Box width="medium" margin={{ vertical: "small" }}>
+            <Stack anchor="top-right">
+              <TextInput
+                placeholder="Søk her..."
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+              />
+              <FormSearch size="large" color="brand" />
+            </Stack>
+          </Box>
+        </FormField>
+      </Form>
 
-    }
-    
-    render(){
-        return(
-            <>
-              <Form 
-                onChange={event => {
-                this.updateGrid(event.target.value.toString())}}
-              >
-                <FormField
-                  name="name" 
-                  label="Søk etter tittel eller dato "
-                >
-                  <Box width="medium" margin={{"vertical":"small"}}>
-                    <Stack anchor="top-right">
-                      <TextInput placeholder="Søk her..." />
-                      <FormSearch size="large" color="brand"/>
-                    </Stack>
-                  </Box>
-                </FormField>
-              </Form>
-
-              <BlogRollGrid posts={this.state.posts} />
-
-            </>
-          )
-        }
-    }
-
-
+      <BlogRollGrid posts={results} />
+    </>
+  )
+}
 
 BlogRoll.propTypes = {
   data: PropTypes.shape({
@@ -92,16 +80,13 @@ BlogRoll.propTypes = {
   }),
 }
 
-
 export default () => (
   <StaticQuery
     query={graphql`
-    query{
+      query {
         allMarkdownRemark(
           sort: { order: DESC, fields: [frontmatter___date] }
-          filter: {
-            frontmatter: { templateKey: { eq: "blog-post" } }
-          }
+          filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
         ) {
           edges {
             node {
