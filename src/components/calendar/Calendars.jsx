@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import { graphql, StaticQuery, Link } from "gatsby"
 import styled from "styled-components"
 
-import unitColor from "../style/unitColor"
+import { withUnitColor } from "../style/unitColor"
 
 const Container = styled.div`
   display: flex;
@@ -19,15 +19,17 @@ const ItemLink = styled(Link)`
   box-sizing: border-box;
   white-space: nowrap;
 `
+const UnitLink = withUnitColor(ItemLink)
 
 const Calendars = ({ calendars = [] }) => (
   <Container>
     {calendars.map(({ node: calendar }) => {
       const slugs = calendar.slug.split("/")
       const isMain = slugs.length === 1
-      const UnitLink = unitColor(ItemLink, slugs[0])
       return (
         <UnitLink
+          key={calendar.slug}
+          unit={slugs[0]}
           to={`/program/${calendar.slug}/`}
           activeStyle={{ borderColor: "#333" }}
         >
@@ -53,7 +55,7 @@ Calendars.defaultProps = {
   calendars: [],
 }
 
-export default props => (
+export default (props) => (
   <StaticQuery
     query={graphql`
       query CalendarsQuery {
@@ -72,6 +74,8 @@ export default props => (
         }
       }
     `}
-    render={data => <Calendars calendars={data.allCalendar.edges} {...props} />}
+    render={(data) => (
+      <Calendars calendars={data.allCalendar.edges} {...props} />
+    )}
   />
 )

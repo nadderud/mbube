@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import unitColor from "./style/unitColor"
+import { withUnitColor } from "./style/unitColor"
 
 const BadgeBase = styled.span`
   display: inline-box;
@@ -13,10 +13,11 @@ const BadgeBase = styled.span`
   border-radius: 4px;
 `
 
+const Badge = withUnitColor(BadgeBase)
+
 const UnitBadge = ({ name, unit }) => {
   if (!unit) return null
-  const Badge = unitColor(BadgeBase, unit)
-  return <Badge>{name}</Badge>
+  return <Badge unit={unit}>{name}</Badge>
 }
 
 export default UnitBadge
