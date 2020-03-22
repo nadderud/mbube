@@ -1,4 +1,4 @@
-const proxy = require("http-proxy-middleware")
+const { createProxyMiddleware } = require("http-proxy-middleware")
 
 require("dotenv").config({
   path: ".env",
@@ -7,10 +7,10 @@ require("dotenv").config({
 module.exports = {
   // for avoiding CORS while developing Netlify Functions locally
   // read more: https://www.gatsbyjs.org/docs/api-proxy/#advanced-proxying
-  developMiddleware: app => {
+  developMiddleware: (app) => {
     app.use(
       "/.netlify/functions/",
-      proxy({
+      createProxyMiddleware({
         target: "http://localhost:9000",
         pathRewrite: {
           "/.netlify/functions/": "",
@@ -25,6 +25,13 @@ module.exports = {
     author: "@gatsbyjs",
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-1742550-1",
+        anonymize: true,
+      },
+    },
     {
       resolve: "@horacioh/gatsby-theme-instagram",
       options: {
