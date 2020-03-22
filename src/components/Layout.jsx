@@ -15,7 +15,6 @@ import "./layout.css"
 
 import Header from "./Header"
 import Footer from "./Footer"
-import MaxWidthContainer from "./MaxWidthContainer"
 
 import CustomTheme from "./customTheme"
 
@@ -24,14 +23,7 @@ export const LayoutTemplate = ({ children, isFrontpage, siteTitle }) => (
     <Box background="#f5f5f5">
       <Header siteTitle={siteTitle} />
       {children}
-      {!isFrontpage ? (
-        <MaxWidthContainer>
-          <Text>
-            <Link to="/">Tilbake til forsiden</Link>
-          </Text>
-        </MaxWidthContainer>
-      ) : null}
-      <Footer />
+      <Footer isFrontpage={isFrontpage} />
     </Box>
   </CustomTheme>
 )
@@ -58,7 +50,7 @@ const Layout = ({ children, location }) => (
         }
       }
     `}
-    render={data => (
+    render={(data) => (
       <LayoutTemplate
         siteTitle={data.site.siteMetadata.title}
         isFrontpage={location.pathname === "/"}
