@@ -7,8 +7,8 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { StaticQuery, graphql, Link } from "gatsby"
-import { Box, Text } from "grommet"
+import { StaticQuery, graphql } from "gatsby"
+import { Box } from "grommet"
 
 import "sanitize.css"
 import "./layout.css"
