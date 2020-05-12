@@ -1,7 +1,7 @@
 ---
 templateKey: blog-post
 title: Informasjon om 17. mai 2020
-featuredimage: /img/upload/flagg.jpeg
+featuredimage: /img/upload/flagg2.jpg
 description: >-
   Nasjonaldagen nærmer seg, og som dere alle vet blir det en annerledes 17. mai
   i år.
