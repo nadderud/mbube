@@ -33,13 +33,6 @@ module.exports = {
       },
     },
     {
-      resolve: "@horacioh/gatsby-theme-instagram",
-      options: {
-        type: `account`, // optional. `account` is the default `type` value
-        username: "1946950564", // instagram user id
-      },
-    },
-    {
       resolve: "gatsby-plugin-create-client-paths",
       options: { prefixes: ["/app/*"] },
     },

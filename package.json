@@ -3,7 +3,6 @@
   "private": true,
   "version": "0.1.0",
   "dependencies": {
-    "@horacioh/gatsby-theme-instagram": "^0.1.6",
     "axios": "^0.19.2",
     "babel-plugin-styled-components": "^1.10.7",
     "dotenv": "^8.1.0",
@@ -23,7 +22,6 @@
     "gatsby-remark-images": "^3.3.8",
     "gatsby-remark-relative-images": "^0.3.0",
     "gatsby-source-filesystem": "^2.3.8",
-    "gatsby-source-instagram": "^0.8.0-beta.0",
     "gatsby-transformer-remark": "^2.8.13",
     "gatsby-transformer-sharp": "^2.5.3",
     "grommet": "^2.13.0",
