@@ -20,4 +20,28 @@ Vi trenger også flere foreldre som kan være med å drive speidergruppa, og hje
 
 Sakspapirer legges ut på nadderud.no ca. en uke før årsmøtet. Hvis noen har saker dere ønsker å ta opp på årsmøtet, kan de sendes til [mats@nadderud.no](mailto:mats@nadderud.no) innen 1. juni.
 
+## Saksliste
+
+1. **Konstituering**
+
+   1. Valg av møteleder
+   2. Valg av referent og to representanter til å underskrive protokollen
+   3. Godkjenning av innkalling og saksliste
+2. **[Årsmelding 2019](https://docs.google.com/document/d/e/2PACX-1vQ7COFw5tgyFnr_ZJrzM8B7mMcC9r_8nU1Nmv1xeE348r3huOo9haochSbsRF5xlamFDyQ-_90jtya1/pub)**\
+   Gruppestyrets årsmelding legges fram for godkjenning. Rapport fra enhetene og Mason Hill.
+3. **[Regnskap 2019](https://drive.google.com/file/d/1w109Ti6FyHXvepxszRNdDByDCQDwuwb8/view?usp=sharing)**\
+   Regnskap legges fram for godkjenning.
+4. **Eiendommene etter 1. Haslum**\
+   Oppfølging av diskusjonen om hva vi skal gjøre med de to ekstra speiderhyttene vi har ansvar for.
+5. **[Budsjett 2021](https://docs.google.com/spreadsheets/d/e/2PACX-1vSEb-DOGxZX4M6YBHZX792HgYRenybNi89UdJz8tYYBI1V7D-8VzogTUzMEZdk--aeMgtJRIqsnJaYe/pubhtml?gid=0&single=true)**\
+   Forslag til budsjett for neste år.
+6. **Valg**
+
+   1. Gruppeleder (for to år)
+   2. Styremedlem (for to år)
+   3. Representanter til kretsting (10 representanter, for ett år)
+   4. Kasserer
+   5. Revisor (for ett år)
+   6. Foreldreråd (5 representanter, for ett år)
+
 Vel møtt!
