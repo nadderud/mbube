@@ -17,11 +17,14 @@ Det blir leir med overnatting, og den avholdes på Trettenes leirsted ved Farris
 
 Fordi vi ikke får transportkostnader og har fått midler fra Ferd til “koronaspeiding” vil leiren være gratis.
 
-Litt info om smittevernsvurderingen: •	Som hovedregel vil aktiviteter og opplegg være tilpasset 1-metersregelen, og følge gjeldende retningslinjer fra FHI og NSF. Speiderne kommer til å spise og sove med patruljene sine og vil være noe tettere på disse enn troppen for øvrig. De vil sove inntil seks personer i hver 10-mannslavvo, og får minst en meter mellom hodene når de sover. 
+Litt info om smittevernsvurderingen: 
 
+•	Som hovedregel vil aktiviteter og opplegg være tilpasset 1-metersregelen, og følge gjeldende retningslinjer fra FHI og NSF. Speiderne kommer til å spise og sove med patruljene sine og vil være noe tettere på disse enn troppen for øvrig. De vil sove inntil seks personer i hver 10-mannslavvo, og får minst en meter mellom hodene når de sover. 
 
-•	Nadderud har tradisjon for to daglige inspeksjoner av personlig hygiene, generell hygiene og orden, og denne kommer til bli strengere i år!
+•	Nadderud har tradisjon for to daglige inspeksjoner av personlig hygiene, generell hygiene og orden, og denne kommer til bli strengere i år! 
+
 •	Det er vannklosetter og rennende vann å vaske seg med på stedet. Toalettene vil bli rengjort flere ganger daglig.
+
 •	Personer med forkjølelsessymptomer eller andre luftveisinfeksjoner skal holde seg hjemme. Det gjelder også personer i karantene eller isolasjon. Dersom symptomer skulle oppstå på leir må speideren blir hentet. Vi har muligheter for karantene frem til henting.
 
 Påmelding til leir på mail til Merete på mbhaukedal@gmail.com, senest 19. juni. Når du melder deg på vil du motta helsekort som må fylles ut og returneres.
