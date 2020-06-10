@@ -1,15 +1,14 @@
 ---
 templateKey: blog-post
-title: Troppsleir i Jotunheimen 8-15 august
+title: Troppsleir i Jotunheimen 8-15 august - Avlyst
 featuredimage: /img/upload/leir Jotunheimen.jpg
-description: >-
-  Bli med på en eventyrlig uke, sammen med troll, prinsesser og konger. Sammen
-  skal vi leke oss gjennom en uke, full av morsomme opplevelser. Vi skal bade,
-  bygge, spise, lete, rafte og mye mer!
+description: Bli med på en eventyrlig uke, sammen med troll, prinsesser og
+  konger. Sammen skal vi leke oss gjennom en uke, full av morsomme opplevelser.
+  Vi skal bade, bygge, spise, lete, rafte og mye mer!
 date: 2020-03-03T18:32:31.373Z
 expireInDays: 150
 tags:
-  - .
+  - .nan
 ---
 Men vi må ikke glemme hvorfor vi har denne leiren. Prinsessen må reddes! Hun har fått en stor spillegjeld over hode, etter å ha gamblet med trollene. Nå frykter hun at trollene er ute etter henne, og derfor har hun har ansatt oss for å være hennes livvakter. Uheldigvis er det fortsatt lenge til leiren, og mye kan skje på den tid...\
 \
