@@ -19,7 +19,9 @@ Fordi vi ikke får transportkostnader og har fått midler fra Ferd til “korona
 
 Litt info om smittevernsvurderingen: 
 
-•	Som hovedregel vil aktiviteter og opplegg være tilpasset 1-metersregelen, og følge gjeldende retningslinjer fra FHI og NSF. Speiderne kommer til å spise og sove med patruljene sine og vil være noe tettere på disse enn troppen for øvrig. De vil sove inntil seks personer i hver 10-mannslavvo, og får minst en meter mellom hodene når de sover. 
+•	Som hovedregel vil aktiviteter og opplegg være tilpasset 1-metersregelen, og følge gjeldende retningslinjer fra FHI og NSF. 
+
+•	Speiderne kommer til å spise og sove med patruljene sine og vil være noe tettere på disse enn troppen for øvrig. De vil sove inntil seks personer i hver 10-mannslavvo, og får minst en meter mellom hodene når de sover. 
 
 •	Nadderud har tradisjon for to daglige inspeksjoner av personlig hygiene, generell hygiene og orden, og denne kommer til bli strengere i år! 
 
