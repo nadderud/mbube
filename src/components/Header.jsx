@@ -6,18 +6,19 @@ import { Box, Text, Button, ResponsiveContext, Menu } from "grommet"
 import { Menu as MenuIcon } from "grommet-icons"
 
 import MaxWidthContainer from "./MaxWidthContainer"
+import HideOnPrintBox from "./HideOnPrintBox"
 import { LayoutSEO } from "./seo"
 
-export const navProps = to => ({
+export const navProps = (to) => ({
   as: "a",
   href: to,
-  onClick: e => {
+  onClick: (e) => {
     e.preventDefault()
     navigate(to)
   },
 })
 
-const isMobile = size => size === "xsmall" || size === "small"
+const isMobile = (size) => size === "xsmall" || size === "small"
 
 const NavButton = ({ to, label }) => (
   <Button plain hoverIndicator="dark-1" {...navProps(to)}>
@@ -29,9 +30,9 @@ const NavButtonLabel = ({ children }) => (
   <Box pad={{ horizontal: "small", vertical: "small" }}>{children}</Box>
 )
 
-const ResponsiveMenu = ({ isMobile, items }) => (
-  <Box direction="row" gap="small" alignSelf="end" margin={{ left: "auto" }}>
-    {isMobile ? (
+const ResponsiveMenu = ({ isMobile, items }) => {
+  if (isMobile)
+    return (
       <Menu
         items={items}
         dropProps={{ align: { top: "bottom", right: "right" } }}
@@ -42,13 +43,11 @@ const ResponsiveMenu = ({ isMobile, items }) => (
           closeMenu: "Skjul navigasjon",
         }}
       />
-    ) : (
-      items.map(item => (
-        <NavButton label={item.label} key={item.to} to={item.to} />
-      ))
-    )}
-  </Box>
-)
+    )
+  return items.map((item) => (
+    <NavButton label={item.label} key={item.to} to={item.to} />
+  ))
+}
 
 const MbubeHeader = ({ siteTitle }) => (
   <header>
@@ -56,7 +55,7 @@ const MbubeHeader = ({ siteTitle }) => (
     <Box background="dark-1" pad={{ vertical: "5px" }}>
       <MaxWidthContainer margin={{ horizontal: "auto" }}>
         <ResponsiveContext.Consumer>
-          {size => (
+          {(size) => (
             <Box direction="row" gap="medium">
               <Box margin={{ vertical: "small" }}>
                 <Text size="large" style={{ whiteSpace: "nowrap" }}>
@@ -72,31 +71,38 @@ const MbubeHeader = ({ siteTitle }) => (
                   </Link>
                 </Text>
               </Box>
-              <ResponsiveMenu
-                isMobile={isMobile(size)}
-                items={[
-                  {
-                    label: <NavButtonLabel>Program</NavButtonLabel>,
-                    to: "/program/",
-                    onClick: () => navigate("/program/"),
-                  },
-                  {
-                    label: <NavButtonLabel>Informasjon</NavButtonLabel>,
-                    to: "/info/",
-                    onClick: () => navigate("/info/"),
-                  },
-                  {
-                    label: <NavButtonLabel>Bilder</NavButtonLabel>,
-                    to: "/bilder/",
-                    onClick: () => navigate("/bilder/"),
-                  },
-                  {
-                    label: <NavButtonLabel>Bli speider</NavButtonLabel>,
-                    to: "/bli-speider/",
-                    onClick: () => navigate("/bli-speider/"),
-                  },
-                ]}
-              />
+              <HideOnPrintBox
+                direction="row"
+                gap="small"
+                alignSelf="end"
+                margin={{ left: "auto" }}
+              >
+                <ResponsiveMenu
+                  isMobile={isMobile(size)}
+                  items={[
+                    {
+                      label: <NavButtonLabel>Program</NavButtonLabel>,
+                      to: "/program/",
+                      onClick: () => navigate("/program/"),
+                    },
+                    {
+                      label: <NavButtonLabel>Informasjon</NavButtonLabel>,
+                      to: "/info/",
+                      onClick: () => navigate("/info/"),
+                    },
+                    {
+                      label: <NavButtonLabel>Bilder</NavButtonLabel>,
+                      to: "/bilder/",
+                      onClick: () => navigate("/bilder/"),
+                    },
+                    {
+                      label: <NavButtonLabel>Bli speider</NavButtonLabel>,
+                      to: "/bli-speider/",
+                      onClick: () => navigate("/bli-speider/"),
+                    },
+                  ]}
+                />
+              </HideOnPrintBox>
             </Box>
           )}
         </ResponsiveContext.Consumer>
