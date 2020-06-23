@@ -2,6 +2,7 @@ backend:
   name: git-gateway
   branch: master
 
+local_backend: true
 media_folder: static/img/upload
 public_folder: /img/upload
 
@@ -83,34 +84,26 @@ collections:
           - { label: Beskrivelse, name: description, widget: string }
           - { label: "Innhold", name: "body", widget: "markdown" }
 
-  - name: "leir"
-    label: "Leir"
-    files:
       - file: "src/pages/leir/index.md"
         label: "Leir"
         delete: false
-        name: "index"
+        name: "leir"
         fields:
           - { label: Tittel, name: title, widget: string }
-          - { label: Bilde, name: image, widget: image }
           - { label: "Innhold", name: "body", widget: "markdown" }
 
       - file: "src/pages/leir/pakkeliste.md"
         label: "Leir - Pakkeliste"
-        name: "pakkeliste"
+        name: "leir-pakkeliste"
         delete: false
         fields:
           - { label: Tittel, name: "title", widget: "string" }
-          - { label: Bilde, name: image, widget: image }
-          - { label: Beskrivelse, name: description, widget: string }
           - { label: "Innhold", name: "body", widget: "markdown" }
 
       - file: "src/pages/leir/reglement.md"
         label: "Leir - Reglement"
-        name: "reglement"
+        name: "leir-reglement"
         delete: false
         fields:
           - { label: Tittel, name: "title", widget: "string" }
-          - { label: Bilde, name: image, widget: image }
-          - { label: Beskrivelse, name: description, widget: string }
           - { label: "Innhold", name: "body", widget: "markdown" }
