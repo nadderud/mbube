@@ -2,12 +2,20 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Box } from "grommet"
 import BackgroundImage from "gatsby-background-image"
+import styled from "styled-components"
+
+const InnerBox = styled(Box)`
+  @media print {
+    padding: 0;
+    text-align: left;
+  }
+`
 
 const HeroBackground = ({ image, height, children }) => {
   const innerBox = (
-    <Box pad="large" height={height} alignContent="center">
+    <InnerBox pad="large" height={height} alignContent="center">
       {children}
-    </Box>
+    </InnerBox>
   )
   if (!!image && image.childImageSharp) {
     return (

@@ -16,7 +16,7 @@ export default function Template({ data: { markdownRemark } }) {
     <>
       <SEO title={title} description={description} />
       <Hero title={title} image={image} />
-      <WhiteBox>{description}</WhiteBox>
+      {description && <WhiteBox>{description}</WhiteBox>}
       <WhiteBox>
         <div
           className="page-content"
@@ -45,7 +45,7 @@ export const pageQuery = graphql`
               ...GatsbyImageSharpFluid
             }
           }
-        } 
+        }
       }
     }
   }
