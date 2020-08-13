@@ -9,11 +9,11 @@ description: "Spennende friluftsliv for barn og ungdom fra 3. klasse og oppover.
   Øygardveien 49, 1357 Bekkestua
 
 - Postadresse:
-  Nadderud speidergruppe, v/Mats Grimsgaard,
-  Tostrups gate 25, 0264 Oslo
+  Nadderud speidergruppe, v/Merete Haukedal,
+  Rytterfaret 25, 1362 Hosle
 
 - Telefonnummer: 
-  926 11 925
+  411 44 182
 - E-postadresse:
   [post@nadderud.no](mailto:post@nadderud.no)
 - Kontonummer:
@@ -23,12 +23,12 @@ description: "Spennende friluftsliv for barn og ungdom fra 3. klasse og oppover.
 
 ## Kontakt oss
 
-- __Mats Grimsgaard__, gruppeleder:  
-  926 11 925, <a href="mailto:mats@nadderud.no">mats@nadderud.no</a>
-- __Merete Haukedal__, troppsleder (5.–10. klasse):  
+- __Merete Haukedal__, gruppeleder:  
   411 44 182, <a href="mailto:mbhaukedal@gmail.com">mbhaukedal@gmail.com</a>
-- __Janne Valkonen__, flokkleder (3.–4. klasse):  
-  977 97 439, <a href="mailto:janne.p.valkonen@gmail.com">janne.p.valkonen@gmail.com</a>
+- __Martin Clementz__, troppsleder (5.–10. klasse):  
+  918 50 048, <a href="mailto:martincclementz@gmail.com">martincclementz@gmail.com</a>
+- __Yngve Benestad Hågvar__, flokkleder (3.–4. klasse):  
+  416 43 901, <a href="mailto:yngve.hagvar@gmail.com">yngve.hagvar@gmail.com</a>
 
 &nbsp;
 
