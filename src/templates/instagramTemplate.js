@@ -18,11 +18,11 @@ const BilderInstagram = ({ data: { markdownRemark } }) => {
         <h1>Bilder fra Instagram</h1>
         <Instagram />
         <p>
-          Trykk for å gå til{" "}
+          Følg{" "}
           <a href="https://www.instagram.com/nadderudspeidergruppe/?hl=nb">
             nadderudspeidergruppe
           </a>{" "}
-          på Instagram{" "}
+          på Instagram for å holde deg oppdatert{" "}
         </p>
       </WhiteBox>
     </div>
