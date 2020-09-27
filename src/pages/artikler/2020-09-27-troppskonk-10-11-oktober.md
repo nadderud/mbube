@@ -9,12 +9,12 @@ expireInDays: 39
 tags:
   - Troppen
 ---
-Gjør klar speiderkunskapen og konkurranseinstinktet til årets første speidertur, nemlig troppskonkuransen. Bli med på den morsomme konkurransen om å bli årets flagg- eller bannerpatrulje! Vinnerpatruljen får æren av å heise flagget på Hosle skole den 17. mai. Håper gamle og nye speidere ønsker å være med! 
+Bli med på den morsomme konkurransen om å bli årets flagg- eller bannerpatrulje! Vinnerpatruljen får æren av å heise flagget på Hosle skole den 17. mai. Håper gamle og nye speidere ønsker å være med! 
 
 Dato: 10.-11. oktober\
 For hvem: Alle i troppen\
-Oppmøte: Stein gård, lørdag kl 11:00\
-Henting: Fossum klubbhus, søndag kl 14:30\
+Oppmøte: Se Spond eller mail\
+Henting: Se Spond eller mail\
 Påmelding: På Spond\
 \
 På turen går vi i speiderskjerf(de som har)\
