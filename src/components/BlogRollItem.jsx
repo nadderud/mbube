@@ -12,6 +12,7 @@ const BlogRollItem = ({ image, slug, title, description, date, compact }) => (
     round="xsmall"
     direction="column"
     onClick={() => navigate(slug)}
+    background="white"
   >
     <Box
       height={compact ? "xsmall" : "small"}
@@ -21,7 +22,7 @@ const BlogRollItem = ({ image, slug, title, description, date, compact }) => (
       <PreviewCompatibleImage
         imageInfo={{
           image,
-          style: { width: "100%" },
+          style: { width: "100%", height:"100%", borderRadius: "5px 5px 0px 0px"},
         }}
       />
     </Box>
@@ -29,14 +30,12 @@ const BlogRollItem = ({ image, slug, title, description, date, compact }) => (
       <Heading color="black" level={compact ? "3" : "2"} size="small" margin="none">
           {title}
       </Heading> 
-
       {compact  
       ? ""
       : <Paragraph margin={{ vertical: "xsmall" }}>{description}</Paragraph>
       }
       
-      <Box flex justify="between" direction="row" align="end">
-        <div></div>
+      <Box flex justify="between" direction="row" justify="end" align="end">
         <Text size="xsmall" color="grey">
           {date}
         </Text>

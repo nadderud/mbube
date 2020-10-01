@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from "react"
 import { graphql, navigate } from "gatsby"
-import { Button, Box } from "grommet"
+import { Button, Box, Heading } from "grommet"
 
 import SEO from "../components/seo"
 import { initAuth } from "../app/services/auth"
@@ -25,6 +25,7 @@ export default function Template({ data }) {
     <>
       <SEO title={frontmatter.title} />
       <Hero image={frontmatter.image} height="medium" />
+    
       <WhiteBox>
         <p>{frontmatter.description}</p>
         <Box gap="small" direction="row">
@@ -40,7 +41,9 @@ export default function Template({ data }) {
           />
         </Box>
       </WhiteBox>
+        
       <WhiteBox>
+        <Heading level="2">Artikler</Heading>
         <BlogRoll />
         <Box 
           width="medium" 
@@ -51,7 +54,7 @@ export default function Template({ data }) {
           <Button
             size="small"
             icon={<Archive />}
-            label="Flere artikler"
+            label="Eldre artikler"
             onClick={() => navigate("/artikler")}
           />
         </Box>
