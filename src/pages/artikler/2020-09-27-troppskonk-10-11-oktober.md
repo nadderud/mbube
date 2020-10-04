@@ -54,4 +54,4 @@ Hvis det er noen spørsmål ta kontakt til Martin på mail ([martin@nadderud.no]
 \
 Vi gleder oss til å dra på tur med dere!\
 \
-Speiderhilsen fra lederne!!
+Speiderhilsen fra lederne!
