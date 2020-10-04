@@ -1,26 +1,45 @@
-import React from "react"
+import React, { useContext } from "react"
 import PropTypes from "prop-types"
-import { graphql, StaticQuery } from "gatsby"
-import { Grid, Box } from "grommet"
+import { graphql, StaticQuery, navigate } from "gatsby"
+
+import { Grid, Box, ResponsiveContext, Button } from "grommet"
+import { Archive } from 'grommet-icons';
 
 import BlogRollItem from "./BlogRollItem"
 
 
-const BlogRoll = ({ posts }) => (
-  <Box>
-    <Grid columns="300px" gap="medium">
-      {posts &&
-        posts.map(({ node: post }) => (
+const BlogRoll = ({ posts }) => {
+  const size = useContext(ResponsiveContext);
+  return(
+    <Grid columns={["auto","auto","auto","auto","auto","auto"]} gap="small">
+    {posts &&
+      posts.map(({ node: post }) => (
+        <Box width={size !== "small" ? "medium" : "85vw"} >
           <BlogRollItem
             key={post.fields.slug}
             image={post.frontmatter.featuredimage}
             slug={post.fields.slug}
             {...post.frontmatter}
           />
-        ))}
+        </Box>
+      ))}
+      <Box 
+          width="300px" 
+          align="start" 
+          alignSelf="center"
+          margin="medium"
+        >
+          <Button
+            size="small"
+            icon={<Archive />}
+            label="Alle artikler"
+            onClick={() => navigate("/artikler")}
+            primary
+          />
+        </Box>
     </Grid>
-  </Box>
-)
+  )
+}
 
 BlogRoll.propTypes = {
   data: PropTypes.shape({

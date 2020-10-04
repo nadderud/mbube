@@ -8,8 +8,8 @@ import { initAuth } from "../app/services/auth"
 import BlogRoll from "../components/BlogRoll"
 import WhiteBox from "../components/WhiteBox"
 import Hero from "../components/Hero"
+import MaxWidthContainer from "../components/MaxWidthContainer"
 
-import { Archive } from 'grommet-icons';
 
 initAuth()
 
@@ -41,23 +41,30 @@ export default function Template({ data }) {
           />
         </Box>
       </WhiteBox>
-        
-      <WhiteBox>
-        <Heading level="2">Artikler</Heading>
-        <BlogRoll />
-        <Box 
-          width="medium" 
-          align="center" 
-          alignSelf="center"
-          margin="medium"
-        >
-          <Button
-            size="small"
-            icon={<Archive />}
-            label="Eldre artikler"
-            onClick={() => navigate("/artikler")}
-          />
+
+      <Box 
+        background={{
+          "image": "url(https://www.transparenttextures.com/patterns/dark-stripes-light.png)",
+          "color": "neutral-3",
+          "repeat": "repeat",
+          "size": "auto",
+          "opacity": "strong",
+        }} 
+        pad={{vertical:"medium"}} 
+      >
+        <MaxWidthContainer>
+          <Heading level="2" margin="small">Nye artikler</Heading>
+          <Box style={{height:"1px", width:"100%", background:"white"}} />
+        </MaxWidthContainer>
+
+        <Box fill="horizontal" pad="small" overflow="scroll">
+          <MaxWidthContainer>
+            <BlogRoll />
+          </MaxWidthContainer>
         </Box>
+      </Box>
+    
+      <WhiteBox>
         <div
           className="page-content"
           dangerouslySetInnerHTML={{ __html: html }}

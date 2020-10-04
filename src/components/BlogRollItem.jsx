@@ -17,7 +17,7 @@ const BlogRollItem = ({ image, slug, title, description, date, compact }) => (
     <Box
       height={compact ? "xsmall" : "small"}
       background={{ dark: false, color: "light-2" }}
-      round={{ corner: "top", size: "xsmall" }}
+      round={{ corner: "top", size: "5px" }}
     >
       <PreviewCompatibleImage
         imageInfo={{
@@ -34,7 +34,6 @@ const BlogRollItem = ({ image, slug, title, description, date, compact }) => (
       ? ""
       : <Paragraph margin={{ vertical: "xsmall" }}>{description}</Paragraph>
       }
-      
       <Box flex justify="between" direction="row" justify="end" align="end">
         <Text size="xsmall" color="grey">
           {date}

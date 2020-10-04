@@ -6,7 +6,7 @@ description: >-
   Da var sommeren over og et nytt speiderår rett rundt hjørnet!
 
 
-  Troppens første møte (de som starter i 5-10 kl) er på Bogstadvannet den 7.september. Her skal vi blant annet padle kano, så husk redningsvest/flytevest! Møtet starter kl. 18.00 og avsluttes kl. 19.30. På starten av møtet tar vi et kort foreldremøte hvor vi oppfordrer alle speiderforeldre å delta.
+  Troppens første møte (de som starter i 5-10 kl) er på Bogstadvannet den 7.september.
 date: 2020-08-12T15:16:26.759Z
 expireInDays: 60
 tags:
