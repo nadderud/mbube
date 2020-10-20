@@ -35,4 +35,4 @@ Berit Tennøy Heide
 
 Tel.: 91 88 27 62
 
-Bildet er lånt fra facebook-siden til Lion fra en tidligere hjulskiftaksjon
+Bildet er lånt fra facebook-siden til Lion fra en tidligere hjulskiftaksjon.
