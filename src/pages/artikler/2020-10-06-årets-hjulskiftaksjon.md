@@ -4,7 +4,7 @@ title: Årets hjulskiftaksjon!
 featuredimage: /img/upload/hjulskift.jpg
 description: >-
   Høstens hjulskiftaksjon skjer lørdag 31. Oktober og søndag 1. November i
-  skolegården på Hosle skole.**
+  skolegården på Hosle skole.*
 
 
   Nadderud Speidergruppe fortsetter det gode samarbeidet med Lions Hosle-Eiksmarka og pengene vi får fra Lions er et viktig bidrag til driften av speidergruppa og vedlikeholdet av Mason Hill.
