@@ -46,6 +46,6 @@ Påmelding skjer til Merete ([mbhaukedal@gmail.com](mailto:mbhaukedal@gmail.com)
 
 Ta gjerne kontakt hvis det er noen spørsmål.
 
-Vi gleder oss til å dra på tur med dere!!
+Vi gleder oss til å dra på tur med dere!
 
 Speiderhilsen fra lederne
