@@ -2,7 +2,7 @@
 templateKey: blog-post
 title: mandeljakten
 featuredimage: /img/upload/nisser.jpg
-description: "På lover sitter nissen med sin julegrøt, så god og søt! "
+description: "På låven sitter nissen med sin julegrøt, så god og søt! "
 date: 2019-12-24T13:16:33.570Z
 expireInDays: 0
 tags:
