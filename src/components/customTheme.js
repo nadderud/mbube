@@ -19,6 +19,11 @@ const myTheme = {
       color: { dark: "brand", light: "brand" },
     },
   },
+  carousel:{
+    icons:{
+      color: "brand",
+    }
+  }
 }
 
 const mergedTheme = deepMerge(myTheme, grommet)

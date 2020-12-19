@@ -1,11 +1,17 @@
 ---
 templateKey: index
 title: Forsiden
-image: /img/upload/vann.jpg
+image: /img/upload/skjermbilde-2020-09-27-kl.-23.19.49.png
 description: >-
   Spennende friluftsliv for barn og ungdom fra 3. klasse og oppover. Vi er en
   aktiv speidergruppe med ca. 100 medlemmer som dekker området Nadderud,
   Bekkestua, Hosle, Eikeli og Haslum.
+  
+
+imageOne: /img/upload/leirbaal.jpg
+imageTwo: /img/upload/pionering.jpg
+imageThree: /img/upload/flaate.jpg
+
 contacts:
   - email: mats@nadderud.no
     name: Mats Grimsgaard
@@ -21,3 +27,4 @@ contacts:
     title: flokkleder (3.–4. klasse)
 instagram: nadderudspeidergruppe
 ---
+

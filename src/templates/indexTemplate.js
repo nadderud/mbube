@@ -7,9 +7,9 @@ import SEO from "../components/seo"
 import { initAuth } from "../app/services/auth"
 import BlogRoll from "../components/BlogRoll"
 import WhiteBox from "../components/WhiteBox"
-import Hero from "../components/Hero"
-import MaxWidthContainer from "../components/MaxWidthContainer"
 
+import MaxWidthContainer from "../components/MaxWidthContainer"
+import ImageCarousel from "../components/ImageCarousel"
 
 initAuth()
 
@@ -24,10 +24,28 @@ export default function Template({ data }) {
   return (
     <>
       <SEO title={frontmatter.title} />
-      <Hero image={frontmatter.image} height="medium" />
-    
+      <ImageCarousel 
+        height="90vh"
+        speed={9000}
+        data={[{
+          image: frontmatter.imageOne.childImageSharp.fluid,
+          header: "Nadderud Speidergruppe",
+          text: frontmatter.description
+        },
+         {
+          image: frontmatter.imageTwo.childImageSharp.fluid,
+          header: "Flokken 3.-4. klasse",
+          text: frontmatter.description
+        },
+         {
+          image: frontmatter.imageThree.childImageSharp.fluid,
+          header: "Troppen 5.-10. klasse",
+          text: frontmatter.description
+        }]}
+      />
+      
       <WhiteBox>
-        <p>{frontmatter.description}</p>
+        <p style={{"display":"none"}}>{frontmatter.description}</p>
         <Box gap="small" direction="row">
           <Button
             label="Arrangementer"
@@ -82,6 +100,27 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         title
         description
+        imageOne {
+          childImageSharp {
+            fluid(maxWidth: 2080) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        imageThree {
+          childImageSharp {
+            fluid(maxWidth: 2080) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        imageTwo {
+          childImageSharp {
+            fluid(maxWidth: 2080) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
         image {
           childImageSharp {
             fluid(maxWidth: 2080) {
