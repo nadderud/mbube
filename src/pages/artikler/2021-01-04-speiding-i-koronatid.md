@@ -3,9 +3,9 @@ templateKey: blog-post
 title: Speiding i koronatid
 featuredimage: /img/upload/koronamerket.jpg
 description: "Etter pressekonferansen mandag ser vi dessverre ingen annen
-  løsning enn å avlyse alle speidermøter frem til 18 november. Dette vil gjelde
+  løsning enn å avlyse alle speidermøter frem til 18 januar. Dette vil gjelde
   for alle enheter, både flokken, troppen og roverlaget. Vi vil sende ut ny
-  informasjon etter 18 november. "
+  informasjon etter 18 januar. "
 date: 2021-01-04T20:38:14.684Z
 expireInDays: 60
 tags:
