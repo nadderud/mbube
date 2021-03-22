@@ -1,9 +1,9 @@
 ---
 templateKey: blog-post
-title: Dyrke chiafrø
+title: Spire chiafrø
 featuredimage: /img/upload/chiafrø.jpeg
-description: "Her er oppskriften på hvordan man kan dyrke chiafrø, både med jord
-  og uten jord! Dette er en del av påske pakken til troppen (5. 10. klasse) i
+description: "Her er oppskriften på hvordan man kan så chiafrø, både med jord og
+  uten jord! Dette er en del av påskepakken til troppen (5. 10. klasse) i
   speidergruppa. "
 date: 2021-03-22T22:01:13.351Z
 expireInDays: 30
