@@ -9,8 +9,7 @@ description: Spennende friluftsliv for barn og ungdom fra 3. klasse og oppover.
 ## Generell info
 
 * Møtelokaler: Øygardveien 49, 1357 Bekkestua
-* Postadresse: Nadderud speidergruppe, v/Merete Haukedal,
-  Rytterfaret 25, 1362 Hosle
+* Postadresse: Nadderud speidergruppe, v/Merete Haukedal, Rytterfaret 25, 1362 Hosle
 * Telefonnummer:  411 44 182
 * E-postadresse: [post@nadderud.no](mailto:post@nadderud.no)
 * Kontonummer: 9235.19.85773  
@@ -21,8 +20,8 @@ description: Spennende friluftsliv for barn og ungdom fra 3. klasse og oppover.
 
 * **Merete Haukedal**, gruppeleder:\
   411 44 182, <a href="mailto:mbhaukedal@gmail.com">mbhaukedal@gmail.com</a>
-* **Martin Clementz**, troppsleder (5.–10. klasse):\
-  918 50 048, <a href="mailto:martin@nadderud.no">martin@nadderud.no</a>
+* **Philip Godager**, troppsleder (5.–10. klasse):\
+  918 50 048, <a href="mailto:philip1014@outlook.com">philip1014@outlook.com</a>
 * **Yngve Benestad Hågvar**, flokkleder (3.–4. klasse):\
   416 43 901, <a href="mailto:yngve.hagvar@gmail.com">yngve.hagvar@gmail.com</a>
 
