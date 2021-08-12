@@ -21,7 +21,7 @@ description: Spennende friluftsliv for barn og ungdom fra 3. klasse og oppover.
 * **Merete Haukedal**, gruppeleder:\
   411 44 182, <a href="mailto:mbhaukedal@gmail.com">mbhaukedal@gmail.com</a>
 * **Philip Godager**, troppsleder (5.–10. klasse):\
-  918 50 048, <a href="mailto:philip1014@outlook.com">philip1014@outlook.com</a>
+  477 16 980, <a href="mailto:philip1014@outlook.com">philip1014@outlook.com</a>
 * **Yngve Benestad Hågvar**, flokkleder (3.–4. klasse):\
   416 43 901, <a href="mailto:yngve.hagvar@gmail.com">yngve.hagvar@gmail.com</a>
 
