@@ -22,6 +22,6 @@ Vel møtt!
 
 ———
 
-Veibeskrivelse:
+Veibeskrivelse
 
 [google.no/maps/dir/Øygardveien+49A,+1357+Bekkestua/60.4318056,10.2738333/@60.1725318,10.1476195,116056m/am=t/data=!3m2!1e3!4b1!4m8!4m7!1m5!1m1!1s0x46416cd61d0f6097:0xe26c2936136078b!2m2!1d10.5884322!2d59.9250535!1m0?hl=no](https://www.google.no/maps/dir/%C3%98ygardveien+49A,+1357+Bekkestua/60.4318056,10.2738333/@60.1725318,10.1476195,116056m/am=t/data=!3m2!1e3!4b1!4m8!4m7!1m5!1m1!1s0x46416cd61d0f6097:0xe26c2936136078b!2m2!1d10.5884322!2d59.9250535!1m0?hl=no)
