@@ -1,9 +1,9 @@
 import { Link, navigate } from "gatsby"
 import PropTypes from "prop-types"
-import React from "react"
-import { Box, Text, Button, ResponsiveContext, Menu } from "grommet"
+import React, { useState } from "react"
+import { Box, Text, Button, ResponsiveContext, Layer } from "grommet"
 
-import { Menu as MenuIcon } from "grommet-icons"
+import { Menu as MenuIcon, Close } from "grommet-icons"
 
 import MaxWidthContainer from "./MaxWidthContainer"
 import HideOnPrintBox from "./HideOnPrintBox"
@@ -31,18 +31,41 @@ const NavButtonLabel = ({ children }) => (
 )
 
 const ResponsiveMenu = ({ isMobile, items }) => {
+  const [show, setShow] = useState();
   if (isMobile)
     return (
-      <Menu
-        items={items}
-        dropProps={{ align: { top: "bottom", right: "right" } }}
-        dropBackground="dark-1"
-        icon={<MenuIcon />}
-        messages={{
-          openMenu: "Vis navigasjon",
-          closeMenu: "Skjul navigasjon",
-        }}
-      />
+      <Box margin={{ vertical: "small" }}>
+        <Button label="Meny" onClick={() => setShow(true)} icon={ <MenuIcon />} reverse={true} plain/>
+        {show && (
+            <Layer
+              onEsc={() => setShow(false)}
+              onClickOutside={() => setShow(false)}
+              background="light-1"
+              responsive={false}
+              position="right"
+              full="vertical"
+            >
+              <Box>
+              <Button 
+                margin={{bottom:"medium", right:"xsmall", top:"xsmall"}} 
+                color="brand"
+                alignSelf="end"
+                icon={<Close color="brand"/>}
+                onClick={() => setShow(false)}
+              />
+              <Box pad={{horizontal:"xlarge"}}>
+                 {items.map((item)=>(
+                    <Box margin={{vertical:"medium"}} key={item.to} {...navProps(item.to)}>
+                     <Text alignSelf="center">
+                      {item.label}
+                     </Text>
+                   </Box>
+                 ))}
+                 </Box>
+               </Box>
+            </Layer>
+        )}
+      </Box>
     )
   return items.map((item) => (
     <NavButton label={item.label} key={item.to} to={item.to} />
@@ -50,7 +73,7 @@ const ResponsiveMenu = ({ isMobile, items }) => {
 }
 
 const MbubeHeader = ({ siteTitle }) => (
-  <header>
+  <>
     <LayoutSEO siteTitle={siteTitle} />
     <Box background="dark-1" pad={{ vertical: "5px" }}>
       <MaxWidthContainer margin={{ horizontal: "auto" }}>
@@ -108,7 +131,7 @@ const MbubeHeader = ({ siteTitle }) => (
         </ResponsiveContext.Consumer>
       </MaxWidthContainer>
     </Box>
-  </header>
+  </>
 )
 
 MbubeHeader.propTypes = {
