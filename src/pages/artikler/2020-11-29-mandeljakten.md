@@ -8,4 +8,4 @@ expireInDays: 0
 tags:
   - troppen
 ---
-Ho, ho, ho! Du trodde du kunne tyvstarte med mandeljakten! Ho, ho ho! Du får vente til mandag 7. desember 2020, kl 16. Da vil jakten starte på Spond.
+Ho, ho, ho! Du trodde du kunne tyvstarte med mandeljakten! Ho, ho ho! Du får vente til mandag 7. desember 2020, kl 16. Da vil jakten starte på Spond..
