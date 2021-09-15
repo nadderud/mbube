@@ -20,21 +20,17 @@ export const navProps = (to) => ({
 
 const isMobile = (size) => size === "xsmall" || size === "small"
 
-const NavButton = ({ to, label }) => (
-  <Button plain hoverIndicator="dark-1" {...navProps(to)}>
-    {label}
-  </Button>
-)
-
-const NavButtonLabel = ({ children }) => (
-  <Box pad={{ horizontal: "small", vertical: "small" }}>{children}</Box>
+const NavButton = ({ to, label, ...props}) => (
+    <Button plain hoverIndicator="dark-1" {...props} {...navProps(to)}>
+      {label}
+    </Button>
 )
 
 const ResponsiveMenu = ({ isMobile, items }) => {
   const [show, setShow] = useState();
   if (isMobile)
     return (
-      <Box margin={{ vertical: "small" }}>
+      <Box alignSelf="center">
         <Button label="Meny" onClick={() => setShow(true)} icon={ <MenuIcon />} reverse={true} plain/>
         {show && (
             <Layer
@@ -53,13 +49,14 @@ const ResponsiveMenu = ({ isMobile, items }) => {
                 icon={<Close color="brand"/>}
                 onClick={() => setShow(false)}
               />
-              <Box pad={{horizontal:"xlarge"}}>
+              <Box pad={{horizontal:"xlarge"}} gap="large">
                  {items.map((item)=>(
-                    <Box margin={{vertical:"medium"}} key={item.to} {...navProps(item.to)}>
-                     <Text alignSelf="center">
-                      {item.label}
-                     </Text>
-                   </Box>
+                      <NavButton 
+                        label={item.label} 
+                        key={item.to} 
+                        to={item.to} 
+                        hoverIndicator="light-1"
+                        />
                  ))}
                  </Box>
                </Box>
@@ -67,20 +64,20 @@ const ResponsiveMenu = ({ isMobile, items }) => {
         )}
       </Box>
     )
-  return items.map((item) => (
-    <NavButton label={item.label} key={item.to} to={item.to} />
-  ))
+  return items.map((item)=> (
+        <NavButton label={item.label} key={item.to} to={item.to} alignSelf="center" margin={{horizontal:"small"}} />
+      ))
 }
 
 const MbubeHeader = ({ siteTitle }) => (
   <>
     <LayoutSEO siteTitle={siteTitle} />
-    <Box background="dark-1" pad={{ vertical: "5px" }}>
+    <Box background="dark-1" pad={{ vertical: "7px" }}>
       <MaxWidthContainer margin={{ horizontal: "auto" }}>
         <ResponsiveContext.Consumer>
           {(size) => (
-            <Box direction="row" gap="medium">
-              <Box margin={{ vertical: "small" }}>
+            <Box direction="row" height="xxsmall">
+              <Box alignSelf="center">
                 <Text size="large" style={{ whiteSpace: "nowrap" }}>
                   <Link
                     to="/"
@@ -96,32 +93,26 @@ const MbubeHeader = ({ siteTitle }) => (
               </Box>
               <HideOnPrintBox
                 direction="row"
-                gap="small"
-                alignSelf="end"
                 margin={{ left: "auto" }}
               >
                 <ResponsiveMenu
                   isMobile={isMobile(size)}
                   items={[
                     {
-                      label: <NavButtonLabel>Program</NavButtonLabel>,
-                      to: "/program/",
-                      onClick: () => navigate("/program/"),
+                      label: "Program",
+                      to: "/program/"
                     },
                     {
-                      label: <NavButtonLabel>Informasjon</NavButtonLabel>,
-                      to: "/info/",
-                      onClick: () => navigate("/info/"),
+                      label: "Informasjon",
+                      to: "/info/"
                     },
                     {
-                      label: <NavButtonLabel>Bilder</NavButtonLabel>,
-                      to: "/bilder/",
-                      onClick: () => navigate("/bilder/"),
+                      label: "Bilder",
+                      to: "/bilder/"
                     },
                     {
-                      label: <NavButtonLabel>Bli speider</NavButtonLabel>,
-                      to: "/bli-speider/",
-                      onClick: () => navigate("/bli-speider/"),
+                      label: "Bli speider",
+                      to: "/bli-speider/"
                     },
                   ]}
                 />
