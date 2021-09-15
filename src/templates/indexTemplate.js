@@ -60,27 +60,12 @@ export default function Template({ data }) {
         </Box>
       </WhiteBox>
 
-      <Box 
-        background={{
-          "image": "url(https://www.transparenttextures.com/patterns/dark-stripes-light.png)",
-          "color": "neutral-3",
-          "repeat": "repeat",
-          "size": "auto",
-          "opacity": "strong",
-        }} 
-        pad={{vertical:"medium"}} 
-      >
         <MaxWidthContainer>
-          <Heading level="2" margin="small">Nye artikler</Heading>
-          <Box style={{height:"1px", width:"100%", background:"white"}} />
+          <Heading level="2" margin="small" alignSelf="center">Artikler</Heading>
         </MaxWidthContainer>
 
-        <Box fill="horizontal" pad="small" overflow="scroll">
-          <MaxWidthContainer>
-            <BlogRoll />
-          </MaxWidthContainer>
-        </Box>
-      </Box>
+          <BlogRoll />
+
     
       <WhiteBox>
         <div
