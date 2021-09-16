@@ -60,7 +60,7 @@ export default function Template({ data }) {
       </Box>
       <Panel
         image={imageTwo}
-        title="Litt om oss"
+        title="Nadderud Speidergruppe"
         text={description}
       />
       <Box gap="small" direction="row" justify="center" background="white" fill="horizontal" pad={{bottom:"medium", top:"xsmall"}}>
