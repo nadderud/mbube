@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-filename-extension */
 import React, {useRef} from "react"
 import { graphql, navigate } from "gatsby"
-import { Button, Box, Heading, Text } from "grommet"
+import { Button, Box, Heading } from "grommet"
 import HeroBackground from "../components/HeroBackground"
 import SEO from "../components/seo"
 import { initAuth } from "../app/services/auth"
@@ -20,7 +20,7 @@ const navTo = href => e => {
 
 export default function Template({ data }) {
   const { markdownRemark } = data
-  const { frontmatter: { title, description, imageOne, imageTwo, imageThree }, html } = markdownRemark
+  const { frontmatter: { title, description, imageOne, imageTwo }, html } = markdownRemark
   const myRef = useRef(null)
   const executeScroll = () => myRef.current.scrollIntoView({behavior: 'smooth'})
   return (
@@ -102,23 +102,9 @@ export const pageQuery = graphql`
             }
           }
         }
-        imageThree {
-          childImageSharp {
-            fluid(maxWidth: 600) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
         imageTwo {
           childImageSharp {
             fluid(maxWidth: 600) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-        image {
-          childImageSharp {
-            fluid(maxWidth: 2080) {
               ...GatsbyImageSharpFluid
             }
           }
