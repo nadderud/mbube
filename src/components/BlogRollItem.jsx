@@ -33,7 +33,7 @@ const BlogRollItem = ({ image, slug, title, description, date, compact, width })
       </Heading> 
       {compact  
       ? ""
-      : <Paragraph margin={{ vertical: "xsmall" }}>{description} <Link to={slug}>Ler mer..</Link></Paragraph>
+      : <Paragraph margin={{ vertical: "xsmall" }}>{description} <Link to={slug}>Les mer..</Link></Paragraph>
       }
       <Box flex justify="between" direction="row" justify="end" align="end">
         <Text size="xsmall" color="grey">

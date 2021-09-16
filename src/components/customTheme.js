@@ -10,7 +10,7 @@ const myTheme = {
       },
     },
     colors: {
-      brand: "#43b02a",
+      brand: "rgb(122,200, 98)",
     },
     font: {
       family: "'LFT Etica','Helvetica Neue',Arial,sans-serif",

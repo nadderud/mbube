@@ -14,7 +14,7 @@ const Heading = styled(GrommetHeading)`
 `
 
 const HeadingText = styled.span`
-  background-color: #f00;
+  background-color: rgb(122,200, 98);
   color: #fff;
   display: inline;
   padding: 0.45rem 0.75rem;

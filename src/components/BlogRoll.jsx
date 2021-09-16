@@ -6,7 +6,7 @@ import { graphql, StaticQuery, Link} from "gatsby"
 import MaxWidthContainer from "./MaxWidthContainer"
 
 import BlogRollItem from "./BlogRollItem"
-import { Box, ResponsiveContext, Text} from "grommet"
+import { Box, ResponsiveContext, Text, Heading} from "grommet"
 import { Archive } from "grommet-icons"
 
 import styled from "styled-components"
@@ -29,7 +29,8 @@ const isMobile = (size) => size === "xsmall" || size === "small"
 const BlogRoll = ({ posts }) => {
   const size = React.useContext(ResponsiveContext);
   return(
-    <Box background="light-2" pad={{vertical:"medium"}} >
+    <Box background="light-1" pad={{vertical:"medium"}} >
+      <Heading level="2" margin="small" alignSelf="center">Artikler</Heading>
             <Container> 
                 {isMobile(size)? "":<Child> <div style={{width:"250px"}} /></Child>}
                 
