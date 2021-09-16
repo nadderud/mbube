@@ -1,15 +1,15 @@
 /* eslint-disable react/jsx-filename-extension */
-import React from "react"
+import React, {useRef} from "react"
 import { graphql, navigate } from "gatsby"
 import { Button, Box, Heading } from "grommet"
-
+import HeroBackground from "../components/HeroBackground"
 import SEO from "../components/seo"
 import { initAuth } from "../app/services/auth"
 import BlogRoll from "../components/BlogRoll"
 import WhiteBox from "../components/WhiteBox"
-
 import MaxWidthContainer from "../components/MaxWidthContainer"
-import ImageCarousel from "../components/ImageCarousel"
+import Panel from "../components/panel"
+import { CaretDown as Down } from "grommet-icons"
 
 initAuth()
 
@@ -20,33 +20,50 @@ const navTo = href => e => {
 
 export default function Template({ data }) {
   const { markdownRemark } = data
-  const { frontmatter, html } = markdownRemark
+  const { frontmatter: { title, description, imageOne, imageTwo }, html } = markdownRemark
+  const myRef = useRef(null)
+  const executeScroll = () => myRef.current.scrollIntoView({behavior: 'smooth'})
   return (
     <>
-      <SEO title={frontmatter.title} />
-      <ImageCarousel 
-        height="90vh"
-        speed={9000}
-        data={[{
-          image: frontmatter.imageOne.childImageSharp.fluid,
-          header: "Nadderud Speidergruppe",
-          text: frontmatter.description
-        },
-         {
-          image: frontmatter.imageTwo.childImageSharp.fluid,
-          header: "Flokken 3.-4. klasse",
-          text: frontmatter.description
-        },
-         {
-          image: frontmatter.imageThree.childImageSharp.fluid,
-          header: "Troppen 5.-10. klasse",
-          text: frontmatter.description
-        }]}
+      <SEO title={title} description={description} />
+      <Box height="93vh" fill="horizontal" background="accent-4">
+        <HeroBackground image={imageOne} height="85vh">
+          <MaxWidthContainer animation="fadeIn" fill="vertical" justify="center">
+            <Box margin={{bottom:"xlarge", top:"0"}}>
+              <Heading color="brand" margin="0" style={{textShadow: "1px 1px 10px #fafafa"}}>
+                Friluft, mestring og sammhold!
+            </Heading>
+            <Heading margin="0" level="2" color="white">
+              Prøv speideing da vel!
+            </Heading>
+            </Box>
+          
+          </MaxWidthContainer>
+        </HeroBackground>
+
+        <Box background="white" height="100px" fill="horizontal" justify="center">
+          <Box 
+            alignSelf="center" 
+            height="xxsmall" 
+            width="xxsmall"  
+            align="center"
+            justify="center"
+            onClick={()=> executeScroll()}
+            hoverIndicator={true}
+            animation="pulse"
+            >
+              <Down />
+          </Box>
+          <div ref={myRef}></div>
+        </Box>
+        
+      </Box>
+      <Panel
+        image={imageTwo}
+        title="Nadderud Speidergruppe"
+        text={description}
       />
-      
-      <WhiteBox>
-        <p style={{"display":"none"}}>{frontmatter.description}</p>
-        <Box gap="small" direction="row">
+      <Box gap="small" direction="row" justify="center" background="white" fill="horizontal" pad={{bottom:"medium", top:"xsmall"}}>
           <Button
             label="Arrangementer"
             href="/program/"
@@ -56,32 +73,10 @@ export default function Template({ data }) {
             label="Bli speider"
             href="/bli-speider/"
             onClick={navTo("/bli-speider/")}
+            primary
           />
         </Box>
-      </WhiteBox>
-
-      <Box 
-        background={{
-          "image": "url(https://www.transparenttextures.com/patterns/dark-stripes-light.png)",
-          "color": "neutral-3",
-          "repeat": "repeat",
-          "size": "auto",
-          "opacity": "strong",
-        }} 
-        pad={{vertical:"medium"}} 
-      >
-        <MaxWidthContainer>
-          <Heading level="2" margin="small">Nye artikler</Heading>
-          <Box style={{height:"1px", width:"100%", background:"white"}} />
-        </MaxWidthContainer>
-
-        <Box fill="horizontal" pad="small" overflow="scroll">
-          <MaxWidthContainer>
-            <BlogRoll />
-          </MaxWidthContainer>
-        </Box>
-      </Box>
-    
+      <BlogRoll />
       <WhiteBox>
         <div
           className="page-content"
@@ -107,23 +102,9 @@ export const pageQuery = graphql`
             }
           }
         }
-        imageThree {
-          childImageSharp {
-            fluid(maxWidth: 2080) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
         imageTwo {
           childImageSharp {
-            fluid(maxWidth: 2080) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-        image {
-          childImageSharp {
-            fluid(maxWidth: 2080) {
+            fluid(maxWidth: 600) {
               ...GatsbyImageSharpFluid
             }
           }

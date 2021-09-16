@@ -6,11 +6,9 @@ description: >-
   Spennende friluftsliv for barn og ungdom fra 3. klasse og oppover. Vi er en
   aktiv speidergruppe med ca. 100 medlemmer som dekker området Nadderud,
   Bekkestua, Hosle, Eikeli og Haslum.
-  
 
 imageOne: /img/upload/leirbaal.jpg
 imageTwo: /img/upload/pionering.jpg
-imageThree: /img/upload/flaate.jpg
 
 contacts:
   - email: mats@nadderud.no

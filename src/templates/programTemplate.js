@@ -19,7 +19,7 @@ export default function Template({ data: { calendar, allEvent } }) {
       <SEO title={title(slug, name)} />
       <Hero title={title(slug, name)} />
       <WhiteBox>
-        Her finner du møter og turer vi har planlagt fremover.
+        Her finner du møter og turer vi har planlagt fremover. Troppen (5. 10. klasse) bruker også Spond.
       </WhiteBox>
       <MaxWidthContainer margin={{ horizontal: "auto", bottom: "small" }}>
         <Calendars selected={slug} />

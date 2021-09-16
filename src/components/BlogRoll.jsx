@@ -1,43 +1,66 @@
-import React, { useContext } from "react"
+import React from "react"
 import PropTypes from "prop-types"
-import { graphql, StaticQuery, navigate } from "gatsby"
+import { graphql, StaticQuery, Link} from "gatsby"
 
-import { Grid, Box, ResponsiveContext, Button } from "grommet"
-import { Archive } from 'grommet-icons';
+
+import MaxWidthContainer from "./MaxWidthContainer"
 
 import BlogRollItem from "./BlogRollItem"
+import { Box, ResponsiveContext, Text, Heading} from "grommet"
+import { Archive } from "grommet-icons"
 
+import styled from "styled-components"
+
+const Container = styled.div`
+padding: 1rem;
+display: flex;
+overflow-x: scroll;
+scroll-snap-type: x mandatory;
+`
+const Child = styled.div`
+scroll-snap-align: center;
+display: inline-block;
+border-radius: 3px;
+margin-right: 3rem;
+`
+
+const isMobile = (size) => size === "xsmall" || size === "small"
 
 const BlogRoll = ({ posts }) => {
-  const size = useContext(ResponsiveContext);
+  const size = React.useContext(ResponsiveContext);
   return(
-    <Grid columns={["auto","auto","auto","auto","auto","auto"]} gap="small">
-    {posts &&
-      posts.map(({ node: post }) => (
-        <Box width={size !== "small" ? "medium" : "85vw"} >
-          <BlogRollItem
-            key={post.fields.slug}
-            image={post.frontmatter.featuredimage}
-            slug={post.fields.slug}
-            {...post.frontmatter}
-          />
+    <Box background="light-1" pad={{vertical:"medium"}} >
+      <Heading level="2" margin="small" alignSelf="center">Artikler</Heading>
+            <Container> 
+                {isMobile(size)? "":<Child> <div style={{width:"250px"}} /></Child>}
+                
+                {posts && posts.map(({ node: post }) => {
+                    return(
+                        <Child key={post.id}>
+                            <BlogRollItem
+                                key={post.fields.slug}
+                                image={post.frontmatter.featuredimage}
+                                slug={post.fields.slug}
+                                width={isMobile(size)? "300px":"medium"}
+                                {...post.frontmatter}
+                              />
+                        </Child>
+                    )
+                })}
+
+            </Container>
+        
+            <MaxWidthContainer >
+                <Link to="/artikler/" style={{alignSelf:"center"}}>
+                    <Box direction="row" gap="small">
+                        <Archive color="dark-2" />
+                        <Text color="dark-2"> Eldre innlegg </Text>
+                    </Box>  
+                    
+                </Link>
+            </MaxWidthContainer>
+            
         </Box>
-      ))}
-      <Box 
-          width="300px" 
-          align="start" 
-          alignSelf="center"
-          margin="medium"
-        >
-          <Button
-            size="small"
-            icon={<Archive />}
-            label="Alle artikler"
-            onClick={() => navigate("/artikler")}
-            primary
-          />
-        </Box>
-    </Grid>
   )
 }
 
@@ -56,10 +79,9 @@ export default () => (
         allMarkdownRemark(
           sort: { order: DESC, fields: [frontmatter___date] }
           filter: {
-            isFuture: { eq: false }
-            isExpired: { eq: false }
             frontmatter: { templateKey: { eq: "blog-post" } }
           }
+          limit:5
         ) {
           edges {
             node {
