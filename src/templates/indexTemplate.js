@@ -31,10 +31,10 @@ export default function Template({ data }) {
           <MaxWidthContainer animation="fadeIn" fill="vertical" justify="center">
             <Box margin={{bottom:"xlarge", top:"0"}}>
               <Heading color="brand" margin="0" style={{textShadow: "1px 1px 10px #fafafa"}}>
-                Friluft, mestring og sammhold!
+                Friluft, mestring og samhold!
             </Heading>
             <Heading margin="0" level="2" color="white">
-              Prøv speideing da vel!
+              Prøv speiding da vel!
             </Heading>
             </Box>
           
