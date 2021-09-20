@@ -31,7 +31,7 @@ const ResponsiveMenu = ({ isMobile, items }) => {
   if (isMobile)
     return (
       <Box alignSelf="center">
-        <Button label="Meny" onClick={() => setShow(true)} icon={ <MenuIcon />} reverse={true} plain/>
+        <Button onClick={() => setShow(true)} icon={ <MenuIcon />} reverse={true} plain/>
         {show && (
             <Layer
               onEsc={() => setShow(false)}
