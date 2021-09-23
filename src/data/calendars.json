@@ -51,12 +51,11 @@
     "sortKey": 20
   },
   {
-    "name": "Roverne",
-    "nameExt": " (16-25 år)",
+    "name": "Ørn",
     "id": "nadderud.no_609bou5r8u9cl5e5lqdve7vq18@group.calendar.google.com",
-    "slug": "rover",
+    "slug": "troppen/ørn",
     "visible": true,
-    "sortKey": 30
+    "sortKey": 20
   },
   {
     "name": "Alle",
