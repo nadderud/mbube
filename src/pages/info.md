@@ -31,5 +31,5 @@ description: Spennende friluftsliv for barn og ungdom fra 3. klasse og oppover.
 
 Vi er på facebook og instagram!
 
-* Instagram: <a href="https://www.instagram.com/nadderudspeidergruppe/">nadderudspeidergruppe</a>
+* Instagram: <a href="https://www.instagram.com/nadderudspeidergruppe/">@nadderudspeidergruppe</a>
 * Facebook: <a href="https://www.facebook.com/groups/248612515197643/">Nadderud speidergruppe</a>
