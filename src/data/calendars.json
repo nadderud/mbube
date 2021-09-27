@@ -58,6 +58,14 @@
     "sortKey": 20
   },
   {
+    "name": "Roverlaget",
+    "nameExt": " (16-25 år)",
+    "id": "c_dpj0b5jk1slqj2sb9tj0ot7kj0@group.calendar.google.com",
+    "slug": "rover",
+    "visible": true,
+    "sortKey": 30
+  },
+  {
     "name": "Alle",
     "id": "nadderud.no_nmhftcmqkjihqv2p0dbdh09o34@group.calendar.google.com",
     "slug": "",
