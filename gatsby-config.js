@@ -33,6 +33,13 @@ module.exports = {
       },
     },
     {
+      resolve: "gcal",
+      options: {
+        path: `${__dirname}/src/data/calendars.json`,
+        apiKey: process.env.GOOGLE_KEY,
+      },
+    },
+    {
       resolve: "gatsby-plugin-create-client-paths",
       options: { prefixes: ["/app/*"] },
     },
@@ -87,13 +94,6 @@ module.exports = {
       resolve: "gatsby-plugin-netlify-cms",
       options: {
         modulePath: `${__dirname}/src/cms/cms.js`,
-      },
-    },
-    {
-      resolve: "gcal",
-      options: {
-        path: `${__dirname}/src/data/calendars.json`,
-        apiKey: process.env.GOOGLE_KEY,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
