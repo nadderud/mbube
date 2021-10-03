@@ -20,9 +20,11 @@ import CustomTheme from "./customTheme"
 
 export const LayoutTemplate = ({ children, isFrontpage, siteTitle }) => (
   <CustomTheme>
-    <Box background="#f5f5f5">
-      <Header siteTitle={siteTitle} />
-      {children}
+    <Box background="light-2" height={{min:"100vh"}} justify="between">
+      <Box>
+        <Header siteTitle={siteTitle} />
+        {children}
+      </Box>
       <Footer isFrontpage={isFrontpage} />
     </Box>
   </CustomTheme>
