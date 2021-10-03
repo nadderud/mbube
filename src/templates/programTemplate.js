@@ -12,12 +12,12 @@ import AllEventsList from "../components/calendar/AllEventsList"
 
 const title = (slug, name) => (slug ? `Program for ${name}` : "Program")
 
-export default function Template({ data: { calendar, allEvent } }) {
+export default function Template({ data: { calendar, allEvent, image } }) {
   const { slug, name } = calendar || {}
   return (
     <>
       <SEO title={title(slug, name)} />
-      <Hero title={title(slug, name)} />
+      <Hero title={title(slug, name)}  image={image}/>
       <WhiteBox>
         Her finner du møter og turer vi har planlagt fremover. Troppen (5. 10. klasse) bruker også Spond.
       </WhiteBox>
@@ -48,6 +48,13 @@ export const pageQuery = graphql`
         location
         description
         calendar
+      }
+    }
+    image: file(name: {eq: "vann"}) {
+      childImageSharp {
+        fluid(maxWidth: 1920) {
+          ...GatsbyImageSharpFluid
+        }
       }
     }
   }
