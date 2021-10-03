@@ -8,7 +8,6 @@ import HeroBackground from "./HeroBackground"
 const Heading = styled(GrommetHeading)`
   font-style: italic;
   font-family: "Next", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-  text-align: center;
   line-height: 1.4;
   padding: 2px 0;
 `
@@ -24,7 +23,7 @@ const HeadingText = styled.span`
 const Hero = ({ title, image, height }) => (
   <HeroBackground image={image} height={height}>
     {title && (
-      <Heading>
+      <Heading alignSelf="center">
         <HeadingText>{title}</HeadingText>
       </Heading>
     )}
