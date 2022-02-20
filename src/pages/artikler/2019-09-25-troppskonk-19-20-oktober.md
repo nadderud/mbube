@@ -2,7 +2,7 @@
 templateKey: blog-post
 title: Troppskonk 19-20 oktober
 featuredimage: /img/upload/20181013_122906.jpg
-description: Endelig er det på tide med høstens første troppstur!!
+description: Endelig er det på tide med høstens første troppstur!
 date: 2019-10-19T08:00:00.000Z
 expireInDays: 60
 tags:
