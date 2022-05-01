@@ -18,10 +18,10 @@ import Members, {
 class Email extends React.Component {
   state = { selected: [], message: "", subject: "" }
 
-  toggleSelected = item => this.setState(transformStateForToggleItem(item))
+  toggleSelected = (item) => this.setState(transformStateForToggleItem(item))
   setSelectedItems = (items, add) =>
     this.setState(transformStateForSetItems(items, add))
-  changeHandler = field => e => this.setState({ [field]: e.target.value })
+  changeHandler = (field) => (e) => this.setState({ [field]: e.target.value })
 
   render() {
     const { selected, subject, message } = this.state

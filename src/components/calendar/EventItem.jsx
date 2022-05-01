@@ -9,7 +9,7 @@ import styled from "styled-components"
 
 import parseDate from "./parseDate"
 import EventDate from "./EventDate"
-import UnitBadge from "../UnitBadge"
+import UnitBadge from "../layout/UnitBadge"
 
 const Container = styled.div`
   display: flex;
@@ -75,7 +75,7 @@ const eventTime = (startRaw, endRaw) => {
   return null
 }
 
-const calendarUnit = calendar => calendar.split("/")[0]
+const calendarUnit = (calendar) => calendar.split("/")[0]
 
 const EventItem = ({
   data: { id, start, end, summary, location, description, organizer, calendar },

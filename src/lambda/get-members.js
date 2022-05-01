@@ -10,9 +10,7 @@ export async function handler(event, context) {
     Array.isArray(user.app_metadata.roles) &&
     user.app_metadata.roles.includes("members")
   ) {
-    return getMembers()
-      .then(success)
-      .catch(error)
+    return getMembers().then(success).catch(error)
   }
   return unauthorized
 }

@@ -2,11 +2,12 @@ import React from "react"
 import { graphql } from "gatsby"
 import { Paragraph, Heading } from "grommet"
 
-import SEO from "../components/seo"
-import Byline from "../components/Byline"
-import Hero from "../components/Hero"
-import WhiteBox from "../components/WhiteBox"
-import Content, { HTMLContent } from "../components/Content"
+// project components
+import SEO from "../components/navigation/seo"
+import Byline from "../components/miscellaneous/Byline"
+import Hero from "../components/layout/Hero"
+import WhiteBox from "../components/layout/WhiteBox"
+import Content, { HTMLContent } from "../components/miscellaneous/Content"
 
 export const BlogPostTemplate = ({
   title,
@@ -56,7 +57,7 @@ const BlogPost = ({ data }) => {
 export default BlogPost
 
 export const pageQuery = graphql`
-  query($slug: String!) {
+  query ($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {

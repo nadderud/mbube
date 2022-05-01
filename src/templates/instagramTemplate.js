@@ -1,9 +1,11 @@
 import React from "react"
 import { graphql } from "gatsby"
-import WhiteBox from "../components/WhiteBox"
-import Hero from "../components/Hero"
-import SEO from "../components/seo"
-import Instagram from "../components/Instagram"
+
+// project components
+import WhiteBox from "../components/layout/WhiteBox"
+import Hero from "../components/layout/Hero"
+import SEO from "../components/navigation/seo"
+import Instagram from "../components/layout/Instagram"
 
 const BilderInstagram = ({ data: { markdownRemark } }) => {
   const {
@@ -32,7 +34,7 @@ const BilderInstagram = ({ data: { markdownRemark } }) => {
 export default BilderInstagram
 
 export const pageQuery = graphql`
-  query($slug: String!) {
+  query ($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {

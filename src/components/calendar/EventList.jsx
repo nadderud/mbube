@@ -25,8 +25,8 @@ const Month = ({ children }) => (
   </StyledMonth>
 )
 
-const currentFilter = events =>
-  events.filter(item => parseDate(item.end).isSameOrAfter(moment(), "day"))
+const currentFilter = (events) =>
+  events.filter((item) => parseDate(item.end).isSameOrAfter(moment(), "day"))
 
 const EventList = ({ events = [] }) => {
   const currentEvents = currentFilter(events)
@@ -47,7 +47,7 @@ const EventList = ({ events = [] }) => {
 
   return (
     <div>
-      {currentEvents.map(item => (
+      {currentEvents.map((item) => (
         <React.Fragment key={item.id}>
           {monthRow(item.start)}
           <EventItem data={item} />

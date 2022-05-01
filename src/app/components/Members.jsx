@@ -8,22 +8,22 @@ import Loading from "./Loading"
 import { getUser } from "../services/auth"
 import { subset, getGroups } from "../utils/object"
 
-export const transformStateForToggleItem = item => currState => ({
+export const transformStateForToggleItem = (item) => (currState) => ({
   selected: toggleItem(currState.selected, item),
 })
-export const transformStateForSetItems = (items, add) => currState => ({
+export const transformStateForSetItems = (items, add) => (currState) => ({
   selected: toggleItems(currState.selected, items, add),
 })
 
 const toggleItem = (target, item) =>
-  target.includes(item) ? target.filter(x => x !== item) : [...target, item]
+  target.includes(item) ? target.filter((x) => x !== item) : [...target, item]
 
 const toggleItems = (target, items, add) =>
   add
     ? [...target, ...items].filter(uniqueFilter)
-    : target.filter(x => !items.includes(x))
+    : target.filter((x) => !items.includes(x))
 
-const intersect = (setA, setB) => setA.filter(x => setB.includes(x))
+const intersect = (setA, setB) => setA.filter((x) => setB.includes(x))
 const arrayEql = (setA, setB) => {
   if (setA.length !== setB.length) {
     return false
@@ -32,7 +32,7 @@ const arrayEql = (setA, setB) => {
 }
 const uniqueFilter = (x, index, self) => self.indexOf(x) === index
 
-const useStateWithSessionStorage = localStorageKey => {
+const useStateWithSessionStorage = (localStorageKey) => {
   const [value, setValue] = useState(
     JSON.parse(sessionStorage.getItem(localStorageKey)) || {}
   )
@@ -60,7 +60,7 @@ const useMembers = () => {
           Authorization: "Bearer " + user.token.access_token,
         },
       })
-        .then(response => response.json())
+        .then((response) => response.json())
         .then(setItems)
         .finally(() => {
           setLoading(false)
@@ -94,7 +94,7 @@ const Members = ({ selected, toggleSelected, setSelectedItems }) => {
           <Refresh />
         </Button>
       </Heading>
-      {Object.keys(units).map(unit => {
+      {Object.keys(units).map((unit) => {
         const unitKeys = units[unit]
         const patrols = getGroups(subset(items, unitKeys), "patrol")
         return (
@@ -106,7 +106,7 @@ const Members = ({ selected, toggleSelected, setSelectedItems }) => {
             selected={intersect(unitKeys, selected)}
             setSelectedItems={setSelectedItems}
           >
-            {Object.keys(patrols).map(patrol => {
+            {Object.keys(patrols).map((patrol) => {
               const patrolKeys = patrols[patrol]
               return (
                 <Members.Unit
@@ -117,7 +117,7 @@ const Members = ({ selected, toggleSelected, setSelectedItems }) => {
                   selected={intersect(patrolKeys, selected)}
                   setSelectedItems={setSelectedItems}
                 >
-                  {patrolKeys.map(item => (
+                  {patrolKeys.map((item) => (
                     <Members.Item
                       key={item}
                       name={items[item].name}
@@ -157,18 +157,12 @@ class Unit extends React.Component {
   }
 
   reveal = () => {
-    this.setState(currState => ({ collapsed: !currState.collapsed }))
+    this.setState((currState) => ({ collapsed: !currState.collapsed }))
   }
 
   render() {
-    const {
-      name,
-      size,
-      children,
-      keys,
-      selected,
-      setSelectedItems,
-    } = this.props
+    const { name, size, children, keys, selected, setSelectedItems } =
+      this.props
     const { collapsed } = this.state
     const allSelected = keys.length === selected.length
     const someSelected = selected.length > 0

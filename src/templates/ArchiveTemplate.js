@@ -3,10 +3,11 @@ import React from "react"
 import PropTypes from "prop-types"
 import { graphql } from "gatsby"
 
-import WhiteBox from "../components/WhiteBox"
-import SEO from "../components/seo"
-import Hero from "../components/Hero"
-import BloggRollArchive from "../components/BloggRollArchive"
+// project components
+import WhiteBox from "../components/layout/WhiteBox"
+import SEO from "../components/navigation/seo"
+import Hero from "../components/layout/Hero"
+import BloggRollArchive from "../components/layout/BloggRollArchive"
 
 export default function Template({ data: { markdownRemark } }) {
   const {
@@ -34,7 +35,7 @@ Template.propTypes = {
 }
 
 export const pageQuery = graphql`
-  query($slug: String!) {
+  query ($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {
@@ -47,9 +48,8 @@ export const pageQuery = graphql`
               ...GatsbyImageSharpFluid
             }
           }
-        } 
+        }
       }
     }
   }
 `
-

@@ -1,5 +1,5 @@
 import React from "react"
-import Layout from "./src/components/Layout"
+import Layout from "./src/components/layout/Layout"
 
 export const onClientEntry = () => {
   // IntersectionObserver polyfill for gatsby-background-image (Safari, IE)

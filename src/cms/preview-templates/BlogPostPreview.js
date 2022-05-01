@@ -1,7 +1,9 @@
 import React, { useState } from "react"
 import PropTypes from "prop-types"
+
+// project components
 import { BlogPostTemplate } from "../../templates/blog-postTemplate"
-import { LayoutTemplate } from "../../components/Layout"
+import { LayoutTemplate } from "../../components/layout/Layout"
 
 const BlogPostPreview = ({ entry, widgetFor, getAsset }) => {
   const tags = entry.getIn(["data", "tags"])

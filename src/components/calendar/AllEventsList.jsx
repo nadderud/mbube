@@ -3,7 +3,7 @@ import { graphql, StaticQuery } from "gatsby"
 
 import EventList from "./EventList"
 
-export default props => (
+export default (props) => (
   <StaticQuery
     query={graphql`
       query AllEventsQuery {
@@ -21,6 +21,6 @@ export default props => (
         }
       }
     `}
-    render={data => <EventList events={data.allEvent.nodes} {...props} />}
+    render={(data) => <EventList events={data.allEvent.nodes} {...props} />}
   />
 )

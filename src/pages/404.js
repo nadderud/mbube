@@ -1,8 +1,9 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from "react"
 
-import SEO from "../components/seo"
-import Hero from "../components/Hero"
+// project components
+import SEO from "../components/navigation/seo"
+import Hero from "../components/layout/Hero"
 
 const NotFoundPage = () => (
   <>

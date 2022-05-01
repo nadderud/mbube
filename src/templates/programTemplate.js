@@ -2,10 +2,11 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import WhiteBox from "../components/WhiteBox"
-import MaxWidthContainer from "../components/MaxWidthContainer"
-import SEO from "../components/seo"
-import Hero from "../components/Hero"
+// project components
+import WhiteBox from "../components/layout/WhiteBox"
+import MaxWidthContainer from "../components/layout/MaxWidthContainer"
+import SEO from "../components/navigation/seo"
+import Hero from "../components/layout/Hero"
 import Calendars from "../components/calendar/Calendars"
 import EventList from "../components/calendar/EventList"
 import AllEventsList from "../components/calendar/AllEventsList"
@@ -17,9 +18,10 @@ export default function Template({ data: { calendar, allEvent, image } }) {
   return (
     <>
       <SEO title={title(slug, name)} />
-      <Hero title={title(slug, name)}  image={image}/>
+      <Hero title={title(slug, name)} image={image} />
       <WhiteBox>
-        Her finner du møter og turer vi har planlagt fremover. Troppen (5. 10. klasse) bruker også Spond.
+        Her finner du møter og turer vi har planlagt fremover. Troppen (5. 10.
+        klasse) bruker også Spond.
       </WhiteBox>
       <MaxWidthContainer margin={{ horizontal: "auto", bottom: "small" }}>
         <Calendars selected={slug} />
@@ -30,7 +32,7 @@ export default function Template({ data: { calendar, allEvent, image } }) {
 }
 
 export const pageQuery = graphql`
-  query($calendarId: String, $calendarIds: [String]) {
+  query ($calendarId: String, $calendarIds: [String]) {
     calendar(slug: { eq: $calendarId }) {
       slug
       name
@@ -50,7 +52,7 @@ export const pageQuery = graphql`
         calendar
       }
     }
-    image: file(name: {eq: "vann"}) {
+    image: file(name: { eq: "vann" }) {
       childImageSharp {
         fluid(maxWidth: 1920) {
           ...GatsbyImageSharpFluid

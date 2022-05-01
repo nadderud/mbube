@@ -21,7 +21,7 @@ module.exports = {
   siteMetadata: {
     title: "Nadderud speidergruppe",
     description:
-      "Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.",
+      "Spennende friluftsliv for barn og ungdom fra 3. klasse og oppover. Vi er en aktiv speidergruppe med ca. 100 medlemmer som dekker området Nadderud, Bekkestua, Hosle, Eikeli og Haslum.",
     author: "@gatsbyjs",
   },
   plugins: [
@@ -86,7 +86,6 @@ module.exports = {
         name: "pages",
       },
     },
-
     {
       resolve: "gatsby-plugin-styled-components",
     },

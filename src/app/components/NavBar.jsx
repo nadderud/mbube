@@ -6,8 +6,9 @@ export default () => {
   const content = { message: "", login: true }
   const user = getUser()
   if (isLoggedIn()) {
-    content.message = `Hello, ${user.user_metadata &&
-      user.user_metadata.full_name}`
+    content.message = `Hello, ${
+      user.user_metadata && user.user_metadata.full_name
+    }`
   } else {
     content.message = "You are not logged in"
   }
@@ -32,7 +33,7 @@ export default () => {
         {isLoggedIn() ? (
           <a
             href="/"
-            onClick={event => {
+            onClick={(event) => {
               event.preventDefault()
               logout(() => navigate(`/app/login`))
             }}
