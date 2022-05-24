@@ -8,6 +8,7 @@ import { Menu as MenuIcon, Close } from "grommet-icons"
 // project components
 
 import HideOnPrintBox from "../miscellaneous/hideOnPrintBox"
+import MaxWidthContainer from "../layout/MaxWidthContainer"
 
 export const navProps = (to) => ({
   as: "a",

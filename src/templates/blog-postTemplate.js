@@ -64,13 +64,7 @@ export const pageQuery = graphql`
         date
         title
         description
-        featuredimage {
-          childImageSharp {
-            fluid(quality: 90, maxWidth: 1920) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
-          }
-        }
+        featuredimage 
       }
     }
   }

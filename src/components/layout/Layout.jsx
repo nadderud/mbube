@@ -7,8 +7,8 @@ import "sanitize.css"
 import "../style/layout.css"
 
 // project components
-import Header from "../navigation/Header"
-import Footer from "../navigation/Footer"
+import Header from "../navigation/header"
+import Footer from "../navigation/footer"
 import CustomTheme from "../style/customTheme"
 
 export const LayoutTemplate = ({ children, isFrontpage, siteTitle }) => (

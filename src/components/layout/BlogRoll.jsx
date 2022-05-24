@@ -98,14 +98,7 @@ export default () => (
                 description
                 templateKey
                 date(formatString: "D. MMMM YYYY", locale: "nb")
-                featuredimage {
-                  childImageSharp {
-                    fluid(maxWidth: 400, maxHeight: 300, quality: 100) {
-                      ...GatsbyImageSharpFluid
-                      presentationWidth
-                    }
-                  }
-                }
+                featuredimage
               }
             }
           }

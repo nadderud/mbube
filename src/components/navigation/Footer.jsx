@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 
 // project components
 import MaxWidthContainer from "../layout/MaxWidthContainer"
-import HideOnPrintBox from "../miscellaneous/HideOnPrintBox"
+import HideOnPrintBox from "../miscellaneous/hideOnPrintBox"
 
 const Footer = ({ isFrontpage = false }) => (
   <HideOnPrintBox>

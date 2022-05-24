@@ -120,20 +120,8 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         title
         description
-        imageOne {
-          childImageSharp {
-            fluid(maxWidth: 2080) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-        imageTwo {
-          childImageSharp {
-            fluid(maxWidth: 600) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
+        imageOne
+        imageTwo 
       }
     }
   }
