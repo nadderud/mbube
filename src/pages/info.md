@@ -22,7 +22,7 @@ description: Spennende friluftsliv for barn og ungdom fra 3. klasse og oppover.
   47242810, <a href="mailto:annemarietorb@gmail.com">annemarietorb@gmail.com</a>
 * **Philip Godager**, troppsleder (5.–10. klasse):\
   477 16 980, <a href="mailto:philip1014@outlook.com">philip1014@outlook.com</a>
-* **Yngve Benestad Hågvar**, flokkleder (3.–4. klasse):\
+* **Kristian Sveen-Østensen**, flokkleder (3.–4. klasse):\
   416 43 901, <a href="mailto:yngve.hagvar@gmail.com">yngve.hagvar@gmail.com</a>
 
 &nbsp;
