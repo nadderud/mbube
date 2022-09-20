@@ -58,6 +58,14 @@
     "sortKey": 20
   },
   {
+    "name": "Hjort",
+    "id": "c_fcc36bad2ad05c6e569b7959a795ca3ff3d896f0e1f6ee352dec7ebf037597a5@group.calendar.google.com",
+    "slug": "troppen/hjort",
+    "visible": true,
+    "sortKey": 20
+
+  },
+  {
     "name": "Roverlaget",
     "nameExt": " (16-25 år)",
     "id": "c_dpj0b5jk1slqj2sb9tj0ot7kj0@group.calendar.google.com",
