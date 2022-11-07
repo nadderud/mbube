@@ -18,18 +18,20 @@ description: Spennende friluftsliv for barn og ungdom fra 3. klasse og oppover.
 
 ## Kontakt oss
 
-* **Anne Marie Torbjørnsdal**, gruppeleder:\
-  47242810, <a href="mailto:annemarietorb@gmail.com">annemarietorb@gmail.com</a>
-* **Philip Godager**, troppsleder (5.–10. klasse):\
+* **Anne Marie Torbjørnsdal**, Gruppeleder:\
+  472 42 810, <a href="mailto:annemarietorb@gmail.com">annemarietorb@gmail.com</a>
+* **Philip Godager**, Troppsleder (5.–10. klasse):\
   477 16 980, <a href="mailto:philip1014@outlook.com">philip1014@outlook.com</a>
-* **Kristian Sveen-Østensen**, flokkleder (3.–4. klasse):\
-  416 43 901, <a href="mailto:yngve.hagvar@gmail.com">yngve.hagvar@gmail.com</a>
+* **Nikolai Kragøe Andresen**, Flokkleder (3.–4. klasse):\
+  997 29 706, <a href="mailto:nikolai.andresen@gmail.com">nikolai.andresen@gmail.com</a>
 
-&nbsp;
+
+
+
 
 ## Sosiale medier
 
-Vi er på facebook og instagram!
+Vi er på Facebook og Instagram!
 
 * Instagram: <a href="https://www.instagram.com/nadderudspeidergruppe/">@nadderudspeidergruppe</a>
 * Facebook: <a href="https://www.facebook.com/groups/248612515197643/">Nadderud speidergruppe</a>
