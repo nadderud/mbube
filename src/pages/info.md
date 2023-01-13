@@ -9,8 +9,8 @@ description: Spennende friluftsliv for barn og ungdom fra 3. klasse og oppover.
 ## Generell info
 
 * Møtelokaler: Øygardveien 49, 1357 Bekkestua
-* Postadresse: Nadderud speidergruppe, v/Merete Haukedal, Rytterfaret 25, 1362 Hosle
-* Telefonnummer:  411 44 182
+* Postadresse: Nadderud speidergruppe, v/Anne Marie Torbjørnsdal, Egne Hjemsvei 3E 1356 Bekkestua
+* Telefonnummer:  472 42 810
 * E-postadresse: [post@nadderud.no](mailto:post@nadderud.no)
 * Kontonummer: 9235.19.85773  
 
@@ -25,13 +25,11 @@ description: Spennende friluftsliv for barn og ungdom fra 3. klasse og oppover.
 * **Nikolai Kragøe Andresen**, Flokkleder (3.–4. klasse):\
   997 29 706, <a href="mailto:nikolai.andresen@gmail.com">nikolai.andresen@gmail.com</a>
 
-
-
-
-
 ## Sosiale medier
 
 Vi er på Facebook og Instagram!
 
-* Instagram: <a href="https://www.instagram.com/nadderudspeidergruppe/">@nadderudspeidergruppe</a>
+
+
 * Facebook: <a href="https://www.facebook.com/groups/248612515197643/">Nadderud speidergruppe</a>
+* Instagram: <a href="https://www.instagram.com/nadderudspeidergruppe/">@nadderudspeidergruppe</a>
